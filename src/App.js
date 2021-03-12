@@ -1,10 +1,15 @@
 import React from "react";
+import { Route, Switch, Redirect } from "react-router-dom";
 import Layout from "./layout";
+import MainPage from "./pages/MainPage";
 
 function App() {
     return (
         <Layout>
-            <h2>Hello world</h2>
+            <Switch>
+                <Route path="/" exact component={MainPage} />
+                <Redirect from="*" to="/" />
+            </Switch>
         </Layout>
     );
 }

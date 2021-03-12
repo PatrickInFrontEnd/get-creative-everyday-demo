@@ -1,10 +1,11 @@
 import React from "react";
 import GlobalStyle from "./globalStyle.styles";
+import Navigation from "./menu.component";
 
 const LayoutComponent = (props) => (
     <>
         <GlobalStyle />
-        <h2>It's layout here ;&gt;</h2>
+        <Navigation />
         {props.children}
     </>
 );
