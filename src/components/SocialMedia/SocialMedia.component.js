@@ -59,8 +59,27 @@ export const SocialContainer = styled.div`
                   left: ${position.left || "100px"};
               `
             : ""};
-    ${({ typeOfSize }) => setSizeOfSocialContainer(typeOfSize)};
+    ${({ typeofsize }) => setSizeOfSocialContainer(typeofsize)};
     border-radius: 50%;
+    animation: floating 3s infinite;
+
+    @keyframes floating {
+        0% {
+            transform: translateY(0);
+        }
+
+        25% {
+            transform: translateY(-10px);
+        }
+
+        50% {
+            transform: translateY(10px);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
 
     & > img,
     & > a {
@@ -79,8 +98,8 @@ export const SocialContainer = styled.div`
         left: unset;
         right: unset;
         ${flexCenter};
-        ${({ linkPosition }) =>
-            linkPosition === "left"
+        ${({ linkposition }) =>
+            linkposition === "left"
                 ? css`
                       left: -10px;
                   `
@@ -88,7 +107,7 @@ export const SocialContainer = styled.div`
                       right: -10px;
                   `};
 
-        ${({ typeOfSize }) => setSizeOfSocialLink(typeOfSize)};
+        ${({ typeofsize }) => setSizeOfSocialLink(typeofsize)};
         background-color: ${({ theme }) => theme.colors.darker_blue};
         padding: 6%;
 
@@ -110,8 +129,8 @@ const SocialMediaComponent = ({
     <SocialContainer typeOfSize={containerSize} position={position}>
         <img src={imgSrc} alt="Social media" />
         <a
-            typeOfSize={LinkSize}
-            linkPosition={linkPosition}
+            typeofsize={LinkSize}
+            linkposition={linkPosition}
             href={linkUrl}
             target="_blank"
             rel="noreferrer"

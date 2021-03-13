@@ -60,7 +60,7 @@ const Form = styled.form`
         transform: translate(-50%, 100%);
         z-index: -1;
         width: 450px;
-        height: 550px;
+        height: 520px;
         object-fit: cover;
     }
 `;

@@ -38,30 +38,46 @@ h6{
     font-size: ${({ theme }) => theme.fz.S}
 }
 
+p{
+    font-size: ${({ theme }) => theme.fz.S};
+}
+
 a{
     text-decoration:none;
+    color:inherit;
 }
 
 
         ${SocialContainer}{
-            &:nth-of-type(2) {
-                img{
-                    padding:0 10px;
-                    background:${({ theme }) => theme.colors.light_white};
-                    background-blend-mode:multiply;
-                    object-fit:contain;
-                }
+            &:nth-of-type(1) {
+                 animation-delay: 0.5s;
 
-                a{
+                  a{
+                     left:-10px !important;
+                 }
+            }
+
+            &:nth-of-type(2) {
+                animation-delay: 1s;
+
+                a {
                     padding:7%;
-                    left:-10px;
+                    right:-10px;
                 }
             }
             
             &:nth-of-type(3) {
+                animation-delay: 1.2s;
 
-                a{
-                    left:-10px;
+                & > img {
+                    padding:0 10px;
+                    background: ${({ theme }) => theme.colors.light_white};
+                    background-blend-mode: multiply;
+                    object-fit: contain;
+                }
+
+                a {
+                    left:-10px !important;
                 }
             }
             

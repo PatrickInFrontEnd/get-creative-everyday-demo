@@ -2,6 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { absoluteCenter } from "./../components/mixins";
+import gsap from "gsap";
+import scrollToPlugin from "gsap/ScrollToPlugin";
+
+gsap.registerPlugin(scrollToPlugin);
 
 const Navigation = styled.nav`
     position: relative;
@@ -47,13 +51,26 @@ const Navigation = styled.nav`
     }
 `;
 
-const NavigationComponent = (props) => (
-    <Navigation>
-        <Link to="#home">Strona Główna</Link>
-        <Link to="#about">Niezbędnik</Link>
-        <Link to="#contact">Kontakt</Link>
-        <h2>wkrótce premiera</h2>
-    </Navigation>
-);
+const NavigationComponent = (props) => {
+    const scrollTo = (hash) => () => {
+        console.log(hash);
+        gsap.to(window, { scrollTo: hash });
+    };
+
+    return (
+        <Navigation>
+            <Link to="#glowna" onClick={scrollTo("#glowna")}>
+                Strona Główna
+            </Link>
+            <Link to="#niezbednik" onClick={scrollTo("#niezbednik")}>
+                Niezbędnik
+            </Link>
+            <Link to="#kontakt" onClick={scrollTo("#kontakt")}>
+                Kontakt
+            </Link>
+            <h2>wkrótce premiera</h2>
+        </Navigation>
+    );
+};
 
 export default NavigationComponent;

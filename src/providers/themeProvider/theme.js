@@ -14,6 +14,7 @@ const theme = {
     fw: {
         light: "300",
         regular: "400",
+        medium: "500",
         semiBold: "600",
     },
     ff: {
@@ -26,6 +27,7 @@ const theme = {
         light_blue: "#4396B8",
         dark_blue: "#335669",
         darker_blue: "#264653",
+        dark: "#",
         beige: "#F3DA9D",
         green: "#2A9D8F",
         light_green: "#30C1B0",
