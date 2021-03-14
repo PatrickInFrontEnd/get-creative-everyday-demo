@@ -49,19 +49,47 @@ function setSizeOfSocialLink(size) {
 }
 
 export const SocialContainer = styled.div`
+    /* DEV RWD*/
+    /* display: none; */
+    /* DEV RWD*/
     position: absolute;
-    top: unset;
-    left: unset;
-    ${({ position }) =>
-        position
-            ? css`
-                  top: ${position.top || "150px"};
-                  left: ${position.left || "100px"};
-              `
-            : ""};
     ${({ typeofsize }) => setSizeOfSocialContainer(typeofsize)};
     border-radius: 50%;
     animation: floating 3s infinite;
+
+    &:nth-of-type(3) {
+        top: 100px;
+        left: 80%;
+        animation-delay: 0.5s;
+
+        & > img {
+            padding: 0 10px;
+            background: ${({ theme }) => theme.colors.light_white};
+            background-blend-mode: multiply;
+            object-fit: contain;
+        }
+
+        a {
+            left: -10px;
+        }
+    }
+
+    &:nth-of-type(4) {
+        top: 350px;
+        left: 75%;
+        animation-delay: 1.5s;
+
+        a {
+            padding: 7%;
+            right: -10px;
+        }
+    }
+
+    &:nth-of-type(2) {
+        top: 150px;
+        left: 150px;
+        animation-delay: 1s;
+    }
 
     @keyframes floating {
         0% {
@@ -115,6 +143,56 @@ export const SocialContainer = styled.div`
             ${size_100x100};
         }
     }
+
+    @media screen and (max-width: 1740px) {
+        &:nth-of-type(3) {
+            left: 85%;
+        }
+        &:nth-of-type(4) {
+            left: 80%;
+        }
+        &:nth-of-type(2) {
+            top: 20%;
+            left: 200px;
+        }
+    }
+
+    @media screen and (max-width: 1550px) {
+        &:nth-of-type(3) {
+            top: 25%;
+            width: 120px;
+            height: 120px;
+
+            & > a {
+                width: 60px;
+                height: 60px;
+            }
+        }
+        &:nth-of-type(4) {
+            top: 55%;
+            width: 100px;
+            height: 100px;
+
+            & > a {
+                width: 50px;
+                height: 50px;
+            }
+        }
+        &:nth-of-type(2) {
+            top: 60%;
+            width: 110px;
+            height: 110px;
+
+            & > a {
+                width: 50px;
+                height: 50px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1220px) {
+        display: none;
+    }
 `;
 
 const SocialMediaComponent = ({
@@ -124,20 +202,22 @@ const SocialMediaComponent = ({
     linkPosition,
     linkUrl,
     imgSrc,
-    position,
-}) => (
-    <SocialContainer typeOfSize={containerSize} position={position}>
-        <img src={imgSrc} alt="Social media" />
-        <a
-            typeofsize={LinkSize}
-            linkposition={linkPosition}
-            href={linkUrl}
-            target="_blank"
-            rel="noreferrer"
-        >
-            {children}
-        </a>
-    </SocialContainer>
-);
+    /* position, */
+}) => {
+    return (
+        <SocialContainer typeOfSize={containerSize} /* position={position} */>
+            <img src={imgSrc} alt="Social media" />
+            <a
+                typeofsize={LinkSize}
+                linkposition={linkPosition}
+                href={linkUrl}
+                target="_blank"
+                rel="noreferrer"
+            >
+                {children}
+            </a>
+        </SocialContainer>
+    );
+};
 
 export default SocialMediaComponent;

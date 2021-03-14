@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { flexCenter } from "./../mixins";
 import GCEDphoto from "./../../assets/img/GCED.png";
@@ -62,6 +62,95 @@ const Form = styled.form`
         width: 450px;
         height: 520px;
         object-fit: cover;
+    }
+
+    @media screen and (max-width: 1130px) {
+        & {
+            min-width: unset;
+            width: 70vw;
+        }
+    }
+
+    @media screen and (max-width: 900px) {
+        & {
+            height: 90px;
+
+            input {
+                &,
+                &::placeholder {
+                    font-size: ${({ theme }) => theme.fz.S};
+                }
+            }
+
+            button[type="submit"] {
+                font-size: ${({ theme }) => theme.fz.S};
+            }
+        }
+    }
+
+    @media screen and (max-width: 700px) {
+        & {
+            width: calc(100vw - 80px);
+            height: 80px;
+
+            input {
+                &,
+                &::placeholder {
+                    font-size: ${({ theme }) => theme.fz.XS};
+                }
+            }
+
+            button[type="submit"] {
+                font-size: ${({ theme }) => theme.fz.XS};
+            }
+        }
+    }
+
+    @media screen and (max-width: 700px) {
+        & {
+            width: 100%;
+            height: 80px;
+            border-radius: 0;
+
+            input {
+                &,
+                &::placeholder {
+                    font-size: ${({ theme }) => theme.fz.XS};
+                }
+            }
+
+            button[type="submit"] {
+                font-size: ${({ theme }) => theme.fz.XS};
+            }
+        }
+    }
+
+    @media screen and (max-width: 560px) {
+        img {
+            width: 100%;
+            height: 560px;
+        }
+
+        input {
+            padding: 0 15px 0 0;
+        }
+    }
+
+    @media screen and (max-width: 400px) {
+        button[type="submit"] {
+            width: 40%;
+        }
+
+        button[type="submit"],
+        input,
+        input::placeholder {
+            font-size: ${({ theme }) => theme.fz.XXS};
+        }
+
+        img {
+            width: 100%;
+            height: 500px;
+        }
     }
 `;
 

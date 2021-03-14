@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-import { SocialContainer } from "./../components/SocialMedia/SocialMedia.component";
 
 const GlobalStyle = createGlobalStyle`
 *{
@@ -10,6 +9,12 @@ const GlobalStyle = createGlobalStyle`
 
 html{
     font-size:10px;
+
+    @media screen and (max-width:560px){
+        &{
+            font-size: 8px;
+        }
+    }
 }
 
 body{
@@ -46,45 +51,6 @@ a{
     text-decoration:none;
     color:inherit;
 }
-
-
-        ${SocialContainer}{
-            &:nth-of-type(1) {
-                 animation-delay: 0.5s;
-
-                  a{
-                     left:-10px !important;
-                 }
-            }
-
-            &:nth-of-type(2) {
-                animation-delay: 1s;
-
-                a {
-                    padding:7%;
-                    right:-10px;
-                }
-            }
-            
-            &:nth-of-type(3) {
-                animation-delay: 1.2s;
-
-                & > img {
-                    padding:0 10px;
-                    background: ${({ theme }) => theme.colors.light_white};
-                    background-blend-mode: multiply;
-                    object-fit: contain;
-                }
-
-                a {
-                    left:-10px !important;
-                }
-            }
-            
-        }
-    
-
-
 `;
 
 export default GlobalStyle;

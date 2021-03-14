@@ -18,6 +18,25 @@ const Container = styled.div`
         width: 100%;
         font-weight: ${({ theme }) => theme.fw.medium};
     }
+
+    @media screen and (max-width: 1350px) {
+        width: 300px;
+        height: 200px;
+
+        p {
+            font-size: ${({ theme }) => theme.fz.XXS};
+        }
+    }
+    @media screen and (max-width: 500px) {
+        margin: 30px 0;
+        width: 100%;
+        ${flexCenter};
+
+        p {
+            margin-top: 20px;
+            text-align: center;
+        }
+    }
 `;
 
 export const TileIconContainer = styled.div`
@@ -34,6 +53,15 @@ export const TileIconContainer = styled.div`
 
     svg {
         ${size_100x100};
+    }
+
+    @media screen and (max-width: 1350px) {
+        width: 70px;
+        height: 70px;
+    }
+
+    @media screen and (max-width: 838px) {
+        right: 50%;
     }
 `;
 

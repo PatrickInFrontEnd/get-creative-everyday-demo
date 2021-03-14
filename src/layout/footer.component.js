@@ -9,7 +9,17 @@ const Footer = styled.footer`
     padding: 50px 150px;
     ${flexCenter};
     justify-content: space-between;
+    flex-wrap: wrap;
     background-color: ${({ theme }) => theme.colors.darker_blue};
+
+    @media screen and (max-width: 1220px) {
+        padding: 50px 80px;
+    }
+
+    @media screen and (max-width: 1020px) {
+        flex-direction: column;
+        padding: 40px;
+    }
 `;
 
 const DescriptionBlock = styled.div`
@@ -43,6 +53,31 @@ const DescriptionBlock = styled.div`
             margin-bottom: 30px;
         }
     }
+
+    &:nth-of-type(3) {
+        a {
+            margin: 5px 0;
+        }
+    }
+
+    @media screen and (max-width: 1020px) {
+        margin: 40px auto;
+        min-height: unset;
+        max-width: unset;
+        ${flexCenter};
+
+        p {
+            min-width: 190px;
+            text-align: left;
+        }
+
+        &:nth-of-type(2) {
+            a {
+                min-width: 190px;
+                text-align: left;
+            }
+        }
+    }
 `;
 
 const Header = styled.h5`
@@ -61,17 +96,23 @@ const Header = styled.h5`
         height: 4px;
         background-color: ${({ theme }) => theme.colors.beige};
     }
+
+    @media screen and (max-width: 1020px) {
+        left: unset;
+    }
 `;
 
 const CopyRight = styled.footer`
     width: 100%;
-    height: 40px;
+    min-height: 40px;
+    padding: 15px 0;
     ${flexCenter};
     background-color: #213d49;
 
     p {
         text-align: center;
         font-size: ${({ theme }) => theme.fz.XXXS};
+        padding: 0 40px;
     }
 `;
 
@@ -108,6 +149,24 @@ const FooterComponent = (props) => (
                 <Header>Linki</Header>
                 <a href="#dd" target="_blank">
                     Wersja angielska
+                </a>
+
+                <a
+                    href="https://www.facebook.com/magazynGetCreative/"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <i class="fab fa-facebook-f"></i>
+                    Facebook
+                </a>
+
+                <a
+                    href="https://www.instagram.com/czasopismo_getcreative/"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <i class="fab fa-instagram"></i>
+                    Instagram
                 </a>
             </DescriptionBlock>
         </Footer>

@@ -9,6 +9,10 @@ const TilesSection = styled.div`
     padding: 0 60px;
     margin: 250px auto 0;
     z-index: 2;
+
+    @media screen and (max-width: 500px) {
+        padding: 0 40px;
+    }
 `;
 
 const TilesContainer = (props) => <TilesSection>{props.children}</TilesSection>;

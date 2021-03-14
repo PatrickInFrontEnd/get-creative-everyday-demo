@@ -78,7 +78,6 @@ const MainPageContainer = (props) => (
             linkUrl="https://www.instagram.com/czasopismo_getcreative/"
             imgSrc={GCLogoPNG}
             linkPosition="left"
-            position={{ top: "50px", left: "80%" }}
         >
             <InstagramIcon />
         </SocialMedia>

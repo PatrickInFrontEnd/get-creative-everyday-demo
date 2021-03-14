@@ -2,7 +2,7 @@ import styled from "styled-components";
 import flowerPNG from "./../../assets/img/flower.png";
 
 const Flower = styled.img`
-    z-index: -1;
+    z-index: -2;
     position: absolute;
     bottom: 10px;
     left: 0;
@@ -10,6 +10,10 @@ const Flower = styled.img`
     width: 1000px;
     height: 520px;
     object-fit: cover;
+
+    @media screen and (max-width: 900px) {
+        display: none;
+    }
 `;
 
 const FlowerComponent = (props) => (
