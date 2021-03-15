@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { flexCenter } from "./../mixins";
 import GCEDphoto from "./../../assets/img/GCED.png";
+import axios from "axios";
 
 const Form = styled.form`
     display: flex;
@@ -162,6 +163,17 @@ const FormComponent = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(email);
+
+        axios({
+            method: "POST",
+            url: "http://localhost:3000/sign",
+            /* headers: {
+                "Content-Type": "application/json",
+            }, */
+            data: {
+                email,
+            },
+        }).then((res) => console.log(res));
     };
 
     return (
