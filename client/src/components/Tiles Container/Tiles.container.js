@@ -7,8 +7,12 @@ const TilesSection = styled.div`
     flex-wrap: wrap;
     width: 100%;
     padding: 0 60px;
-    margin: 500px auto 0;
+    margin: 600px auto 0;
     z-index: 2;
+
+    @media screen and (max-width: 560px) {
+        margin: 640px auto 0;
+    }
 
     @media screen and (max-width: 500px) {
         padding: 0 40px;

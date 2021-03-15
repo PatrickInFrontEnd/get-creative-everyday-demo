@@ -4,28 +4,31 @@ import { flexCenter, size_100x100 } from "./../../mixins";
 
 const Container = styled.div`
     position: relative;
-    width: 350px;
-    height: 220px;
+    width: 330px;
+    height: 200px;
     margin: 30px;
     padding: 30px;
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
     flex-direction: column;
-    background-color: ${({ theme }) => theme.colors.darker_blue};
+    background-color: ${({ theme }) => theme.colors.light_blue};
+    color: ${({ theme }) => theme.colors.white};
+
+    h4 {
+        font-size: ${({ theme }) => theme.fz.M};
+        color: ${({ theme }) => theme.colors.yellow};
+    }
 
     p {
         width: 100%;
+        font-size: ${({ theme }) => theme.fz.XXXS};
         font-weight: ${({ theme }) => theme.fw.medium};
     }
 
     @media screen and (max-width: 1350px) {
         width: 300px;
         height: 200px;
-
-        p {
-            font-size: ${({ theme }) => theme.fz.XXS};
-        }
     }
     @media screen and (max-width: 500px) {
         margin: 30px 0;
@@ -45,11 +48,11 @@ export const TileIconContainer = styled.div`
     top: 0;
     transform: translate(50%, -50%);
     ${flexCenter};
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     padding: 16px;
     border-radius: 50%;
-    background-color: ${({ theme }) => theme.colors.darker_blue};
+    background-color: ${({ theme }) => theme.colors.light_blue};
 
     svg {
         ${size_100x100};

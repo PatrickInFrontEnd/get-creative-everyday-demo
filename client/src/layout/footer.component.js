@@ -10,7 +10,8 @@ const Footer = styled.footer`
     ${flexCenter};
     justify-content: space-between;
     flex-wrap: wrap;
-    background-color: ${({ theme }) => theme.colors.darker_blue};
+    background-color: ${({ theme }) => theme.colors.blue};
+    color: ${({ theme }) => theme.colors.white};
 
     @media screen and (max-width: 1220px) {
         padding: 50px 80px;
@@ -94,7 +95,7 @@ const Header = styled.h5`
         content: "";
         width: 15px;
         height: 4px;
-        background-color: ${({ theme }) => theme.colors.beige};
+        background-color: ${({ theme }) => theme.colors.yellow};
     }
 
     @media screen and (max-width: 1020px) {
@@ -107,7 +108,8 @@ const CopyRight = styled.footer`
     min-height: 40px;
     padding: 15px 0;
     ${flexCenter};
-    background-color: #213d49;
+    color: ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme }) => theme.colors.light_blue};
 
     p {
         text-align: center;

@@ -16,7 +16,7 @@ const Navigation = styled.nav`
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    background-color: ${({ theme }) => theme.colors.blue};
+    background-color: ${({ theme }) => theme.colors.white};
     width: 100%;
     min-height: 80px;
     padding: 0px 80px;
@@ -28,7 +28,7 @@ const Navigation = styled.nav`
             position: relative;
             overflow: hidden;
             z-index: 1;
-            color: ${({ theme }) => theme.colors.white || "#ffffff"};
+            color: ${({ theme }) => theme.colors.darker_blue || "#ffffff"};
             font-size: ${({ theme }) => theme.fz.XXS || "18px"};
             font-weight: ${({ theme }) => theme.fw.semiBold};
             margin: 20px 20px 0;
@@ -46,7 +46,7 @@ const Navigation = styled.nav`
                 content: "";
                 width: 100%;
                 height: 2px;
-                background-color: #f5f5f5;
+                background-color: #264653;
                 transition: 0.3s;
             }
         }
@@ -54,7 +54,7 @@ const Navigation = styled.nav`
 
     h2 {
         ${absoluteCenter};
-        color: ${({ theme }) => theme.colors.beige};
+        color: ${({ theme }) => theme.colors.yellow};
         text-transform: uppercase;
         text-align: center;
         width: 100%;
@@ -106,7 +106,7 @@ const Navigation = styled.nav`
             width: 100%;
             transition: 0.5s;
             transform: translate(-100%, 100%);
-            background-color: ${({ theme }) => theme.colors.blue};
+            background-color: ${({ theme }) => theme.colors.white};
 
             &.active {
                 transform: translate(0, 100%);
@@ -122,7 +122,7 @@ const Hamburger = styled.div`
     top: 50%;
     right: 80px;
     transform: translateY(-50%);
-    background-color: ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme }) => theme.colors.grey};
     border-radius: 50%;
     transition: 0.3s;
     cursor: pointer;
@@ -163,7 +163,7 @@ const Hamburger = styled.div`
         width: 55%;
         height: 2px;
         transition: 0.3s;
-        background-color: ${({ theme }) => theme.colors.darker_blue};
+        background-color: ${({ theme }) => theme.colors.white};
 
         &:nth-of-type(1) {
             top: 17px;

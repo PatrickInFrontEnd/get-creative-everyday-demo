@@ -15,7 +15,7 @@ const Form = styled.form`
     height: 100px;
     margin: 60px auto;
     padding: 10px 20px;
-    background-color: ${({ theme }) => theme.colors.beige};
+    background-color: ${({ theme }) => theme.colors.yellow};
     border-radius: 50px;
 
     input {
@@ -28,7 +28,7 @@ const Form = styled.form`
         &,
         &::placeholder {
             font-size: ${({ theme }) => theme.fz.M};
-            color: ${({ theme }) => theme.colors.dark_blue};
+            color: ${({ theme }) => theme.colors.white};
             font-weight: ${({ theme }) => theme.fw.semiBold};
             font-family: ${({ theme }) => theme.ff.Montserrat};
         }
@@ -58,10 +58,10 @@ const Form = styled.form`
         position: absolute;
         bottom: 0;
         left: 50%;
-        transform: translate(-50%, 100%);
+        transform: translate(-50%, 110%);
         z-index: -1;
-        width: 450px;
-        height: 520px;
+        width: 420px;
+        height: 490px;
         object-fit: cover;
     }
 
@@ -128,6 +128,7 @@ const Form = styled.form`
 
     @media screen and (max-width: 560px) {
         img {
+            transform: translate(-50%, 100%);
             width: 100%;
             height: 560px;
         }

@@ -136,7 +136,7 @@ export const SocialContainer = styled.div`
                   `};
 
         ${({ typeofsize }) => setSizeOfSocialLink(typeofsize)};
-        background-color: ${({ theme }) => theme.colors.darker_blue};
+        background-color: ${({ theme }) => theme.colors.grey};
         padding: 6%;
 
         svg {

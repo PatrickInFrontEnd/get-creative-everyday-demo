@@ -18,8 +18,8 @@ html{
 }
 
 body{
-    background-color: ${({ theme }) => theme.colors.blue};
-    color: ${({ theme }) => theme.colors.white || "#ffffff"};
+    background-color: ${({ theme }) => theme.colors.white};
+    color: ${({ theme }) => theme.colors.darker_blue || "#ffffff"};
     font-family:${({ theme }) => theme.ff.Montserrat};
 }
 
