@@ -34,6 +34,7 @@ const theme = {
         darker_grey: "#7D7D7D",
         green: "#2A9D8F",
         light_green: "#30C1B0",
+        red: "#D44420",
     },
 };
 

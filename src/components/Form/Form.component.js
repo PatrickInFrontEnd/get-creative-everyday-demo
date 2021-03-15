@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { flexCenter } from "./../mixins";
-import GCEDphoto from "./../../assets/img/GCED.png";
+import GCEDphoto from "./../../assets/img/niezbednik.png";
 import axios from "axios";
 
 const Form = styled.form`
@@ -51,6 +51,10 @@ const Form = styled.form`
 
         &:hover {
             background-color: ${({ theme }) => theme.colors.light_green};
+        }
+
+        &:disabled {
+            background-color: ${({ theme }) => theme.colors.grey};
         }
     }
 
@@ -127,12 +131,6 @@ const Form = styled.form`
     }
 
     @media screen and (max-width: 560px) {
-        img {
-            transform: translate(-50%, 100%);
-            width: 100%;
-            height: 560px;
-        }
-
         input {
             padding: 0 15px 0 0;
         }
@@ -156,39 +154,87 @@ const Form = styled.form`
     }
 `;
 
+const Message = styled.div`
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    width: 100%;
+    height: 60px;
+    ${flexCenter};
+    background-color: ${({ theme, emailsent }) =>
+        emailsent ? theme.colors.green : theme.colors.red};
+
+    p {
+        color: ${({ theme }) => theme.colors.white};
+        text-align: center;
+        padding: 0 30px;
+    }
+`;
+
 const FormComponent = (props) => {
     const [email, setEmail] = useState("");
+    const [emailSuccessful, setEmailSuccessful] = useState(null);
+    const [buttonDisabled, setButtonDisabled] = useState(false);
+    //const [showMessage, setShowMessage] = useState(false);
 
     const handleInputChange = (e) => setEmail(e.target.value);
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setButtonDisabled(true);
         console.log(email);
 
         axios({
             method: "POST",
-            url: "http://localhost:3000/sign",
-            /* headers: {
-                "Content-Type": "application/json",
-            }, */
-            data: {
-                email,
+            url: `https://live.wzmacniacznauczanki.pl/api/email-save/${email}`,
+            headers: {
+                "Access-Control-Allow-Origin": "http://localhost:3000",
             },
-        }).then((res) => console.log(res));
+        })
+            .then((res) => {
+                setEmailSuccessful(true);
+
+                setTimeout(() => {
+                    setEmailSuccessful(null);
+                }, 3000);
+            })
+            .catch((e) => {
+                setEmailSuccessful(false);
+                setButtonDisabled(false);
+
+                setTimeout(() => {
+                    setEmailSuccessful(null);
+                }, 3000);
+            });
     };
 
     return (
-        <Form onSubmit={handleSubmit}>
-            <input
-                type="email"
-                placeholder="Twój email"
-                onChange={handleInputChange}
-                name="email"
-                required
-            />
-            <button type="submit">Zapisz się</button>
-            <img src={GCEDphoto} alt="Get Creative Every Day" />
-        </Form>
+        <>
+            <Form onSubmit={handleSubmit}>
+                <input
+                    type="email"
+                    placeholder="Twój email"
+                    onChange={handleInputChange}
+                    name="email"
+                    required
+                />
+                <button type="submit" disabled={buttonDisabled}>
+                    Zapisz się
+                </button>
+                <img src={GCEDphoto} alt="Get Creative Every Day" />
+            </Form>
+            {emailSuccessful === null ? null : emailSuccessful === true ? (
+                <Message emailsent={true}>
+                    <p>Email został zapisany</p>
+                </Message>
+            ) : (
+                <Message emailsent={false}>
+                    <p>Email nie został zapisany. Spróbuj ponownie później.</p>
+                </Message>
+            )}
+        </>
     );
 };
 
