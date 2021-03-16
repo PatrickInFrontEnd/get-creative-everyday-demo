@@ -188,9 +188,9 @@ const FormComponent = (props) => {
 
         axios({
             method: "POST",
-            url: `https://live.wzmacniacznauczanki.pl/api/email-save/${email}`,
+            url: `https://api.semantika.pl/api/email-save/${email}`,
             headers: {
-                "Access-Control-Allow-Origin": "http://localhost:3000",
+                "Access-Control-Allow-Origin": "*",
             },
         })
             .then((res) => {
