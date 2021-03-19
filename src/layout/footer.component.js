@@ -168,10 +168,10 @@ const FooterComponent = (props) => (
                 </a>
 
                 <a
-                    href={`${process.env.PUBLIC_URL}/documents/ikony.txt`}
+                    href={`${process.env.PUBLIC_URL}/documents/polityka_ikon.txt`}
                     download
                 >
-                    Polityka ikon
+                    Prawa autorskie ikon
                 </a>
             </DescriptionBlock>
         </Footer>
