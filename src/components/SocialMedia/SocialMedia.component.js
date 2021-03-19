@@ -60,7 +60,7 @@ export const SocialContainer = styled.a`
     }
 
     & > img,
-    & > a {
+    & > div {
         border-radius: 50%;
     }
 
@@ -70,7 +70,7 @@ export const SocialContainer = styled.a`
         object-fit: cover;
         object-position: center center;
     }
-    & > a {
+    & > div {
         position: absolute;
         bottom: -5%;
         left: -10px;
@@ -84,25 +84,76 @@ export const SocialContainer = styled.a`
             ${size_100x100};
         }
     }
+
+    @media screen and (max-width: 1450px) {
+        & {
+            width: 70px;
+            height: 70px;
+
+            & > div {
+                bottom: -15%;
+                left: -10px;
+
+                svg {
+                    ${size_100x100};
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        top: -25px;
+    }
+
+    @media screen and (max-width: 420px) {
+        width: 60px;
+        height: 60px;
+    }
 `;
 
 const Container = styled.div`
     ${flexCenter};
+
+    @media screen and (max-width: 1350px) {
+        & {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: ${({ theme }) => theme.colors.white};
+            transition: 0.5s;
+            transform: translateX(-150%);
+
+            ${({ isActive }) =>
+                isActive
+                    ? css`
+                          transform: translateX(0);
+                      `
+                    : ""}
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        padding: 30px 0;
+        bottom: -335px;
+    }
+
+    @media screen and (max-width: 420px) {
+        bottom: -325px;
+    }
 `;
 
 const SocialMediaComponent = ({ children, linkUrl, imgSrc }) => {
     return (
         <SocialContainer href={linkUrl} target="_blank" rel="noreferrer">
             <img src={imgSrc} alt="Social media" />
-            <a href={linkUrl} target="_blank" rel="noreferrer">
-                {children}
-            </a>
+            <div>{children}</div>
         </SocialContainer>
     );
 };
 
-export const SocialMediasComponent = (props) => (
-    <Container>
+export const SocialMediasComponent = ({ isActive }) => (
+    <Container isActive={isActive}>
         <SocialMediaComponent
             linkUrl="https://www.facebook.com/magazynGetCreative/"
             imgSrc={GCPNG}

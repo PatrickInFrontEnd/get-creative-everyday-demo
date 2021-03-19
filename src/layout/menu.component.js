@@ -159,32 +159,53 @@ const Hamburger = styled.div`
 `;
 
 const NavigationComponent = (props) => {
-    const scrollTo = (hash) => () => {
-        console.log(hash);
-        gsap.to(window, { scrollTo: hash });
-    };
+    const scrollTo = (hash) => gsap.to(window, { scrollTo: hash });
 
     const [hamburgerActive, setHamburgerActive] = useState(false);
+
+    const toggleHamburgerActive = () => setHamburgerActive((prev) => !prev);
+
+    const handleMobileClick = () => {
+        if (window.innerWidth <= 1450) toggleHamburgerActive();
+    };
 
     return (
         <Navigation>
             <div className={`links ${hamburgerActive ? "active" : ""}`}>
-                <Link to="#" onClick={scrollTo(0)}>
-                    <i class="fas fa-home"></i>
+                <Link
+                    to="#"
+                    onClick={() => {
+                        scrollTo(0);
+                        handleMobileClick();
+                    }}
+                >
+                    <i className="fas fa-home"></i>
                 </Link>
-                <Link to="#niezbednik" onClick={scrollTo("#niezbednik")}>
+                <Link
+                    to="#niezbednik"
+                    onClick={() => {
+                        scrollTo("#niezbednik");
+                        handleMobileClick();
+                    }}
+                >
                     Niezbędnik
                 </Link>
-                <Link to="#kontakt" onClick={scrollTo("#kontakt")}>
+                <Link
+                    to="#kontakt"
+                    onClick={() => {
+                        scrollTo("#kontakt");
+                        handleMobileClick();
+                    }}
+                >
                     Kontakt
                 </Link>
             </div>
 
-            <SocialMediasComponent />
+            <SocialMediasComponent isActive={hamburgerActive} />
 
             <Hamburger
                 className={hamburgerActive ? "active" : ""}
-                onClick={() => setHamburgerActive((prev) => !prev)}
+                onClick={toggleHamburgerActive}
             >
                 <span></span>
                 <span></span>

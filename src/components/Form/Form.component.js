@@ -163,7 +163,9 @@ const Header = styled.h5`
     & + span {
         ${flexCenter};
         font-size: ${({ theme }) => theme.fz.XXXS};
+        color: ${({ theme }) => theme.colors.grey};
         margin: 10px auto;
+        padding: 0 20px;
         text-align: center;
     }
 `;
@@ -189,6 +191,10 @@ const Message = styled.div`
 
 const FormContainer = styled.div`
     margin: 80px auto 0;
+
+    @media screen and (max-width: 500px) {
+        margin: 40px auto 0;
+    }
 `;
 
 const FormComponent = (props) => {

@@ -154,7 +154,7 @@ const FooterComponent = (props) => (
                     target="_blank"
                     rel="noreferrer"
                 >
-                    <i class="fab fa-facebook-f"></i>
+                    <i className="fab fa-facebook-f"></i>
                     Facebook
                 </a>
 
@@ -163,7 +163,7 @@ const FooterComponent = (props) => (
                     target="_blank"
                     rel="noreferrer"
                 >
-                    <i class="fab fa-instagram"></i>
+                    <i className="fab fa-instagram"></i>
                     Instagram
                 </a>
             </DescriptionBlock>

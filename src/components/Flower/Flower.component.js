@@ -11,9 +11,18 @@ const Flower = styled.img`
     height: 520px;
     object-fit: cover;
 
-    @media screen and (max-width: 1140px) {
+    @media screen and (max-width: 1850px) {
+        bottom: 40%;
+        transform: translate(-35%, 30%) rotate(90deg);
+    }
+
+    @media screen and (max-width: 1230px) {
         width: 900px;
         height: 420px;
+    }
+
+    @media screen and (max-width: 1100px) {
+        bottom: 55%;
     }
 
     @media screen and (max-width: 900px) {

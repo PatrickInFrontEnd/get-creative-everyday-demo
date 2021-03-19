@@ -27,12 +27,10 @@ const Container = styled.div`
         font-weight: ${({ theme }) => theme.fw.medium};
     }
 
-    @media screen and (max-width: 1350px) {
-        width: 300px;
-        height: 200px;
-    }
     @media screen and (max-width: 500px) {
         margin: 30px 0;
+        height: auto;
+        padding: 0;
         width: 100%;
         ${flexCenter};
 
@@ -56,11 +54,6 @@ export const TileIconContainer = styled.div`
     svg {
         ${size_100x100};
         fill: ${({ theme }) => theme.colors.yellow};
-    }
-
-    @media screen and (max-width: 1350px) {
-        width: 70px;
-        height: 70px;
     }
 
     @media screen and (max-width: 838px) {
