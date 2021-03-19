@@ -5,10 +5,10 @@ import Tile, {
     TileIconContainer,
     TitleContainer,
 } from "./../atoms/Tile/Tile.component";
-import { ReactComponent as GlobeIcon } from "./../../assets/svg/icon_globe.svg";
+import { ReactComponent as EnglishIcon } from "./../../assets/svg/icon_english.svg";
 import { ReactComponent as CalendarIcon } from "./../../assets/svg/icon_calendar.svg";
-import { ReactComponent as TrophyIcon } from "./../../assets/svg/icon_trophy.svg";
-import { ReactComponent as StarIcon } from "./../../assets/svg/icon_star.svg";
+import { ReactComponent as OrderIcon } from "./../../assets/svg/icon_order.svg";
+import { ReactComponent as CreativityIcon } from "./../../assets/svg/icon_creativity.svg";
 
 const TilesSection = styled.div`
     ${flexCenter};
@@ -41,7 +41,7 @@ const TilesContainer = (props) => (
         <Tile>
             <TitleContainer>
                 <TileIconContainer>
-                    <GlobeIcon />
+                    <EnglishIcon />
                 </TileIconContainer>
                 <h4>English</h4>
             </TitleContainer>
@@ -64,7 +64,7 @@ const TilesContainer = (props) => (
         <Tile>
             <TitleContainer>
                 <TileIconContainer>
-                    <TrophyIcon />
+                    <OrderIcon />
                 </TileIconContainer>
                 <h4>Organizacja</h4>
             </TitleContainer>
@@ -77,7 +77,7 @@ const TilesContainer = (props) => (
         <Tile>
             <TitleContainer>
                 <TileIconContainer>
-                    <StarIcon />
+                    <CreativityIcon />
                 </TileIconContainer>
                 <h4>Kreatywność</h4>
             </TitleContainer>

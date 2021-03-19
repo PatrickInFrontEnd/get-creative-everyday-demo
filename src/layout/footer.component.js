@@ -166,6 +166,13 @@ const FooterComponent = (props) => (
                     <i className="fab fa-instagram"></i>
                     Instagram
                 </a>
+
+                <a
+                    href={`${process.env.PUBLIC_URL}/documents/ikony.txt`}
+                    download
+                >
+                    Polityka ikon
+                </a>
             </DescriptionBlock>
         </Footer>
         <CopyRight>
