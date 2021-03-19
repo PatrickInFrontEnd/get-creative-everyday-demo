@@ -4,14 +4,13 @@ import SemantikaPNG from "./../assets/img/semantika_logo.png";
 import { flexCenter, flexColumn } from "../components/mixins";
 
 const Footer = styled.footer`
-    margin-top: 50px;
     width: 100%;
     padding: 50px 150px;
     ${flexCenter};
     justify-content: space-between;
     flex-wrap: wrap;
-    background-color: ${({ theme }) => theme.colors.blue};
-    color: ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme }) => theme.colors.black};
+    color: ${({ theme }) => theme.colors.dark_white};
 
     @media screen and (max-width: 1220px) {
         padding: 50px 80px;
@@ -42,6 +41,7 @@ const DescriptionBlock = styled.div`
 
     h6 {
         margin: 0 0 20px 0;
+        font-weight: ${({ theme }) => theme.fw.semiBold};
     }
 
     i {
@@ -108,8 +108,8 @@ const CopyRight = styled.footer`
     min-height: 40px;
     padding: 15px 0;
     ${flexCenter};
-    color: ${({ theme }) => theme.colors.white};
-    background-color: ${({ theme }) => theme.colors.light_blue};
+    color: ${({ theme }) => theme.colors.black};
+    background-color: ${({ theme }) => theme.colors.grey};
 
     p {
         text-align: center;
@@ -149,10 +149,6 @@ const FooterComponent = (props) => (
 
             <DescriptionBlock>
                 <Header>Linki</Header>
-                <a href="#dd" target="_blank">
-                    Wersja angielska
-                </a>
-
                 <a
                     href="https://www.facebook.com/magazynGetCreative/"
                     target="_blank"

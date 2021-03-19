@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { flexCenter } from "./../mixins";
-import GCEDphoto from "./../../assets/img/niezbednik.png";
 import axios from "axios";
 
 const Form = styled.form`
@@ -13,9 +12,9 @@ const Form = styled.form`
     min-width: 680px;
     max-width: 700px;
     height: 100px;
-    margin: 60px auto;
+    margin: 10px auto 40px;
     padding: 10px 20px;
-    background-color: ${({ theme }) => theme.colors.yellow};
+    background-color: ${({ theme }) => theme.colors.beige};
     border-radius: 50px;
 
     input {
@@ -44,13 +43,13 @@ const Form = styled.form`
         font-size: ${({ theme }) => theme.fz.M};
         font-weight: ${({ theme }) => theme.fw.semiBold};
         font-family: ${({ theme }) => theme.ff.Montserrat};
-        background-color: ${({ theme }) => theme.colors.green};
+        background-color: ${({ theme }) => theme.colors.black};
         border-radius: 50px;
         cursor: pointer;
         transition: 0.3s;
 
         &:hover {
-            background-color: ${({ theme }) => theme.colors.light_green};
+            background-color: ${({ theme }) => theme.colors.light_black};
         }
 
         &:disabled {
@@ -66,7 +65,7 @@ const Form = styled.form`
         z-index: -1;
         width: 420px;
         height: 490px;
-        object-fit: cover;
+        object-fit: contain;
     }
 
     @media screen and (max-width: 1130px) {
@@ -154,6 +153,21 @@ const Form = styled.form`
     }
 `;
 
+const Header = styled.h5`
+    margin: 0 auto 5px;
+    text-align: center;
+    padding: 0 40px;
+    font-weight: ${({ theme }) => theme.fw.semiBold};
+    font-size: ${({ theme }) => theme.fz.L};
+
+    & + span {
+        ${flexCenter};
+        font-size: ${({ theme }) => theme.fz.XXXS};
+        margin: 10px auto;
+        text-align: center;
+    }
+`;
+
 const Message = styled.div`
     position: fixed;
     bottom: 0;
@@ -171,6 +185,10 @@ const Message = styled.div`
         text-align: center;
         padding: 0 30px;
     }
+`;
+
+const FormContainer = styled.div`
+    margin: 80px auto 0;
 `;
 
 const FormComponent = (props) => {
@@ -211,7 +229,12 @@ const FormComponent = (props) => {
     };
 
     return (
-        <>
+        <FormContainer>
+            <Header>Zapewniamy nauczycielską kreatywność każdego dnia!</Header>
+            <span>
+                JEŚLI CHCESZ NARESZCIE MIEĆ PLANNER IDEALNY DLA CIEBIE, ZAPISZ
+                SIĘ NA LISTĘ ZAINTERESOWANYCH
+            </span>
             <Form onSubmit={handleSubmit}>
                 <input
                     type="email"
@@ -223,7 +246,7 @@ const FormComponent = (props) => {
                 <button type="submit" disabled={buttonDisabled}>
                     Zapisz się
                 </button>
-                <img src={GCEDphoto} alt="Get Creative Every Day" />
+                {/* <img src={GCEDphoto} alt="Get Creative Every Day" /> */}
             </Form>
             {emailSuccessful === null ? null : emailSuccessful === true ? (
                 <Message emailsent={true}>
@@ -234,7 +257,7 @@ const FormComponent = (props) => {
                     <p>Email nie został zapisany. Spróbuj ponownie później.</p>
                 </Message>
             )}
-        </>
+        </FormContainer>
     );
 };
 

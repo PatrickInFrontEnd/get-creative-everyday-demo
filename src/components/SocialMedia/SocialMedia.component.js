@@ -1,65 +1,28 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { size_100x100, flexCenter } from "./../mixins";
+import { ReactComponent as FbIcon } from "./../../assets/svg/icon_facebook.svg";
+import { ReactComponent as InstagramIcon } from "./../../assets/svg/icon_instagram.svg";
+import { ReactComponent as WWWIcon } from "./../../assets/svg/icon_www.svg";
+import GCPNG from "./../../assets/img/gc.png";
+import GCLogoPNG from "./../../assets/img/gclogo.png";
+import GcWWWPNG from "./../../assets/img/gcwww.png";
 
-function setSizeOfSocialContainer(size) {
-    switch (size) {
-        case "big": {
-            return css`
-                width: 200px;
-                height: 200px;
-            `;
-        }
-        case "medium": {
-            return css`
-                width: 180px;
-                height: 180px;
-            `;
-        }
-        default: {
-            return css`
-                width: 150px;
-                height: 150px;
-            `;
-        }
-    }
-}
-
-function setSizeOfSocialLink(size) {
-    switch (size) {
-        case "big": {
-            return css`
-                width: 90px;
-                height: 90px;
-            `;
-        }
-        case "medium": {
-            return css`
-                width: 80px;
-                height: 80px;
-            `;
-        }
-        default: {
-            return css`
-                width: 70px;
-                height: 70px;
-            `;
-        }
-    }
-}
-
-export const SocialContainer = styled.div`
-    /* DEV RWD*/
-    /* display: none; */
-    /* DEV RWD*/
-    position: absolute;
-    ${({ typeofsize }) => setSizeOfSocialContainer(typeofsize)};
+export const SocialContainer = styled.a`
+    position: relative;
+    top: 20px;
+    ${flexCenter};
+    width: 90px;
+    height: 90px;
+    margin: 0 20px;
     border-radius: 50%;
     animation: floating 3s infinite;
 
-    &:nth-of-type(3) {
-        top: 100px;
-        left: 80%;
+    &:nth-of-type(1) {
+        animation-delay: 1s;
+    }
+
+    &:nth-of-type(2) {
         animation-delay: 0.5s;
 
         & > img {
@@ -68,27 +31,14 @@ export const SocialContainer = styled.div`
             background-blend-mode: multiply;
             object-fit: contain;
         }
-
-        a {
-            left: -10px;
-        }
     }
 
-    &:nth-of-type(4) {
-        top: 350px;
-        left: 75%;
+    &:nth-of-type(3) {
         animation-delay: 1.5s;
 
         a {
             padding: 7%;
-            right: -10px;
         }
-    }
-
-    &:nth-of-type(2) {
-        top: 150px;
-        left: 150px;
-        animation-delay: 1s;
     }
 
     @keyframes floating {
@@ -123,101 +73,57 @@ export const SocialContainer = styled.div`
     & > a {
         position: absolute;
         bottom: -5%;
-        left: unset;
-        right: unset;
+        left: -10px;
         ${flexCenter};
-        ${({ linkposition }) =>
-            linkposition === "left"
-                ? css`
-                      left: -10px;
-                  `
-                : css`
-                      right: -10px;
-                  `};
-
-        ${({ typeofsize }) => setSizeOfSocialLink(typeofsize)};
-        background-color: ${({ theme }) => theme.colors.grey};
+        width: 40px;
+        height: 40px;
+        background-color: ${({ theme }) => theme.colors.light_white};
         padding: 6%;
 
         svg {
             ${size_100x100};
         }
     }
-
-    @media screen and (max-width: 1740px) {
-        &:nth-of-type(3) {
-            left: 85%;
-        }
-        &:nth-of-type(4) {
-            left: 80%;
-        }
-        &:nth-of-type(2) {
-            top: 20%;
-            left: 200px;
-        }
-    }
-
-    @media screen and (max-width: 1550px) {
-        &:nth-of-type(3) {
-            top: 25%;
-            width: 120px;
-            height: 120px;
-
-            & > a {
-                width: 60px;
-                height: 60px;
-            }
-        }
-        &:nth-of-type(4) {
-            top: 55%;
-            width: 100px;
-            height: 100px;
-
-            & > a {
-                width: 50px;
-                height: 50px;
-            }
-        }
-        &:nth-of-type(2) {
-            top: 60%;
-            width: 110px;
-            height: 110px;
-
-            & > a {
-                width: 50px;
-                height: 50px;
-            }
-        }
-    }
-
-    @media screen and (max-width: 1220px) {
-        display: none;
-    }
 `;
 
-const SocialMediaComponent = ({
-    children,
-    containerSize,
-    LinkSize,
-    linkPosition,
-    linkUrl,
-    imgSrc,
-    /* position, */
-}) => {
+const Container = styled.div`
+    ${flexCenter};
+`;
+
+const SocialMediaComponent = ({ children, linkUrl, imgSrc }) => {
     return (
-        <SocialContainer typeOfSize={containerSize} /* position={position} */>
+        <SocialContainer href={linkUrl} target="_blank" rel="noreferrer">
             <img src={imgSrc} alt="Social media" />
-            <a
-                typeofsize={LinkSize}
-                linkposition={linkPosition}
-                href={linkUrl}
-                target="_blank"
-                rel="noreferrer"
-            >
+            <a href={linkUrl} target="_blank" rel="noreferrer">
                 {children}
             </a>
         </SocialContainer>
     );
 };
+
+export const SocialMediasComponent = (props) => (
+    <Container>
+        <SocialMediaComponent
+            linkUrl="https://www.facebook.com/magazynGetCreative/"
+            imgSrc={GCPNG}
+        >
+            <FbIcon />
+        </SocialMediaComponent>
+
+        <SocialMediaComponent
+            linkUrl="https://www.instagram.com/czasopismo_getcreative/"
+            imgSrc={GCLogoPNG}
+        >
+            <InstagramIcon />
+        </SocialMediaComponent>
+
+        <SocialMediaComponent
+            linkUrl="https://www.getcreative.edu.pl/"
+            imgSrc={GcWWWPNG}
+        >
+            <WWWIcon />
+        </SocialMediaComponent>
+    </Container>
+);
 
 export default SocialMediaComponent;

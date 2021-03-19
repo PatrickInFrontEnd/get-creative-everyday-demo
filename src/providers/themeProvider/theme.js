@@ -12,10 +12,10 @@ const theme = {
         miniS: "1.2rem",
     },
     fw: {
-        light: "300",
         regular: "400",
         medium: "500",
         semiBold: "600",
+        black: "900",
     },
     ff: {
         Montserrat: "Montserrat, Arial, sans-serif",
@@ -23,18 +23,21 @@ const theme = {
     colors: {
         white: "#f5f5f5",
         light_white: "#ffffff",
+        dark_white: "#e0e0e0",
         blue: "#255570",
         light_blue: "#4396B8",
         dark_blue: "#335669",
         darker_blue: "#264653",
-        beige: "#F3DA9D",
-        yellow: "#ECC82B",
-        grey: "#CCCCCC",
+        black: "#0D0D0D",
+        light_black: "#2f2f2f",
+        beige: "#F2DA63",
+        yellow: "#F2CB05",
+        grey: "#BFBFBF",
         dark_grey: "#9B9B9B",
         darker_grey: "#7D7D7D",
         green: "#2A9D8F",
         light_green: "#30C1B0",
-        red: "#D44420",
+        red: "#F9423A",
     },
 };
 

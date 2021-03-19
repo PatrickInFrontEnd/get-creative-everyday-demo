@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { absoluteCenter } from "./../components/mixins";
 import gsap from "gsap";
 import scrollToPlugin from "gsap/ScrollToPlugin";
+import { SocialMediasComponent } from "../components/SocialMedia/SocialMedia.component";
 
 gsap.registerPlugin(scrollToPlugin);
 
 const Navigation = styled.nav`
     position: sticky;
-    z-index: 2;
+    z-index: 3;
     top: 0;
     left: 0;
     right: 0;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     background-color: ${({ theme }) => theme.colors.white};
     width: 100%;
     min-height: 80px;
@@ -24,11 +24,15 @@ const Navigation = styled.nav`
     .links {
         display: flex;
 
+        i {
+            font-size: ${({ theme }) => theme.fz.S || "22px"};
+        }
+
         a {
             position: relative;
             overflow: hidden;
             z-index: 1;
-            color: ${({ theme }) => theme.colors.darker_blue || "#ffffff"};
+            color: ${({ theme }) => theme.colors.black || "#ffffff"};
             font-size: ${({ theme }) => theme.fz.XXS || "18px"};
             font-weight: ${({ theme }) => theme.fw.semiBold};
             margin: 20px 20px 0;
@@ -46,45 +50,8 @@ const Navigation = styled.nav`
                 content: "";
                 width: 100%;
                 height: 2px;
-                background-color: #264653;
+                background-color: #0d0d0d;
                 transition: 0.3s;
-            }
-        }
-    }
-
-    h2 {
-        ${absoluteCenter};
-        color: ${({ theme }) => theme.colors.yellow};
-        text-transform: uppercase;
-        text-align: center;
-        width: 100%;
-        padding: 20px 0 0;
-
-        @media screen and (max-width: 900px) {
-            & {
-                font-size: ${({ theme }) => theme.fz.XL};
-            }
-        }
-
-        @media screen and (max-width: 700px) {
-            & {
-                font-size: ${({ theme }) => theme.fz.L};
-            }
-        }
-
-        @media screen and (max-width: 560px) {
-            & {
-                position: relative;
-                top: -5px;
-                left: unset;
-                transform: none;
-                text-align: left;
-            }
-        }
-
-        @media screen and (max-width: 400px) {
-            & {
-                font-size: ${({ theme }) => theme.fz.S};
             }
         }
     }
@@ -202,8 +169,8 @@ const NavigationComponent = (props) => {
     return (
         <Navigation>
             <div className={`links ${hamburgerActive ? "active" : ""}`}>
-                <Link to="#glowna" onClick={scrollTo("#glowna")}>
-                    Strona Główna
+                <Link to="#" onClick={scrollTo(0)}>
+                    <i class="fas fa-home"></i>
                 </Link>
                 <Link to="#niezbednik" onClick={scrollTo("#niezbednik")}>
                     Niezbędnik
@@ -212,7 +179,9 @@ const NavigationComponent = (props) => {
                     Kontakt
                 </Link>
             </div>
-            <h2>wkrótce premiera</h2>
+
+            <SocialMediasComponent />
+
             <Hamburger
                 className={hamburgerActive ? "active" : ""}
                 onClick={() => setHamburgerActive((prev) => !prev)}

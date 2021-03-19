@@ -1,5 +1,6 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
+import Title from "./../atoms/Title/Title.component";
 
 const Header = styled.h5`
     margin: 30px auto;
@@ -25,9 +26,12 @@ const Header = styled.h5`
     }
 `;
 
-const SubHeader = styled.h6`
+export const SubHeader = styled.h6`
     font-size: ${({ theme }) => theme.fz.XS};
-    margin: 50px auto;
+    font-weight: ${({ theme, light }) =>
+        light ? theme.fw.regular : theme.fw.semiBold};
+    text-transform: uppercase;
+    margin: 15px auto;
     padding: 0 20px;
     line-height: 160%;
     max-width: 700px;
@@ -46,18 +50,21 @@ const SubHeader = styled.h6`
     }
 `;
 
-const HeaderComponent = (props) => (
-    <>
-        <Header>
-            Kalendarz i planner dla nauczycieli języka angielskiego uczących
-            młodsze dzieci. Zapewniamy nauczycielską kreatywność każdego dnia!
-        </Header>
-        <SubHeader>
-            JEŚLI CHCESZ NARESZCIE MIEĆ PLANNER IDEALNY DLA CIEBIE,
-            <br />
-            ZAPISZ SIĘ NA LISTĘ ZAINTERESOWANYCH I DOWIEDZ SIĘ WIĘCEJ!
-        </SubHeader>
-    </>
-);
+const HeaderComponent = (props) => {
+    const theme = useTheme();
+
+    return (
+        <>
+            <Title>wkrótce premiera</Title>
+            <SubHeader>
+                Kalendarz i planner dla nauczycieli języka angielskiego uczących
+                młodsze dzieci
+            </SubHeader>
+            <Title margin="0 auto" small>
+                Dowiedz się więcej!
+            </Title>
+        </>
+    );
+};
 
 export default HeaderComponent;

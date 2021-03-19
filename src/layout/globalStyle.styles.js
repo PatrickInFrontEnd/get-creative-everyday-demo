@@ -19,7 +19,7 @@ html{
 
 body{
     background-color: ${({ theme }) => theme.colors.white};
-    color: ${({ theme }) => theme.colors.darker_blue || "#ffffff"};
+    color: ${({ theme }) => theme.colors.black || "#ffffff"};
     font-family:${({ theme }) => theme.ff.Montserrat};
 }
 
@@ -50,6 +50,12 @@ p{
 a{
     text-decoration:none;
     color:inherit;
+}
+
+section#glowna{
+    position:relative;
+    overflow: hidden;
+    min-height:calc(100vh - 80px);
 }
 `;
 

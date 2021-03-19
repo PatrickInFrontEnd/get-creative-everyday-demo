@@ -4,12 +4,17 @@ import flowerPNG from "./../../assets/img/flower.png";
 const Flower = styled.img`
     z-index: -2;
     position: absolute;
-    bottom: 10px;
+    bottom: 0px;
     left: 0;
-    transform: translateX(-35%) rotate(90deg);
+    transform: translate(-25%, 10%) rotate(45deg);
     width: 1000px;
     height: 520px;
     object-fit: cover;
+
+    @media screen and (max-width: 1140px) {
+        width: 900px;
+        height: 420px;
+    }
 
     @media screen and (max-width: 900px) {
         display: none;
