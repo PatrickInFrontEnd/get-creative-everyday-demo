@@ -4,8 +4,10 @@ import { size_100x100, flexCenter } from "./../mixins";
 import { ReactComponent as FbIcon } from "./../../assets/svg/icon_facebook.svg";
 import { ReactComponent as InstagramIcon } from "./../../assets/svg/icon_instagram.svg";
 import { ReactComponent as WWWIcon } from "./../../assets/svg/icon_www.svg";
-import GCPNG from "./../../assets/img/gc.png";
-import GCLogoPNG from "./../../assets/img/gclogo.png";
+import GCPNG_FB from "./../../assets/img/gc.png";
+import GCPNG_ENG_FB from "./../../assets/img/gcedengFB.png";
+import GC_PNG_INSTAGRAM from "./../../assets/img/gclogo.png";
+import GC_PNG_INSTAGRAM_ENG from "./../../assets/img/gcedengINST.png";
 import GcWWWPNG from "./../../assets/img/gcwww.png";
 
 export const SocialContainer = styled.a`
@@ -152,18 +154,43 @@ const SocialMediaComponent = ({ children, linkUrl, imgSrc }) => {
     );
 };
 
-export const SocialMediasComponent = ({ isActive }) => (
+export const SocialMediasComponentPL = ({ isActive }) => (
     <Container isActive={isActive}>
         <SocialMediaComponent
             linkUrl="https://www.facebook.com/magazynGetCreative/"
-            imgSrc={GCPNG}
+            imgSrc={GCPNG_FB}
         >
             <FbIcon />
         </SocialMediaComponent>
 
         <SocialMediaComponent
             linkUrl="https://www.instagram.com/czasopismo_getcreative/"
-            imgSrc={GCLogoPNG}
+            imgSrc={GC_PNG_INSTAGRAM}
+        >
+            <InstagramIcon />
+        </SocialMediaComponent>
+
+        <SocialMediaComponent
+            linkUrl="https://www.getcreative.edu.pl/"
+            imgSrc={GcWWWPNG}
+        >
+            <WWWIcon />
+        </SocialMediaComponent>
+    </Container>
+);
+
+export const SocialMediasComponentENG = ({ isActive }) => (
+    <Container isActive={isActive}>
+        <SocialMediaComponent
+            linkUrl="https://www.facebook.com/GetCreativeEveryday"
+            imgSrc={GCPNG_ENG_FB}
+        >
+            <FbIcon />
+        </SocialMediaComponent>
+
+        <SocialMediaComponent
+            linkUrl="https://www.instagram.com/get_creative_everyday/"
+            imgSrc={GC_PNG_INSTAGRAM_ENG}
         >
             <InstagramIcon />
         </SocialMediaComponent>

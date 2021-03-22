@@ -1,15 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import GlobalStyle from "./globalStyle.styles";
 import Navigation from "./menu.component";
+import NavigationENG from "./menu_ENG.component";
 import FooterComponent from "./footer.component";
+import FooterComponentENG from "./footer_ENG.component";
+import { useLocation } from "react-router-dom";
 
-const LayoutComponent = (props) => (
-    <>
-        <GlobalStyle />
-        <Navigation />
-        {props.children}
-        <FooterComponent />
-    </>
-);
+const LayoutComponent = (props) => {
+    const location = useLocation();
+
+    return (
+        <>
+            <GlobalStyle />
+            {location.pathname === "/pl" ? (
+                <>
+                    <Navigation />
+                    {props.children}
+                    <FooterComponent />
+                </>
+            ) : (
+                <>
+                    <NavigationENG />
+                    {props.children}
+                    <FooterComponentENG />
+                </>
+            )}
+        </>
+    );
+};
 
 export default LayoutComponent;

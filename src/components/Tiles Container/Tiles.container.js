@@ -36,7 +36,7 @@ const TilesSection = styled.div`
     }
 `;
 
-const TilesContainer = (props) => (
+export const TilesContainerPL = (props) => (
     <TilesSection id="niezbednik">
         <Tile>
             <TitleContainer>
@@ -87,4 +87,52 @@ const TilesContainer = (props) => (
     </TilesSection>
 );
 
-export default TilesContainer;
+export const TilesContainerENG = (props) => (
+    <TilesSection id="kit">
+        <Tile>
+            <TitleContainer>
+                <TileIconContainer>
+                    <EnglishIcon />
+                </TileIconContainer>
+                <h4>English</h4>
+            </TitleContainer>
+
+            <p>Created in English for english teachers</p>
+        </Tile>
+        <Tile>
+            <TitleContainer>
+                <TileIconContainer>
+                    <CalendarIcon />
+                </TileIconContainer>
+                <h4>Entire year</h4>
+            </TitleContainer>
+
+            <p>
+                13 months, from August to August &#x28; accordingly with
+                programmes from different countries &#41;
+            </p>
+        </Tile>
+        <Tile>
+            <TitleContainer>
+                <TileIconContainer>
+                    <OrderIcon />
+                </TileIconContainer>
+                <h4>Organization</h4>
+            </TitleContainer>
+
+            <p>
+                Everything in one place - calendar and planner in teacher's work
+            </p>
+        </Tile>
+        <Tile>
+            <TitleContainer>
+                <TileIconContainer>
+                    <CreativityIcon />
+                </TileIconContainer>
+                <h4>Creativity</h4>
+            </TitleContainer>
+
+            <p>Ideas for language activities for every week of the year</p>
+        </Tile>
+    </TilesSection>
+);

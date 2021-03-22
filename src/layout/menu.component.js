@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import gsap from "gsap";
 import scrollToPlugin from "gsap/ScrollToPlugin";
-import { SocialMediasComponent } from "../components/SocialMedia/SocialMedia.component";
+import { SocialMediasComponentPL } from "../components/SocialMedia/SocialMedia.component";
 
 gsap.registerPlugin(scrollToPlugin);
 
-const Navigation = styled.nav`
+export const Navigation = styled.nav`
     position: sticky;
     z-index: 3;
     top: 0;
@@ -82,7 +82,7 @@ const Navigation = styled.nav`
     }
 `;
 
-const Hamburger = styled.div`
+export const Hamburger = styled.div`
     width: 50px;
     height: 50px;
     position: absolute;
@@ -201,7 +201,7 @@ const NavigationComponent = (props) => {
                 </Link>
             </div>
 
-            <SocialMediasComponent isActive={hamburgerActive} />
+            <SocialMediasComponentPL isActive={hamburgerActive} />
 
             <Hamburger
                 className={hamburgerActive ? "active" : ""}

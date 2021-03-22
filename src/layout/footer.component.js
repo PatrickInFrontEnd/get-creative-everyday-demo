@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import SemantikaPNG from "./../assets/img/semantika_logo.png";
 import { flexCenter, flexColumn } from "../components/mixins";
 
-const Footer = styled.footer`
+export const Footer = styled.footer`
     width: 100%;
     padding: 50px 150px;
     ${flexCenter};
@@ -22,7 +23,7 @@ const Footer = styled.footer`
     }
 `;
 
-const DescriptionBlock = styled.div`
+export const DescriptionBlock = styled.div`
     min-height: 240px;
     max-width: 300px;
     ${flexColumn};
@@ -81,7 +82,7 @@ const DescriptionBlock = styled.div`
     }
 `;
 
-const Header = styled.h5`
+export const Header = styled.h5`
     position: relative;
     left: 22.5px;
     font-weight: ${({ theme }) => theme.fw.medium};
@@ -103,7 +104,7 @@ const Header = styled.h5`
     }
 `;
 
-const CopyRight = styled.footer`
+export const CopyRight = styled.footer`
     width: 100%;
     min-height: 40px;
     padding: 15px 0;
@@ -141,7 +142,11 @@ const FooterComponent = (props) => (
                     <i className="fas fa-phone-square-alt"></i>
                     +48 61 847 11 34
                 </p>
-                <a href="#lol" target="_blank">
+                <a
+                    href="https://semantika.pl/"
+                    target="_blank"
+                    rel="noreferrer"
+                >
                     <i className="fas fa-globe-europe"></i>
                     www.semantika.pl
                 </a>
@@ -166,6 +171,8 @@ const FooterComponent = (props) => (
                     <i className="fab fa-instagram"></i>
                     Instagram
                 </a>
+
+                <Link to="/">Wersja angielska</Link>
 
                 <a
                     href={`${process.env.PUBLIC_URL}/documents/polityka_ikon.txt`}

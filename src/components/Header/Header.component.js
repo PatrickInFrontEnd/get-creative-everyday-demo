@@ -26,7 +26,7 @@ export const SubHeader = styled.h6`
     }
 `;
 
-const HeaderComponent = (props) => (
+export const HeaderComponentPL = (props) => (
     <>
         <Title>wkrótce premiera</Title>
         <SubHeader>
@@ -39,4 +39,14 @@ const HeaderComponent = (props) => (
     </>
 );
 
-export default HeaderComponent;
+export const HeaderComponentENG = (props) => (
+    <>
+        <Title>premiere soon</Title>
+        <SubHeader>
+            Calendar and planner for english teachers who learn younger kids
+        </SubHeader>
+        <Title margin="0 auto" small>
+            Check out for more!
+        </Title>
+    </>
+);

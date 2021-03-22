@@ -1,16 +1,16 @@
 import React from "react";
-import Header from "../components/Header/Header.component";
-import Form from "./../components/Form/Form.component";
+import { HeaderComponentPL } from "../components/Header/Header.component";
+import { FormComponentPL } from "./../components/Form/Form.component";
 import Flower from "../components/Flower/Flower.component";
-import TilesSection from "./../components/Tiles Container/Tiles.container";
+import { TilesContainerPL } from "./../components/Tiles Container/Tiles.container";
 import BookComponent from "../components/Book/Book.component";
 
 const MainPageContainer = (props) => (
     <>
         <section id="glowna">
-            <Header />
-            <TilesSection />
-            <Form />
+            <HeaderComponentPL />
+            <TilesContainerPL />
+            <FormComponentPL />
             <Flower />
             <BookComponent />
         </section>

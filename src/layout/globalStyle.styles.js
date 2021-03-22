@@ -52,7 +52,8 @@ a{
     color:inherit;
 }
 
-section#glowna{
+section#glowna,
+section#main{
     position:relative;
     overflow: hidden;
     min-height:calc(100vh - 80px);

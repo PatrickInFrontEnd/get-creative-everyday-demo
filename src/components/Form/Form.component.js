@@ -197,11 +197,10 @@ const FormContainer = styled.div`
     }
 `;
 
-const FormComponent = (props) => {
+export const FormComponentPL = (props) => {
     const [email, setEmail] = useState("");
     const [emailSuccessful, setEmailSuccessful] = useState(null);
     const [buttonDisabled, setButtonDisabled] = useState(false);
-    //const [showMessage, setShowMessage] = useState(false);
 
     const handleInputChange = (e) => setEmail(e.target.value);
 
@@ -252,7 +251,6 @@ const FormComponent = (props) => {
                 <button type="submit" disabled={buttonDisabled}>
                     Zapisz się
                 </button>
-                {/* <img src={GCEDphoto} alt="Get Creative Every Day" /> */}
             </Form>
             {emailSuccessful === null ? null : emailSuccessful === true ? (
                 <Message emailsent={true}>
@@ -267,4 +265,70 @@ const FormComponent = (props) => {
     );
 };
 
-export default FormComponent;
+export const FormComponentENG = (props) => {
+    const [email, setEmail] = useState("");
+    const [emailSuccessful, setEmailSuccessful] = useState(null);
+    const [buttonDisabled, setButtonDisabled] = useState(false);
+
+    const handleInputChange = (e) => setEmail(e.target.value);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setButtonDisabled(true);
+        console.log(email);
+
+        /* axios({
+            method: "POST",
+            url: `englishAPI`,
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+            },
+        })
+            .then((res) => {
+                setEmailSuccessful(true);
+
+                setTimeout(() => {
+                    setEmailSuccessful(null);
+                }, 3000);
+            })
+            .catch((e) => {
+                setEmailSuccessful(false);
+                setButtonDisabled(false);
+
+                setTimeout(() => {
+                    setEmailSuccessful(null);
+                }, 3000);
+            }); */
+    };
+
+    return (
+        <FormContainer>
+            <Header>We provide teachers' creativity every day!</Header>
+            <span>
+                SIGN UP ON THE INTERESTED LIST IF YOU FINALLY WANT TO HAVE A
+                PERFECT PLANNER JUST FOR YOU!
+            </span>
+            <Form onSubmit={handleSubmit}>
+                <input
+                    type="email"
+                    placeholder="Your email"
+                    onChange={handleInputChange}
+                    name="email"
+                    required
+                />
+                <button type="submit" disabled={buttonDisabled}>
+                    Sign up
+                </button>
+            </Form>
+            {emailSuccessful === null ? null : emailSuccessful === true ? (
+                <Message emailsent={true}>
+                    <p>Email has been saved!</p>
+                </Message>
+            ) : (
+                <Message emailsent={false}>
+                    <p>Email has not been saved. Please try again later.</p>
+                </Message>
+            )}
+        </FormContainer>
+    );
+};
