@@ -30,8 +30,8 @@ export const HeaderComponentPL = (props) => (
     <>
         <Title>wkrótce premiera</Title>
         <SubHeader>
-            Kalendarz i planner dla nauczycieli języka angielskiego uczących
-            młodsze dzieci
+            Kalendarz i planner z gotowymi pomysłami na zajęcia z języka
+            angielskiego dla młodszych dzieci
         </SubHeader>
         <Title margin="0 auto" small>
             Dowiedz się więcej!
@@ -43,7 +43,8 @@ export const HeaderComponentENG = (props) => (
     <>
         <Title>premiere soon</Title>
         <SubHeader>
-            Calendar and planner for english teachers who learn younger kids
+            Calendar and planner including ready-to-use ideas for English
+            lessons with young learners
         </SubHeader>
         <Title margin="0 auto" small>
             Check out for more!

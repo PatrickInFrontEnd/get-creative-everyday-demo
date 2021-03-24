@@ -46,7 +46,10 @@ export const TilesContainerPL = (props) => (
                 <h4>English</h4>
             </TitleContainer>
 
-            <p>Stworzony po angielsku dla nauczycieli angielskiego</p>
+            <p>
+                Stworzony w pełni po angielsku i dedykowany nauczycielom
+                angielskiego
+            </p>
         </Tile>
         <Tile>
             <TitleContainer>
@@ -57,8 +60,8 @@ export const TilesContainerPL = (props) => (
             </TitleContainer>
 
             <p>
-                13 miesięcy, od sierpnia do sierpnia &#x28; zgodnie z programami
-                w różnych krajach &#41;
+                … a nawet 13 miesięcy, kalendarz od sierpnia 2021 do sierpnia
+                2022
             </p>
         </Tile>
         <Tile>
@@ -82,7 +85,10 @@ export const TilesContainerPL = (props) => (
                 <h4>Kreatywność</h4>
             </TitleContainer>
 
-            <p>Pomysły na zajęcia językowe na każdy tydzień roku</p>
+            <p>
+                Pomysły na zajęcia językowe dla przedszkolaków i dzieci
+                wczesnoszkolnych
+            </p>
         </Tile>
     </TilesSection>
 );
@@ -97,19 +103,19 @@ export const TilesContainerENG = (props) => (
                 <h4>English</h4>
             </TitleContainer>
 
-            <p>Created in English for english teachers</p>
+            <p>Created especially for English teachers of young learners</p>
         </Tile>
         <Tile>
             <TitleContainer>
                 <TileIconContainer>
                     <CalendarIcon />
                 </TileIconContainer>
-                <h4>Entire year</h4>
+                <h4>School Year</h4>
             </TitleContainer>
 
             <p>
-                13 months, from August to August &#x28; accordingly with
-                programmes from different countries &#41;
+                August 2021 – August 2022 planner with 13 months of monthly and
+                weekly pages.
             </p>
         </Tile>
         <Tile>
@@ -117,12 +123,10 @@ export const TilesContainerENG = (props) => (
                 <TileIconContainer>
                     <OrderIcon />
                 </TileIconContainer>
-                <h4>Organization</h4>
+                <h4>Organiser</h4>
             </TitleContainer>
 
-            <p>
-                Everything in one place - calendar and planner in teacher's work
-            </p>
+            <p>All in one – calendar and teacher’s planner</p>
         </Tile>
         <Tile>
             <TitleContainer>
@@ -132,7 +136,10 @@ export const TilesContainerENG = (props) => (
                 <h4>Creativity</h4>
             </TitleContainer>
 
-            <p>Ideas for language activities for every week of the year</p>
+            <p>
+                Content pages with ideas for English lessons in preschool and
+                early school education
+            </p>
         </Tile>
     </TilesSection>
 );

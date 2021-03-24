@@ -277,9 +277,9 @@ export const FormComponentENG = (props) => {
         setButtonDisabled(true);
         console.log(email);
 
-        /* axios({
+        axios({
             method: "POST",
-            url: `englishAPI`,
+            url: `https://api.semantika.pl/api/eng-email-save/${email}`,
             headers: {
                 "Access-Control-Allow-Origin": "*",
             },
@@ -298,12 +298,12 @@ export const FormComponentENG = (props) => {
                 setTimeout(() => {
                     setEmailSuccessful(null);
                 }, 3000);
-            }); */
+            });
     };
 
     return (
         <FormContainer>
-            <Header>We provide teachers' creativity every day!</Header>
+            <Header>Your everyday boost of creativity in teaching!</Header>
             <span>
                 SIGN UP ON THE INTERESTED LIST IF YOU FINALLY WANT TO HAVE A
                 PERFECT PLANNER JUST FOR YOU!
