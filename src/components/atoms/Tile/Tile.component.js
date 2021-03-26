@@ -4,9 +4,9 @@ import { flexCenter, size_100x100 } from "./../../mixins";
 
 const Container = styled.div`
     position: relative;
-    width: 340px;
+    width: 400px;
     height: 200px;
-    margin: 0 30px;
+    margin: 0 15px;
     padding: 30px;
     display: flex;
     justify-content: space-around;
@@ -53,6 +53,8 @@ export const TileIconContainer = styled.div`
 
     svg {
         ${size_100x100};
+        min-width: 40px;
+        min-height: 40px;
         fill: ${({ theme }) => theme.colors.yellow};
     }
 

@@ -14,7 +14,7 @@ const TilesSection = styled.div`
     ${flexCenter};
     flex-wrap: wrap;
     width: 100%;
-    padding: 0 60px;
+    padding: 0 20px;
     margin: 20px auto;
     z-index: 2;
 
@@ -100,7 +100,7 @@ export const TilesContainerENG = (props) => (
                 <TileIconContainer>
                     <EnglishIcon />
                 </TileIconContainer>
-                <h4>English</h4>
+                <h4>Teaching English as a foreign language</h4>
             </TitleContainer>
 
             <p>Created especially for English teachers of young learners</p>
@@ -110,12 +110,12 @@ export const TilesContainerENG = (props) => (
                 <TileIconContainer>
                     <CalendarIcon />
                 </TileIconContainer>
-                <h4>School Year</h4>
+                <h4>School Year 2021/2022</h4>
             </TitleContainer>
 
             <p>
-                August 2021 – August 2022 planner with 13 months of monthly and
-                weekly pages.
+                … or actually even more! August 2021 – August 2022 planner with
+                13 months of monthly and weekly pages.
             </p>
         </Tile>
         <Tile>
@@ -133,7 +133,7 @@ export const TilesContainerENG = (props) => (
                 <TileIconContainer>
                     <CreativityIcon />
                 </TileIconContainer>
-                <h4>Creativity</h4>
+                <h4>Boost of creativity</h4>
             </TitleContainer>
 
             <p>
