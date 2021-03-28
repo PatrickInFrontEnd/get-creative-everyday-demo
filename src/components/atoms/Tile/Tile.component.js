@@ -15,7 +15,9 @@ const Container = styled.div`
     color: ${({ theme }) => theme.colors.black};
 
     h4 {
-        font-size: ${({ theme }) => theme.fz.M};
+        font-family: ${({ theme }) => theme.ff.HolaB};
+        line-height: 100%;
+        font-size: ${({ theme }) => theme.fz.hola.mini};
         font-weight: ${({ theme }) => theme.fw.semiBold};
         color: ${({ theme }) => theme.colors.black};
     }
@@ -23,7 +25,7 @@ const Container = styled.div`
     p {
         width: 100%;
         font-size: ${({ theme }) => theme.fz.XXS};
-        color: ${({ theme }) => theme.colors.grey};
+        color: ${({ theme }) => theme.colors.black};
         font-weight: ${({ theme }) => theme.fw.medium};
     }
 

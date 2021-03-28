@@ -20,7 +20,7 @@ const NavigationComponent = (props) => {
 
     return (
         <Navigation>
-            <div className={`links ${hamburgerActive ? "active" : ""}`}>
+            <div className={`links ${hamburgerActive ? "active" : ""} eng`}>
                 <Link
                     to="#"
                     onClick={() => {

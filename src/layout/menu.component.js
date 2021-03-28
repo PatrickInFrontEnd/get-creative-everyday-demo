@@ -63,8 +63,19 @@ export const Navigation = styled.nav`
     }
 
     @media screen and (max-width: 1450px) {
+        padding: 0;
+
         .links {
             padding: 40px 0;
+
+            &.eng {
+                padding: 90px 0 40px;
+
+                @media screen and (max-width: 470px) {
+                    padding: 50px 0 40px;
+                }
+            }
+
             flex-direction: column;
             align-items: center;
             position: absolute;

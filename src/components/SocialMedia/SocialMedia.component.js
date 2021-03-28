@@ -1,9 +1,9 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { size_100x100, flexCenter } from "./../mixins";
-import { ReactComponent as FbIcon } from "./../../assets/svg/icon_facebook.svg";
-import { ReactComponent as InstagramIcon } from "./../../assets/svg/icon_instagram.svg";
-import { ReactComponent as WWWIcon } from "./../../assets/svg/icon_www.svg";
+import { ReactComponent as FbIcon } from "./../../assets/svg/facebook.svg";
+import { ReactComponent as InstagramIcon } from "./../../assets/svg/instagram.svg";
+import { ReactComponent as WWWIcon } from "./../../assets/svg/www.svg";
 import GCPNG_FB from "./../../assets/img/gc.png";
 import GCPNG_ENG_FB from "./../../assets/img/gcedengFB.png";
 import GC_PNG_INSTAGRAM from "./../../assets/img/gclogo.png";
@@ -29,7 +29,7 @@ export const SocialContainer = styled.a`
 
         & > img {
             padding: 0 10px;
-            background: ${({ theme }) => theme.colors.light_white};
+            background: #fff;
             background-blend-mode: multiply;
             object-fit: contain;
         }
@@ -79,7 +79,7 @@ export const SocialContainer = styled.a`
         ${flexCenter};
         width: 40px;
         height: 40px;
-        background-color: ${({ theme }) => theme.colors.light_white};
+        background-color: ${({ theme }) => theme.colors.white};
         padding: 6%;
 
         svg {
@@ -145,6 +145,22 @@ const Container = styled.div`
     }
 `;
 
+const ContainerEnglish = styled(Container)`
+    position: relative;
+    top: 70px;
+
+    span {
+        ${flexCenter};
+        width: 100%;
+        position: absolute;
+        top: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: ${({ theme }) => theme.fz.M};
+        font-weight: ${({ theme }) => theme.fw.semiBold};
+    }
+`;
+
 const SocialMediaComponent = ({ children, linkUrl, imgSrc }) => {
     return (
         <SocialContainer href={linkUrl} target="_blank" rel="noreferrer">
@@ -180,7 +196,8 @@ export const SocialMediasComponentPL = ({ isActive }) => (
 );
 
 export const SocialMediasComponentENG = ({ isActive }) => (
-    <Container isActive={isActive}>
+    <ContainerEnglish isActive={isActive}>
+        <span>PROJECT GET CREATIVE</span>
         <SocialMediaComponent
             linkUrl="https://www.facebook.com/GetCreativeEveryday"
             imgSrc={GCPNG_ENG_FB}
@@ -201,7 +218,7 @@ export const SocialMediasComponentENG = ({ isActive }) => (
         >
             <WWWIcon />
         </SocialMediaComponent>
-    </Container>
+    </ContainerEnglish>
 );
 
 export default SocialMediaComponent;

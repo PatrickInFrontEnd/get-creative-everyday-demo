@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import GlobalStyle from "./globalStyle.styles";
 import Navigation from "./menu.component";
 import NavigationENG from "./menu_ENG.component";

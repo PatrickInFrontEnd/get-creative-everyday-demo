@@ -1,6 +1,19 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+
+@font-face{
+    font-family:"Hola Bisou";
+    src:
+    url("${process.env.PUBLIC_URL}/fonts/holaregular.ttf") format("ttf");
+}
+
+@font-face{
+    font-family:"Hola Caps";
+    src:
+    url("${process.env.PUBLIC_URL}/fonts/holacaps.ttf") format("ttf");
+}
+
 *{
     padding:0;
     margin:0;

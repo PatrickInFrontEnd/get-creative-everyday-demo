@@ -109,7 +109,7 @@ export const CopyRight = styled.footer`
     min-height: 40px;
     padding: 15px 0;
     ${flexCenter};
-    color: ${({ theme }) => theme.colors.black};
+    color: ${({ theme }) => theme.colors.white};
     background-color: ${({ theme }) => theme.colors.grey};
 
     p {
