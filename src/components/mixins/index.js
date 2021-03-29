@@ -23,4 +23,25 @@ const absoluteCenter = css`
     transform: translate(-50%, -50%);
 `;
 
-export { flexCenter, flexColumn, size_100x100, absoluteCenter };
+const toUpperCase = (isUpper) =>
+    isUpper
+        ? css`
+              text-transform: uppercase;
+          `
+        : "";
+
+const changeTxtColor = (color) =>
+    color
+        ? css`
+              color: ${color};
+          `
+        : "";
+
+export {
+    flexCenter,
+    flexColumn,
+    size_100x100,
+    absoluteCenter,
+    toUpperCase,
+    changeTxtColor,
+};

@@ -6,7 +6,7 @@ import ThemeProvider from "./providers/themeProvider";
 
 ReactDOM.render(
     <React.StrictMode>
-        <BrowserRouter >
+        <BrowserRouter>
             <ThemeProvider>
                 <App />
             </ThemeProvider>

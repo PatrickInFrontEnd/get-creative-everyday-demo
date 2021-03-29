@@ -12,16 +12,19 @@ const FooterComponent = (props) => (
         <Footer id="contact">
             <DescriptionBlock>
                 <img src={SemantikaPNG} alt="Logo Gw Semantika" />
-                <p>ul. Żuławska 10, 60-412 Poznań</p>
-                <p>KRS: 0000470869,</p>
-                <p>Sąd Rejonowy w Poznaniu</p>
-                <p>IX Wydział Gospodarczy KRS</p>
-                <p>NIP: 7773232650, REGON: 302483298</p>
+                <p>Our registered business address:</p>
+                <p>ul. Żuławska 10</p>
+                <p>60-412 Poznań</p>
+                <p>POLAND</p>
             </DescriptionBlock>
 
             <DescriptionBlock>
                 <Header>Contact</Header>
-                <h6>Have a question? Write us!</h6>
+                <h6 style={{ lineHeight: "160%" }}>
+                    We are here to help!
+                    <br />
+                    Please, drop us a line.
+                </h6>
                 <p>
                     <i className="fas fa-envelope"></i>
                     biuro@semantika.pl

@@ -11,9 +11,9 @@ const theme = {
         XXXS: "1.4rem",
         miniS: "1.2rem",
         normal: {
-            biggest: "3.6rem",
-            big: "2.6rem",
-            medium: "2.4rem",
+            big: "3.6rem",
+            medium: "2.6rem",
+            small: "2.4rem",
         },
         hola: {
             biggest: "11.2rem",

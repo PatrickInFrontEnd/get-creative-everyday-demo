@@ -18,7 +18,7 @@ const Container = styled.div`
         font-family: ${({ theme }) => theme.ff.HolaB};
         line-height: 100%;
         font-size: ${({ theme }) => theme.fz.hola.mini};
-        font-weight: ${({ theme }) => theme.fw.semiBold};
+        font-weight: ${({ theme }) => theme.fw.regular};
         color: ${({ theme }) => theme.colors.black};
     }
 
@@ -34,11 +34,9 @@ const Container = styled.div`
         height: auto;
         padding: 0;
         width: 100%;
-        ${flexCenter};
 
         p {
             margin-top: 20px;
-            text-align: center;
         }
     }
 `;

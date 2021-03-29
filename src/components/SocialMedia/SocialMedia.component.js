@@ -104,19 +104,20 @@ export const SocialContainer = styled.a`
     }
 
     @media screen and (max-width: 480px) {
-        top: -25px;
+        top: 0;
     }
 
     @media screen and (max-width: 420px) {
         width: 60px;
         height: 60px;
+        top: -25px;
     }
 `;
 
 const Container = styled.div`
     ${flexCenter};
 
-    @media screen and (max-width: 1350px) {
+    @media screen and (max-width: 1450px) {
         & {
             position: absolute;
             bottom: 0;
@@ -148,6 +149,9 @@ const Container = styled.div`
 const ContainerEnglish = styled(Container)`
     position: relative;
     top: 70px;
+    padding: 0 0 35px;
+    background-color: ${({ theme }) => theme.colors.white};
+    border-radius: 20px;
 
     span {
         ${flexCenter};
@@ -158,6 +162,26 @@ const ContainerEnglish = styled(Container)`
         transform: translateX(-50%);
         font-size: ${({ theme }) => theme.fz.M};
         font-weight: ${({ theme }) => theme.fw.semiBold};
+    }
+
+    @media screen and (max-width: 480px) {
+        padding: 0 0 35px;
+        top: 70px;
+        bottom: unset;
+    }
+
+    @media screen and (max-width: 420px) {
+        position: absolute;
+        top: unset;
+        bottom: -325px;
+        left: 0;
+        height: 130px;
+
+        span {
+            background-color: ${({ theme }) => theme.colors.white};
+            padding-bottom: 40px;
+            top: -50px;
+        }
     }
 `;
 

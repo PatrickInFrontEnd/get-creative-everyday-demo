@@ -74,6 +74,10 @@ export const Navigation = styled.nav`
                 @media screen and (max-width: 470px) {
                     padding: 50px 0 40px;
                 }
+
+                @media screen and (max-width: 420px) {
+                    padding: 0 0 20px;
+                }
             }
 
             flex-direction: column;

@@ -1,0 +1,110 @@
+import React from "react";
+import styled from "styled-components";
+import { HeaderHola } from "./../components/atoms/Header";
+import { ReactComponent as PencilIcon } from "./../assets/svg/pencil.svg";
+import SituationBox from "./../components/SituationBox/SituationBox";
+import { situationsENG } from "./../data/eng";
+import SituationsContainer from "../components/SituationsContainer/Situations.container";
+
+const HeaderContainer = styled.div`
+    position: relative;
+    display: inline-block;
+    max-width: 700px;
+    padding: 0 20px;
+    margin-bottom: 50px;
+
+    h2 {
+        line-height: 100%;
+    }
+
+    svg {
+        position: absolute;
+
+        &:nth-of-type(1) {
+            bottom: 0px;
+            left: 40px;
+        }
+        &:nth-of-type(2) {
+            bottom: 0px;
+            right: 40px;
+            transform: scaleX(-1);
+        }
+    }
+
+    @media screen and (max-width: 1100px) {
+        svg {
+            width: 75px;
+            height: 75px;
+
+            &:nth-of-type(1) {
+                left: 80px;
+            }
+            &:nth-of-type(2) {
+                right: 80px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 570px) {
+        svg {
+            width: 60px;
+            height: 60px;
+
+            &:nth-of-type(1) {
+                left: 80px;
+            }
+            &:nth-of-type(2) {
+                right: 80px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 470px) {
+        svg {
+            width: 50px;
+            height: 50px;
+            &:nth-of-type(1) {
+                left: 10%;
+            }
+            &:nth-of-type(2) {
+                right: 10%;
+            }
+        }
+    }
+
+    @media screen and (max-width: 350px) {
+        svg {
+            width: 50px;
+            height: 50px;
+            bottom: -20px;
+        }
+    }
+`;
+
+const SituationsSection = (props) => {
+    const situationBoxes = situationsENG.map((properties, i) => (
+        <SituationBox key={i} {...properties} />
+    ));
+
+    return (
+        <section
+            id="situations"
+            style={{ textAlign: "center", padding: "40px 0" }}
+        >
+            <HeaderContainer>
+                <HeaderHola uppercase>
+                    <h2>
+                        Is the planner Get Creative Every Day suitable for you?
+                        <br />
+                        Check it out!
+                    </h2>
+                </HeaderHola>
+                <PencilIcon />
+                <PencilIcon />
+            </HeaderContainer>
+            <SituationsContainer>{situationBoxes}</SituationsContainer>
+        </section>
+    );
+};
+
+export default SituationsSection;
