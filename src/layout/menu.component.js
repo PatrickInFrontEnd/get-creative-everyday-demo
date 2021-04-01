@@ -4,6 +4,7 @@ import styled from "styled-components";
 import gsap from "gsap";
 import scrollToPlugin from "gsap/ScrollToPlugin";
 import { SocialMediasComponentPL } from "../components/SocialMedia/SocialMedia.component";
+import { flexCenter } from "../components/mixins";
 
 gsap.registerPlugin(scrollToPlugin);
 
@@ -31,12 +32,44 @@ export const Navigation = styled.nav`
         a {
             position: relative;
             overflow: hidden;
+            ${flexCenter};
             z-index: 1;
             color: ${({ theme }) => theme.colors.black || "#ffffff"};
             font-size: ${({ theme }) => theme.fz.XXS || "18px"};
             font-weight: ${({ theme }) => theme.fw.semiBold};
-            margin: 20px 20px 0;
-            padding-bottom: 6px;
+            margin: 0 20px 0;
+
+            &.active {
+                overflow: hidden;
+                border: 3px solid ${({ theme }) => theme.colors.black};
+                padding: 8px 12px;
+                transition: 0.3s;
+
+                &::before {
+                    display: none;
+                }
+
+                &::after {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    transform: translateY(100%);
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    z-index: -1;
+                    transition: 0.3s;
+                    background-color: ${({ theme }) => theme.colors.black};
+                }
+
+                &:hover {
+                    color: ${({ theme }) => theme.colors.white};
+
+                    &::after {
+                        transform: translateY(0%);
+                    }
+                }
+            }
 
             &:hover::before {
                 transform: translateX(0%);
@@ -44,7 +77,7 @@ export const Navigation = styled.nav`
 
             &::before {
                 position: absolute;
-                bottom: 0px;
+                bottom: 2px;
                 left: 0;
                 transform: translateX(-140%);
                 content: "";
@@ -71,13 +104,13 @@ export const Navigation = styled.nav`
             &.eng {
                 padding: 90px 0 40px;
 
-                @media screen and (max-width: 470px) {
-                    padding: 50px 0 40px;
-                }
-
                 @media screen and (max-width: 420px) {
                     padding: 0 0 20px;
                 }
+            }
+
+            a {
+                margin: 10px 0;
             }
 
             flex-direction: column;
@@ -174,7 +207,11 @@ export const Hamburger = styled.div`
 `;
 
 const NavigationComponent = (props) => {
-    const scrollTo = (hash) => gsap.to(window, { scrollTo: hash });
+    const scrollTo = (hash, offset = 0) =>
+        gsap.to(window, {
+            scrollTo: { offsetY: offset, y: hash },
+            duration: 1,
+        });
 
     const [hamburgerActive, setHamburgerActive] = useState(false);
 
@@ -197,9 +234,19 @@ const NavigationComponent = (props) => {
                     <i className="fas fa-home"></i>
                 </Link>
                 <Link
-                    to="#niezbednik"
+                    to="#przyklady"
                     onClick={() => {
-                        scrollTo("#niezbednik");
+                        scrollTo("#przyklady", 100);
+                        handleMobileClick();
+                    }}
+                >
+                    Przykłady użycia
+                </Link>
+
+                <Link
+                    to="#planer"
+                    onClick={() => {
+                        scrollTo("#planer", 140);
                         handleMobileClick();
                     }}
                 >
@@ -213,6 +260,17 @@ const NavigationComponent = (props) => {
                     }}
                 >
                     Kontakt
+                </Link>
+
+                <Link
+                    to="#kup"
+                    className="active"
+                    onClick={() => {
+                        scrollTo("#kup", 260);
+                        handleMobileClick();
+                    }}
+                >
+                    KUP TERAZ
                 </Link>
             </div>
 

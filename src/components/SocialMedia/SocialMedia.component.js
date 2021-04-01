@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled, { css } from "styled-components";
 import { size_100x100, flexCenter } from "./../mixins";
 import { ReactComponent as FbIcon } from "./../../assets/svg/facebook.svg";
@@ -152,8 +152,13 @@ const ContainerEnglish = styled(Container)`
     padding: 0 0 35px;
     background-color: ${({ theme }) => theme.colors.white};
     border-radius: 20px;
+    transition: 0.3s;
 
-    span {
+    &.hidden {
+        top: 0;
+    }
+
+    p {
         ${flexCenter};
         width: 100%;
         position: absolute;
@@ -162,6 +167,13 @@ const ContainerEnglish = styled(Container)`
         transform: translateX(-50%);
         font-size: ${({ theme }) => theme.fz.M};
         font-weight: ${({ theme }) => theme.fw.semiBold};
+
+        span {
+            ${flexCenter};
+            font-size: 0.7em;
+            color: ${({ theme }) => theme.colors.grey};
+            margin-right: 10px;
+        }
     }
 
     @media screen and (max-width: 480px) {
@@ -173,15 +185,20 @@ const ContainerEnglish = styled(Container)`
     @media screen and (max-width: 420px) {
         position: absolute;
         top: unset;
-        bottom: -325px;
+        bottom: -395px;
         left: 0;
         height: 130px;
 
-        span {
+        & > p {
             background-color: ${({ theme }) => theme.colors.white};
             padding-bottom: 40px;
             top: -50px;
         }
+    }
+
+    @media screen and (max-width: 420px) and (orientation: landscape) {
+        position: relative;
+        overflow: scroll;
     }
 `;
 
@@ -219,30 +236,68 @@ export const SocialMediasComponentPL = ({ isActive }) => (
     </Container>
 );
 
-export const SocialMediasComponentENG = ({ isActive }) => (
-    <ContainerEnglish isActive={isActive}>
-        <span>PROJECT GET CREATIVE</span>
-        <SocialMediaComponent
-            linkUrl="https://www.facebook.com/GetCreativeEveryday"
-            imgSrc={GCPNG_ENG_FB}
-        >
-            <FbIcon />
-        </SocialMediaComponent>
+export const SocialMediasComponentENG = ({ isActive }) => {
+    const [Y, setY] = useState(window.scrollY);
 
-        <SocialMediaComponent
-            linkUrl="https://www.instagram.com/get_creative_everyday/"
-            imgSrc={GC_PNG_INSTAGRAM_ENG}
-        >
-            <InstagramIcon />
-        </SocialMediaComponent>
+    //refs
+    const ref = useRef();
+    const listenerRef = useRef();
+    //listen to the window's scrollY
+    listenerRef.current = () => {
+        window.addEventListener("scroll", () => {
+            setY(window.scrollY);
+        });
+    };
 
-        <SocialMediaComponent
-            linkUrl="https://www.getcreative.edu.pl/"
-            imgSrc={GcWWWPNG}
-        >
-            <WWWIcon />
-        </SocialMediaComponent>
-    </ContainerEnglish>
-);
+    useEffect(() => listenerRef.current(), []);
+
+    //UTILS
+    const addClass = (ref, className) => ref.current.classList.add(className);
+    const removeClass = (ref, className) =>
+        ref.current.classList.remove(className);
+
+    //HIDE social medias or SHOW them
+    useEffect(() => {
+        if (window.innerWidth > 1450) {
+            if (ref.current.classList.contains("hidden")) {
+                removeClass(ref, "hidden");
+            }
+
+            if (Y >= 80 && !ref.current.classList.contains("hidden")) {
+                addClass(ref, "hidden");
+            } else if (Y <= 80 && ref.current.classList.contains("hidden")) {
+                removeClass(ref, "hidden");
+            }
+        }
+    }, [Y]);
+
+    return (
+        <ContainerEnglish isActive={isActive} ref={ref}>
+            <p>
+                <span>PROJECT</span> GET CREATIVE!
+            </p>
+            <SocialMediaComponent
+                linkUrl="https://www.facebook.com/GetCreativeEveryday"
+                imgSrc={GCPNG_ENG_FB}
+            >
+                <FbIcon />
+            </SocialMediaComponent>
+
+            <SocialMediaComponent
+                linkUrl="https://www.instagram.com/get_creative_everyday/"
+                imgSrc={GC_PNG_INSTAGRAM_ENG}
+            >
+                <InstagramIcon />
+            </SocialMediaComponent>
+
+            <SocialMediaComponent
+                linkUrl="https://www.getcreative.edu.pl/"
+                imgSrc={GcWWWPNG}
+            >
+                <WWWIcon />
+            </SocialMediaComponent>
+        </ContainerEnglish>
+    );
+};
 
 export default SocialMediaComponent;

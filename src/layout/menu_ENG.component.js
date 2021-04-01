@@ -8,7 +8,11 @@ import { SocialMediasComponentENG } from "../components/SocialMedia/SocialMedia.
 gsap.registerPlugin(scrollToPlugin);
 
 const NavigationComponent = (props) => {
-    const scrollTo = (hash) => gsap.to(window, { scrollTo: hash });
+    const scrollTo = (hash, offset = 0) =>
+        gsap.to(window, {
+            scrollTo: { offsetY: offset, y: hash },
+            duration: 1,
+        });
 
     const [hamburgerActive, setHamburgerActive] = useState(false);
 
@@ -31,14 +35,24 @@ const NavigationComponent = (props) => {
                     <i className="fas fa-home"></i>
                 </Link>
                 <Link
-                    to="#kit"
+                    to="#situations"
                     onClick={() => {
-                        scrollTo("#kit");
+                        scrollTo("#situations", 100);
                         handleMobileClick();
                     }}
                 >
-                    About kit
+                    Examples of use
                 </Link>
+                <Link
+                    to="#planner"
+                    onClick={() => {
+                        scrollTo("#planner", 180);
+                        handleMobileClick();
+                    }}
+                >
+                    About planner
+                </Link>
+
                 <Link
                     to="#contact"
                     onClick={() => {
@@ -47,6 +61,17 @@ const NavigationComponent = (props) => {
                     }}
                 >
                     Contact
+                </Link>
+
+                <Link
+                    to="#buy"
+                    className="active"
+                    onClick={() => {
+                        scrollTo("#buy", 250);
+                        handleMobileClick();
+                    }}
+                >
+                    BUY NOW
                 </Link>
             </div>
 

@@ -109,6 +109,7 @@ export const CopyRight = styled.footer`
     min-height: 40px;
     padding: 15px 0;
     ${flexCenter};
+    ${flexColumn};
     color: ${({ theme }) => theme.colors.white};
     background-color: ${({ theme }) => theme.colors.grey};
 
@@ -116,6 +117,9 @@ export const CopyRight = styled.footer`
         text-align: center;
         font-size: ${({ theme }) => theme.fz.XXXS};
         padding: 0 40px;
+    }
+    a {
+        margin-top: 5px;
     }
 `;
 
@@ -173,17 +177,16 @@ const FooterComponent = (props) => (
                 </a>
 
                 <Link to="/">Wersja angielska</Link>
-
-                <a
-                    href={`${process.env.PUBLIC_URL}/documents/polityka_ikon.txt`}
-                    download
-                >
-                    Prawa autorskie ikon
-                </a>
             </DescriptionBlock>
         </Footer>
         <CopyRight>
             <p>Copyright ©2021 Grupa Wydawnicza Semantika Sp. z o.o.</p>
+            <a
+                href={`${process.env.PUBLIC_URL}/documents/polityka_ikon.txt`}
+                download
+            >
+                <u>Prawa autorskie ikon</u>
+            </a>
         </CopyRight>
     </>
 );

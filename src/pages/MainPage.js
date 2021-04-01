@@ -1,10 +1,16 @@
 import React from "react";
-import { TilesContainerPL } from "./../components/Tiles Container/Tiles.container";
+import { HeaderSectionPL } from "./../sections/HeaderSection";
+import { GetCreativeTrailerSectionPL } from "./../sections/GCtrailerSection";
+import { SituationsSectionPL } from "./../sections/SituationsSection";
+import { PlannerSectionPL } from "./../sections/PlannerSection";
 
 const MainPageContainer = (props) => (
     <>
         <section id="glowna">
-            <TilesContainerPL />
+            <HeaderSectionPL />
+            <GetCreativeTrailerSectionPL />
+            <SituationsSectionPL />
+            <PlannerSectionPL />
         </section>
     </>
 );

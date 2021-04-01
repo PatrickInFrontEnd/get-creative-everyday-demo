@@ -83,12 +83,12 @@ export const detailsBoxesENG = [
     {
         header: "School Year Calendar",
         description:
-            "Planner with 13 months of monthly and weekly pages from August 2021 to August 2022.",
+            "Planner with 13 months of monthly and weekly pages from August 2021 to August 2022",
     },
     {
         header: "Let’s plan",
         description:
-            "Ready to use lesson planning spreads which cover all school year. There is some additional space for you own notes.",
+            "Ready to use lesson planning spreads which cover all school year. There is some additional space for you own notes",
     },
     {
         header: "My students",
@@ -98,7 +98,7 @@ export const detailsBoxesENG = [
     {
         header: "Contacts",
         description:
-            "Your handy contact lists to organise phone numbers, addresses etc. ",
+            "Your handy contact lists to organise phone numbers, addresses etc.",
     },
     {
         header: "Teaching hacks  -  tips useful in your everyday work",
@@ -118,7 +118,7 @@ export const detailsBoxesENG = [
             },
             {
                 item:
-                    "TOP 5 SITES – a list od educational sites for children. Use them to make your lessons more attractive and interactive.",
+                    "TOP 5 SITES – a list od educational sites for children. Use them to make your lessons more attractive and interactive",
             },
             {
                 item:
@@ -143,7 +143,7 @@ export const detailsBoxesENG = [
     {
         header: "Let’s celebrate",
         description:
-            "Lists of official holidays, special dates and theme days every month.",
+            "Lists of official holidays, special dates and theme days every month",
     },
     {
         header: "Weekly view pages",
@@ -153,14 +153,14 @@ export const detailsBoxesENG = [
     {
         header: "Ready-to-use craft",
         description:
-            "Additional pages with a calendar to cut out and colour with your children; use it to revise months or seasons of the year ",
+            "Additional pages with a calendar to cut out and colour with your children; use it to revise months or seasons of the year",
     },
-    { header: "Ample space for your notes", description: "" },
+    { header: "Notes", description: "Ample space for your notes" },
 ];
 
 export const buyHeadersENG = [
     {
-        header: "You see ?",
+        header: "You see?",
         description:
             "Get Creative Every Day is not only a calendar or planner, this is an essential teacher’s kit full of valuable materials for your English lessons around the year!",
     },
@@ -171,7 +171,7 @@ export const buyHeadersENG = [
     },
     {
         header:
-            "Join a huge group of well organised and creative teachers of English.",
+            "Join a huge group of well organised and creative teachers of English",
         description: "",
     },
 ];

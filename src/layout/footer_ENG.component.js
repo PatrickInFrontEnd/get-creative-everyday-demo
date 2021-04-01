@@ -27,7 +27,7 @@ const FooterComponent = (props) => (
                 </h6>
                 <p>
                     <i className="fas fa-envelope"></i>
-                    biuro@semantika.pl
+                    hello@getcreative-everyday.com
                 </p>
                 <p>
                     <i className="fas fa-phone-square-alt"></i>
@@ -62,17 +62,16 @@ const FooterComponent = (props) => (
                     <i className="fab fa-instagram"></i>
                     Instagram
                 </a>
-
-                <a
-                    href={`${process.env.PUBLIC_URL}/documents/icons_policy.txt`}
-                    download
-                >
-                    Icons policy
-                </a>
             </DescriptionBlock>
         </Footer>
         <CopyRight>
             <p>Copyright ©2021 Grupa Wydawnicza Semantika Sp. z o.o.</p>
+            <a
+                href={`${process.env.PUBLIC_URL}/documents/icons_policy.txt`}
+                download
+            >
+                <u>Icons policy</u>
+            </a>
         </CopyRight>
     </>
 );

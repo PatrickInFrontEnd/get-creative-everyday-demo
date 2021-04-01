@@ -3,7 +3,10 @@ import HeaderBook from "./../components/HeaderBook/HeaderBook";
 import { HeaderNormal } from "./../components/atoms/Header";
 import styled from "styled-components";
 import { flexCenter, size_100x100 } from "../components/mixins";
-import { TilesContainerENG } from "./../components/Tiles Container/Tiles.container";
+import {
+    TilesContainerPL,
+    TilesContainerENG,
+} from "./../components/Tiles Container/Tiles.container";
 
 const Container = styled.div`
     width: 100%;
@@ -26,6 +29,25 @@ const TitleContainer = styled.div`
     ${size_100x100};
     max-width: 800px;
 `;
+
+export const HeaderSectionPL = (props) => (
+    <>
+        <Container>
+            <HeaderBook />
+            <TitleContainer>
+                <HeaderNormal>
+                    <h1 className="bigger-line header">
+                        <b>Kalendarz i planner</b> z gotowymi pomysłami na
+                        zajęcia z języka angielskiego
+                        <br />
+                        <b>dla młodszych dzieci</b>
+                    </h1>
+                </HeaderNormal>
+            </TitleContainer>
+        </Container>
+        <TilesContainerPL />
+    </>
+);
 
 const HeaderSection = (props) => (
     <>

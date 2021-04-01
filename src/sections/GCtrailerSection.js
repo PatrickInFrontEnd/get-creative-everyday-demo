@@ -61,6 +61,7 @@ const HeaderContainer = styled.div`
     display: inline-block;
     text-align: center;
     margin: 120px auto 80px;
+    min-width: 170px;
 
     img {
         display: block;
@@ -79,7 +80,7 @@ const HeaderContainer = styled.div`
     }
 
     @media screen and (max-width: 1000px) {
-        margin: 160px auto 30px;
+        margin: 120px auto 30px;
 
         img {
             width: 200px;
@@ -94,7 +95,13 @@ const HeaderContainer = styled.div`
         }
     }
 
+    @media screen and (max-width: 860px) {
+        min-width: 120px;
+    }
+
     @media screen and (max-width: 400px) {
+        margin: 80px auto 30px;
+
         img {
             width: 150px;
             height: 150px;
@@ -196,6 +203,63 @@ const NoteCard = styled.div`
         padding: 40px 20px;
     }
 `;
+
+export const GetCreativeTrailerSectionPL = (props) => {
+    const theme = useTheme();
+
+    return (
+        <section id="trailer" style={{ textAlign: "center", margin: "40px 0" }}>
+            <QuestionsContainer>
+                <SunIcon />
+                <SunIcon />
+
+                <HeaderHola>
+                    <h2>Czy to możliwe?</h2>
+                </HeaderHola>
+                <HeaderHola>
+                    <h2>Organizator, inspirator i time-saver w jednym?</h2>
+                </HeaderHola>
+                <HeaderHola>
+                    <h2>Dedykowany nauczycielom angielskiego?</h2>
+                </HeaderHola>
+                <HeaderHola>
+                    <h2>Already fully in English?</h2>
+                </HeaderHola>
+            </QuestionsContainer>
+
+            <HeaderContainer>
+                <HeaderHola uppercase>
+                    <h2>
+                        yess!!!
+                        <br />
+                        oto on
+                    </h2>
+                </HeaderHola>
+
+                <img src={FireworksIcon} alt="firworks icon" />
+                <img src={FireworksIcon} alt="firworks icon" />
+            </HeaderContainer>
+
+            <HereYouAreContainer>
+                <Logo>
+                    <img src={GCEDLogotypePNG} alt="Get creative every day" />
+                    <HeaderHola color={theme.colors.dark_grey}>
+                        <h2>School Year 2021/2022</h2>
+                    </HeaderHola>
+                </Logo>
+
+                <NoteCard>
+                    <HeaderHola uppercase>
+                        <h2>
+                            Zapewniamy nauczycielską kreatywność każdego dnia!
+                        </h2>
+                    </HeaderHola>
+                    <ClipIcon />
+                </NoteCard>
+            </HereYouAreContainer>
+        </section>
+    );
+};
 
 const GetCreativeTrailerSection = (props) => {
     const theme = useTheme();

@@ -1,8 +1,9 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { HeaderHola } from "./../components/atoms/Header";
 import { ReactComponent as PencilIcon } from "./../assets/svg/pencil.svg";
 import SituationBox from "./../components/SituationBox/SituationBox";
+import { situationsPL } from "./../data/pl";
 import { situationsENG } from "./../data/eng";
 import SituationsContainer from "../components/SituationsContainer/Situations.container";
 
@@ -11,7 +12,7 @@ const HeaderContainer = styled.div`
     display: inline-block;
     max-width: 700px;
     padding: 0 20px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 
     h2 {
         line-height: 100%;
@@ -23,11 +24,27 @@ const HeaderContainer = styled.div`
         &:nth-of-type(1) {
             bottom: 0px;
             left: 40px;
+            transform: scale(-1);
         }
         &:nth-of-type(2) {
             bottom: 0px;
             right: 40px;
-            transform: scaleX(-1);
+            transform: scaleY(-1);
+        }
+    }
+
+    @media screen and (max-width: 1558px) {
+        svg {
+            &:nth-of-type(1) {
+                left: 22%;
+                bottom: -14%;
+                transform: scaleY(-1);
+            }
+            &:nth-of-type(2) {
+                right: 22%;
+                bottom: -14%;
+                transform: scale(-1);
+            }
         }
     }
 
@@ -35,13 +52,6 @@ const HeaderContainer = styled.div`
         svg {
             width: 75px;
             height: 75px;
-
-            &:nth-of-type(1) {
-                left: 80px;
-            }
-            &:nth-of-type(2) {
-                right: 80px;
-            }
         }
     }
 
@@ -49,13 +59,6 @@ const HeaderContainer = styled.div`
         svg {
             width: 60px;
             height: 60px;
-
-            &:nth-of-type(1) {
-                left: 80px;
-            }
-            &:nth-of-type(2) {
-                right: 80px;
-            }
         }
     }
 
@@ -81,10 +84,39 @@ const HeaderContainer = styled.div`
     }
 `;
 
+export const SituationsSectionPL = (props) => {
+    const situationBoxes = situationsPL.map((properties, i) => (
+        <SituationBox key={i} {...properties} />
+    ));
+
+    const theme = useTheme();
+
+    return (
+        <section
+            id="przyklady"
+            style={{ textAlign: "center", padding: "40px 0" }}
+        >
+            <HeaderContainer>
+                <HeaderHola uppercase>
+                    <h2 style={{ color: theme.colors.dark_grey }}>
+                        Czy Get Creative Every Day na pewno jest dla Ciebie?
+                    </h2>
+                    <h1>Sprawdź!</h1>
+                </HeaderHola>
+                <PencilIcon />
+                <PencilIcon />
+            </HeaderContainer>
+            <SituationsContainer>{situationBoxes}</SituationsContainer>
+        </section>
+    );
+};
+
 const SituationsSection = (props) => {
     const situationBoxes = situationsENG.map((properties, i) => (
         <SituationBox key={i} {...properties} />
     ));
+
+    const theme = useTheme();
 
     return (
         <section
@@ -93,11 +125,10 @@ const SituationsSection = (props) => {
         >
             <HeaderContainer>
                 <HeaderHola uppercase>
-                    <h2>
+                    <h2 style={{ color: theme.colors.dark_grey }}>
                         Is the planner Get Creative Every Day suitable for you?
-                        <br />
-                        Check it out!
                     </h2>
+                    <h1>Check it out!</h1>
                 </HeaderHola>
                 <PencilIcon />
                 <PencilIcon />
