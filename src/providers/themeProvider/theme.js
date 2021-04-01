@@ -41,6 +41,8 @@ const theme = {
         dark_white: "#d0d0d0",
         grey: "#BFBFBF",
         dark_grey: "#757471",
+        green: "#2A9D8F",
+        red: "#F9423A",
     },
 };
 

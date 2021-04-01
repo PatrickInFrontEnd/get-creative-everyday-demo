@@ -64,6 +64,16 @@ const NavigationComponent = (props) => {
                 </Link>
 
                 <Link
+                    to="#newsletter"
+                    onClick={() => {
+                        scrollTo("#newsletter", 150);
+                        handleMobileClick();
+                    }}
+                >
+                    Newsletter
+                </Link>
+
+                <Link
                     to="#buy"
                     className="active"
                     onClick={() => {

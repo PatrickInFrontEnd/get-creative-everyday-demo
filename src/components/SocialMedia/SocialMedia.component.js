@@ -138,11 +138,7 @@ const Container = styled.div`
 
     @media screen and (max-width: 480px) {
         padding: 30px 0;
-        bottom: -335px;
-    }
-
-    @media screen and (max-width: 420px) {
-        bottom: -325px;
+        bottom: -405px;
     }
 `;
 
@@ -178,16 +174,16 @@ const ContainerEnglish = styled(Container)`
 
     @media screen and (max-width: 480px) {
         padding: 0 0 35px;
-        top: 70px;
         bottom: unset;
     }
 
     @media screen and (max-width: 420px) {
         position: absolute;
         top: unset;
-        bottom: -395px;
+        bottom: -425px;
         left: 0;
         height: 130px;
+        padding: 0;
 
         & > p {
             background-color: ${({ theme }) => theme.colors.white};

@@ -3,6 +3,7 @@ import HeaderSection from "./../sections/HeaderSection";
 import GCtrailerSection from "./../sections/GCtrailerSection";
 import SituationsSection from "./../sections/SituationsSection";
 import PlannerSection from "./../sections/PlannerSection";
+import NewsletterSection from "../sections/NewsletterSection";
 
 const MainPageContainerENG = (props) => (
     <section id="main">
@@ -10,6 +11,7 @@ const MainPageContainerENG = (props) => (
         <GCtrailerSection />
         <SituationsSection />
         <PlannerSection />
+        <NewsletterSection />
     </section>
 );
 

@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { toUpperCase, changeTxtColor } from "../../mixins";
 
 export const HeaderNormal = styled.div`
