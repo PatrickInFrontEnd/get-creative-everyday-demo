@@ -38,6 +38,7 @@ export const Navigation = styled.nav`
             font-size: ${({ theme }) => theme.fz.XXS || "18px"};
             font-weight: ${({ theme }) => theme.fw.semiBold};
             margin: 0 20px 0;
+            padding-bottom: 4px; /* When active button: remove this line */
 
             &.active {
                 overflow: hidden;
@@ -77,7 +78,7 @@ export const Navigation = styled.nav`
 
             &::before {
                 position: absolute;
-                bottom: 2px;
+                bottom: 0px; /* When active button: 2px */
                 left: 0;
                 transform: translateX(-140%);
                 content: "";
@@ -272,7 +273,7 @@ const NavigationComponent = (props) => {
                     Newsletter
                 </Link>
 
-                <Link
+                {/* <Link
                     to="#kup"
                     className="active"
                     onClick={() => {
@@ -281,7 +282,7 @@ const NavigationComponent = (props) => {
                     }}
                 >
                     KUP TERAZ
-                </Link>
+                </Link> */}
             </div>
 
             <SocialMediasComponentPL isActive={hamburgerActive} />

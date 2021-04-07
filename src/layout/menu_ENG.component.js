@@ -73,7 +73,7 @@ const NavigationComponent = (props) => {
                     Newsletter
                 </Link>
 
-                <Link
+                {/* <Link
                     to="#buy"
                     className="active"
                     onClick={() => {
@@ -82,7 +82,7 @@ const NavigationComponent = (props) => {
                     }}
                 >
                     BUY NOW
-                </Link>
+                </Link> */}
             </div>
 
             <SocialMediasComponentENG isActive={hamburgerActive} />
