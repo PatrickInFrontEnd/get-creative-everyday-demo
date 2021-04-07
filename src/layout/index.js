@@ -12,7 +12,7 @@ const LayoutComponent = (props) => {
     return (
         <>
             <GlobalStyle />
-            {location.pathname === "/pl" ? (
+            {location.pathname === "/pl" || location.pathname === "/pl/" ? (
                 <>
                     <Navigation />
                     {props.children}
