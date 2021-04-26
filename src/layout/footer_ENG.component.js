@@ -12,6 +12,7 @@ const FooterComponent = (props) => (
         <Footer id="contact">
             <DescriptionBlock>
                 <img src={SemantikaPNG} alt="Logo Gw Semantika" />
+                <p>Grupa Wydawnicza Semantika Sp. z o.o.</p>
                 <p>Our registered business address:</p>
                 <p>ul. Żuławska 10</p>
                 <p>60-412 Poznań</p>
@@ -65,7 +66,10 @@ const FooterComponent = (props) => (
             </DescriptionBlock>
         </Footer>
         <CopyRight>
-            <p>Copyright ©2021 Grupa Wydawnicza Semantika Sp. z o.o.</p>
+            <p>
+                Copyright ©2021 Grupa Wydawnicza Semantika Sp. z o.o. All rights
+                reserved.
+            </p>
             <a
                 href={`${process.env.PUBLIC_URL}/documents/icons_policy.txt`}
                 download

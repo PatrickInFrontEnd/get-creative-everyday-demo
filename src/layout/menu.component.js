@@ -78,7 +78,7 @@ export const Navigation = styled.nav`
 
             &::before {
                 position: absolute;
-                bottom: 0px; /* When active button: 2px */
+                bottom: 2px; /* When active button: 2px */
                 left: 0;
                 transform: translateX(-140%);
                 content: "";
@@ -273,16 +273,14 @@ const NavigationComponent = (props) => {
                     Newsletter
                 </Link>
 
-                {/* <Link
-                    to="#kup"
+                <a
                     className="active"
-                    onClick={() => {
-                        scrollTo("#kup", 260);
-                        handleMobileClick();
-                    }}
+                    href="https://sklep.semantika.pl/get-creative-every-day"
+                    target="_blank"
+                    rel="noreferrer"
                 >
                     KUP TERAZ
-                </Link> */}
+                </a>
             </div>
 
             <SocialMediasComponentPL isActive={hamburgerActive} />

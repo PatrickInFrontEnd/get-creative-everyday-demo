@@ -73,16 +73,14 @@ const NavigationComponent = (props) => {
                     Newsletter
                 </Link>
 
-                {/* <Link
-                    to="#buy"
+                <a
                     className="active"
-                    onClick={() => {
-                        scrollTo("#buy", 250);
-                        handleMobileClick();
-                    }}
+                    href="https://shop.getcreative-everyday.com/"
+                    target="_blank"
+                    rel="noreferrer"
                 >
                     BUY NOW
-                </Link> */}
+                </a>
             </div>
 
             <SocialMediasComponentENG isActive={hamburgerActive} />

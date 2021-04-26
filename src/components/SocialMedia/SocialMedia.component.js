@@ -5,9 +5,8 @@ import { ReactComponent as FbIcon } from "./../../assets/svg/facebook.svg";
 import { ReactComponent as InstagramIcon } from "./../../assets/svg/instagram.svg";
 import { ReactComponent as WWWIcon } from "./../../assets/svg/www.svg";
 import GCPNG_FB from "./../../assets/img/gc.png";
-import GCPNG_ENG_FB from "./../../assets/img/gcedengFB.png";
+import GCPNG_ICON from "./../../assets/img/gc_icon.png";
 import GC_PNG_INSTAGRAM from "./../../assets/img/gclogo.png";
-import GC_PNG_INSTAGRAM_ENG from "./../../assets/img/gcedengINST.png";
 import GcWWWPNG from "./../../assets/img/gcwww.png";
 
 export const SocialContainer = styled.a`
@@ -27,7 +26,7 @@ export const SocialContainer = styled.a`
     &:nth-of-type(2) {
         animation-delay: 0.5s;
 
-        & > img {
+        &.fit > img {
             padding: 0 10px;
             background: #fff;
             background-blend-mode: multiply;
@@ -188,7 +187,7 @@ const ContainerEnglish = styled(Container)`
         & > p {
             background-color: ${({ theme }) => theme.colors.white};
             padding-bottom: 40px;
-            top: -50px;
+            top: -35px;
         }
     }
 
@@ -198,9 +197,14 @@ const ContainerEnglish = styled(Container)`
     }
 `;
 
-const SocialMediaComponent = ({ children, linkUrl, imgSrc }) => {
+const SocialMediaComponent = ({ children, linkUrl, imgSrc, fitIcon }) => {
     return (
-        <SocialContainer href={linkUrl} target="_blank" rel="noreferrer">
+        <SocialContainer
+            href={linkUrl}
+            target="_blank"
+            rel="noreferrer"
+            className={fitIcon ? "fit" : ""}
+        >
             <img src={imgSrc} alt="Social media" />
             <div>{children}</div>
         </SocialContainer>
@@ -219,6 +223,7 @@ export const SocialMediasComponentPL = ({ isActive }) => (
         <SocialMediaComponent
             linkUrl="https://www.instagram.com/czasopismo_getcreative/"
             imgSrc={GC_PNG_INSTAGRAM}
+            fitIcon
         >
             <InstagramIcon />
         </SocialMediaComponent>
@@ -274,14 +279,14 @@ export const SocialMediasComponentENG = ({ isActive }) => {
             </p>
             <SocialMediaComponent
                 linkUrl="https://www.facebook.com/GetCreativeEveryday"
-                imgSrc={GCPNG_ENG_FB}
+                imgSrc={GCPNG_ICON}
             >
                 <FbIcon />
             </SocialMediaComponent>
 
             <SocialMediaComponent
                 linkUrl="https://www.instagram.com/get_creative_everyday/"
-                imgSrc={GC_PNG_INSTAGRAM_ENG}
+                imgSrc={GCPNG_ICON}
             >
                 <InstagramIcon />
             </SocialMediaComponent>

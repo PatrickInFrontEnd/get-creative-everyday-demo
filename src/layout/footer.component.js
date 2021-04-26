@@ -25,7 +25,7 @@ export const Footer = styled.footer`
 
 export const DescriptionBlock = styled.div`
     min-height: 240px;
-    max-width: 300px;
+    max-width: 320px;
     ${flexColumn};
     align-items: flex-start;
     align-self: center;
@@ -128,10 +128,11 @@ const FooterComponent = (props) => (
         <Footer id="kontakt">
             <DescriptionBlock>
                 <img src={SemantikaPNG} alt="Logo Gw Semantika" />
+                <p>Grupa Wydawnicza Semantika Sp. z o.o.</p>
                 <p>ul. Żuławska 10, 60-412 Poznań</p>
                 <p>KRS: 0000470869,</p>
                 <p>Sąd Rejonowy w Poznaniu</p>
-                <p>IX Wydział Gospodarczy KRS</p>
+                <p>VIII Wydział Gospodarczy KRS</p>
                 <p>NIP: 7773232650, REGON: 302483298</p>
             </DescriptionBlock>
 
@@ -180,7 +181,10 @@ const FooterComponent = (props) => (
             </DescriptionBlock>
         </Footer>
         <CopyRight>
-            <p>Copyright ©2021 Grupa Wydawnicza Semantika Sp. z o.o.</p>
+            <p>
+                Copyright ©2021 Grupa Wydawnicza Semantika Sp. z o.o. Wszelkie
+                prawa zastrzeżone.
+            </p>
             <a
                 href={`${process.env.PUBLIC_URL}/documents/polityka_ikon.txt`}
                 download

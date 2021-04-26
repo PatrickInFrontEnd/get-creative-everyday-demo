@@ -123,15 +123,16 @@ const HeaderContainer = styled.div`
 `;
 
 const Photo = styled.img`
-    width: 1400px;
-    height: 780px;
+    width: 70%;
     object-fit: contain;
     display: block;
     margin: 0px auto 50px;
 
     @media screen and (max-width: 1540px) {
         width: 80%;
-        height: auto;
+    }
+
+    @media screen and (max-width: 900px) {
         max-height: 500px;
     }
 `;
@@ -290,7 +291,7 @@ const BuyNowButton = styled.a`
 
     @media screen and (max-width: 540px) {
         padding: 10px 40px 5px;
-        min-width: 170px;
+        min-width: 175px;
         font-size: ${({ theme }) => theme.fz.hola.small};
         bottom: unset;
         top: 0px;
@@ -354,7 +355,13 @@ export const PlannerSectionPL = (props) => {
 
             <BuyPlannerSection id="kup">
                 <img src={GCED_BuyPNG} alt="Planner" />
-                {/* BuyNowButton id=buy*/}
+                <BuyNowButton
+                    id="buy"
+                    href="https://sklep.semantika.pl/get-creative-every-day"
+                    target="_blank"
+                >
+                    KUP TERAZ
+                </BuyNowButton>
                 <EmoteIcon />
                 <EmoteIcon />
             </BuyPlannerSection>
@@ -417,7 +424,13 @@ const PlannerSection = (props) => {
 
             <BuyPlannerSection id="buy">
                 <img src={GCED_BuyPNG} alt="Planner" />
-                {/* BuyNowButton id=buy*/}
+                <BuyNowButton
+                    href="https://shop.getcreative-everyday.com/"
+                    target="_blank"
+                    id="buy"
+                >
+                    BUY NOW
+                </BuyNowButton>
                 <EmoteIcon />
                 <EmoteIcon />
             </BuyPlannerSection>

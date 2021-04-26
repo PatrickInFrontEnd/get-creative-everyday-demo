@@ -260,7 +260,7 @@ const NewsletterSectionENG = (props) => {
             style={{ padding: "0 20px 40px", textAlign: "center" }}
         >
             <HeaderHola uppercase>
-                <h2>still not enough informations?</h2>
+                <h2>still not enough information?</h2>
                 <h5>sign up for our newsletter to get some details!</h5>
             </HeaderHola>
             <Form onSubmit={handleSubmit}>
