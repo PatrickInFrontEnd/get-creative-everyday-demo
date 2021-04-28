@@ -2,6 +2,8 @@ import { ReactComponent as EnglishIcon } from "./../assets/svg/english.svg";
 import { ReactComponent as CalendarIcon } from "./../assets/svg/calendar.svg";
 import { ReactComponent as CreativityIcon } from "./../assets/svg/creativity.svg";
 import { ReactComponent as OrderIcon } from "./../assets/svg/order.svg";
+import { ReactComponent as FacebookIcon } from "./../assets/svg/facebook_author.svg";
+import { ReactComponent as WWWIcon } from "./../assets/svg/www_author.svg";
 
 export const boxesENG = [
     {
@@ -173,5 +175,25 @@ export const buyHeadersENG = [
         header:
             "Join a huge group of well organised and creative teachers of English",
         description: "",
+    },
+];
+
+export const authors = [
+    {
+        photo: "",
+        links: [
+            {
+                link: "",
+                icon: "",
+            },
+            {
+                link: "",
+                icon: "",
+            },
+        ],
+        author: {
+            name: "",
+            description: "",
+        },
     },
 ];

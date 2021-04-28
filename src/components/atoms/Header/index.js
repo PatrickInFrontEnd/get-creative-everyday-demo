@@ -35,6 +35,22 @@ export const HeaderNormal = styled.div`
                 font-weight: ${({ theme }) => theme.fw.extraBold};
             }
         }
+
+        span {
+            display: block;
+            position: relative;
+
+            &::before {
+                content: "";
+                width: 100%;
+                height: 6px;
+                background-color: ${({ theme }) => theme.colors.yellow};
+                position: absolute;
+                bottom: 4px;
+                left: 0;
+                z-index: -1;
+            }
+        }
     }
 
     @media screen and (max-width: 1200px) {
