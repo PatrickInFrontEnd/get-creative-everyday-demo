@@ -425,7 +425,7 @@ const PlannerSection = (props) => {
             <BuyPlannerSection id="buy">
                 <img src={GCED_BuyPNG} alt="Planner" />
                 <BuyNowButton
-                    href="https://shop.getcreative-everyday.com/"
+                    href="https://shop.getcreative-everyday.com/collection/frontpage/get-creative-every-day"
                     target="_blank"
                     id="buy"
                 >

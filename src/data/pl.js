@@ -2,6 +2,10 @@ import { ReactComponent as EnglishIcon } from "./../assets/svg/english.svg";
 import { ReactComponent as CalendarIcon } from "./../assets/svg/calendar.svg";
 import { ReactComponent as CreativityIcon } from "./../assets/svg/creativity.svg";
 import { ReactComponent as OrderIcon } from "./../assets/svg/order.svg";
+import { ReactComponent as FacebookIcon } from "./../assets/svg/facebook_author.svg";
+import { ReactComponent as WWWIcon } from "./../assets/svg/www_author.svg";
+import AnnaPhoto from "./../assets/img/anna.png";
+import MarlenaPhoto from "./../assets/img/Marlena.jpg";
 
 export const boxesPL = [
     {
@@ -175,5 +179,117 @@ export const buyHeadersPL = [
             "Dołącz do zorganizowanych i kreatywnych nauczycieli angielskiego",
         description:
             "Zorganizuj się za niewielkie pieniądze, to tylko 99 zł na cały rok! Czyli 8 zł miesięcznie, mniej niż mała latte!",
+    },
+];
+
+export const authorsPL = [
+    {
+        photo:
+            "https://thatisevil.education/wp-content/uploads/2020/01/mona_about_photo.png",
+        links: [
+            {
+                link: "www.facebook.com/thatisevil",
+                icon: FacebookIcon,
+            },
+            {
+                link: "www.thatisevil.education",
+                icon: WWWIcon,
+            },
+        ],
+        author: {
+            name: "Monika Bigaj-Kisała",
+            description:
+                "Nauczycielka angielskiego z 18-letnim doświadczeniem zdobywanym w szkołach w Polsce, Anglii i Irlandii. Od 5 lat jest metodyczką oraz trenerką nauczycieli. Wspiera metodycznie zespoły dydaktyczne w szkołach językowych, a oprócz tego szkoli nauczycieli i lektorów na konferencjach i zlotach branżowych. Autorka strony That is Evil skierowanej do anglistów.",
+        },
+    },
+    {
+        photo: AnnaPhoto,
+        links: [
+            {
+                link: "www.facebook.com/LittleForestBookshop",
+                icon: FacebookIcon,
+            },
+            {
+                link: "www.littleforest.pl",
+                icon: WWWIcon,
+            },
+        ],
+        author: {
+            name: "Anna Buschke",
+            description:
+                "Nauczycielka języka angielskiego w przedszkolu. Zapalona miłośniczka książek dla dzieci, dla której storytelling jest ulubionym elementem zajęć. Założycielka Little Forest Children’s Bookshop, miejsca pełnego kreatywnych pomocy dydaktycznych dla nauczycieli.",
+        },
+    },
+    {
+        photo: MarlenaPhoto,
+        links: [
+            {
+                link: "www.facebook.com/nauczycielkaangielskiegoblog",
+                icon: FacebookIcon,
+            },
+            {
+                link: "www.nauczycielkaangielskiego.pl",
+                icon: WWWIcon,
+            },
+        ],
+        author: {
+            name: "Marlena Kubelczuk",
+            description:
+                "Od ponad 9 lat nauczyciel języka angielskiego. Autorka bloga Nauczycielka Angielskiego, na którym dzieli się pomysłami na tworzenie własnych pomocy dydaktycznych dla dzieci w wieku przedszkolnym oraz wczesnoszkolnym, a także inspiracjami zarówno na zajęcia i warsztaty czytelnicze, jak i domowe zabawy językowe.",
+        },
+    },
+    {
+        photo: "",
+        links: [
+            {
+                link: "www.facebook.com/teacherLubas",
+                icon: FacebookIcon,
+            },
+            {
+                link: "www.karolinalubas.pl",
+                icon: WWWIcon,
+            },
+        ],
+        author: {
+            name: "Karolina Lubas",
+            description:
+                "Nauczycielka języka angielskiego, która uwielbia pracę z dziećmi. Często wykorzystuje niekoniecznie oczywiste pomoce dydaktyczne i książki anglojęzyczne na swoich lekcjach. Na co dzień dzieli się pomysłami i materiałami na blogu www.karolinalubas.pl.",
+        },
+    },
+    {
+        photo: "",
+        links: [
+            {
+                link: "www.facebook.com/ezpzblog00",
+                icon: FacebookIcon,
+            },
+            {
+                link: "www.renatanowakowska.pl",
+                icon: WWWIcon,
+            },
+        ],
+        author: {
+            name: "Renata Nowakowska",
+            description:
+                "Magister filologii angielskiej, lektor z ponad 10-letnim stażem. Autorka bloga EasyPeasy oraz poradnika „Angielski bez Podręcznika”. Konsultant metodyczny przy tworzeniu robota edukacyjnego Dino University.",
+        },
+    },
+    {
+        photo: "",
+        links: [
+            {
+                link: "www.facebook.com/panizklasa",
+                icon: FacebookIcon,
+            },
+            {
+                link: "www.agnieszkaiwanicka.pl",
+                icon: WWWIcon,
+            },
+        ],
+        author: {
+            name: "Agnieszka Iwanicka",
+            description:
+                "Tworzy gry językowe, w które sama chciałaby grać, przygotowuje lekcje, w których chciałaby uczestniczyć, uczy tak, jak sama chciałaby być uczona. Pomaga uatrakcyjniać i ożywiać zajęcia językowe. Tworzy autorskie gry, którymi chętnie dzieli się z nauczycielami różnych języków na stronie www.agnieszkaiwanicka.pl. Pokazuje, jak korzystać z technologii w klasie oraz podpowiada, jak uczyć, aby samemu dobrze się bawić na własnych lekcjach. Sprawia, że chce się uczyć – zarówno nauczycielom, jak i uczniom.",
+        },
     },
 ];

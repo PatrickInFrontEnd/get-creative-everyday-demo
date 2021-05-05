@@ -37,6 +37,16 @@ const changeTxtColor = (color) =>
           `
         : "";
 
+const marginToChildren = (margin = "0 0 15px") => css`
+    & > * {
+        margin: ${margin};
+
+        &:last-child {
+            margin: 0;
+        }
+    }
+`;
+
 export {
     flexCenter,
     flexColumn,
@@ -44,4 +54,5 @@ export {
     absoluteCenter,
     toUpperCase,
     changeTxtColor,
+    marginToChildren,
 };

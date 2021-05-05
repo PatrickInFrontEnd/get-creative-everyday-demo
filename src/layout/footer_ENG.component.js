@@ -26,10 +26,13 @@ const FooterComponent = (props) => (
                     <br />
                     Please, drop us a line.
                 </h6>
-                <p>
+                <a
+                    href="mailto:hello@getcreative-everyday.com"
+                    className="mail"
+                >
                     <i className="fas fa-envelope"></i>
                     hello@getcreative-everyday.com
-                </p>
+                </a>
                 <p>
                     <i className="fas fa-phone-square-alt"></i>
                     +48 61 847 11 34

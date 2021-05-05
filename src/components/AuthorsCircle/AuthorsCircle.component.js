@@ -74,6 +74,7 @@ const CircleContainer = styled.div`
 
     @media screen and (max-width: 650px) {
         padding: 20px;
+        margin: 0 auto;
 
         span::before {
             display: none;
@@ -81,9 +82,45 @@ const CircleContainer = styled.div`
 
         p {
             width: 100%;
+            min-width: 300px;
+        }
+
+        a.logo {
+            margin-top: 30px;
         }
     }
 `;
+
+export const AuthorsCircleContainerPL = (props) => (
+    <CircleContainer>
+        <p>
+            Do współpracy nad treściami zaprosiliśmy nauczycieli języka
+            angielskiego, którzy zaproponowali pomysły, wskazówki i tipy oparte
+            na ich codziennej praktyce. Część materiałów pochodzi{" "}
+            <b>także z zasobów</b>
+        </p>
+        <HeaderNormal>
+            <h2 className="bold">
+                <a
+                    href="https://www.getcreative.edu.pl/"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                >
+                    <span>czasopisma Get Creative</span>
+                </a>
+            </h2>
+        </HeaderNormal>
+
+        <a
+            href="https://www.getcreative.edu.pl/"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="logo"
+        >
+            <img src={GetCreative_LOGO} alt="Logo Get Creative Edu" />
+        </a>
+    </CircleContainer>
+);
 
 const AuthorsCircleContainer = (props) => (
     <CircleContainer>

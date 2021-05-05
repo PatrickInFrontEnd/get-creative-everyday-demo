@@ -38,6 +38,10 @@ export const DescriptionBlock = styled.div`
     a {
         text-decoration: underline;
         font-size: ${({ theme }) => theme.fz.XXS};
+
+        &.mail {
+            text-decoration: none;
+        }
     }
 
     h6 {
@@ -139,10 +143,10 @@ const FooterComponent = (props) => (
             <DescriptionBlock>
                 <Header>Kontakt</Header>
                 <h6>Masz pytania? Napisz do nas!</h6>
-                <p>
+                <a href="mailto:biuro@semantika.pl" className="mail">
                     <i className="fas fa-envelope"></i>
                     biuro@semantika.pl
-                </p>
+                </a>
                 <p>
                     <i className="fas fa-phone-square-alt"></i>
                     +48 61 847 11 34

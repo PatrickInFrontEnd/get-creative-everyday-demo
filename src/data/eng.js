@@ -4,6 +4,8 @@ import { ReactComponent as CreativityIcon } from "./../assets/svg/creativity.svg
 import { ReactComponent as OrderIcon } from "./../assets/svg/order.svg";
 import { ReactComponent as FacebookIcon } from "./../assets/svg/facebook_author.svg";
 import { ReactComponent as WWWIcon } from "./../assets/svg/www_author.svg";
+import AnnaPhoto from "./../assets/img/anna.png";
+import MarlenaPhoto from "./../assets/img/Marlena.jpg";
 
 export const boxesENG = [
     {
@@ -178,22 +180,114 @@ export const buyHeadersENG = [
     },
 ];
 
-export const authors = [
+export const authorsENG = [
+    {
+        photo:
+            "https://thatisevil.education/wp-content/uploads/2020/01/mona_about_photo.png",
+        links: [
+            {
+                link: "www.facebook.com/thatisevil",
+                icon: FacebookIcon,
+            },
+            {
+                link: "www.thatisevil.education",
+                icon: WWWIcon,
+            },
+        ],
+        author: {
+            name: "Monika Bigaj-Kisała",
+            description:
+                "English teacher with 18 years of experience in Poland, England and Ireland, director of studies and teacher trainer. Supports didactic teams in language schools, trains teachers and speaks at conferences and branch meetings. Author of the website That is Evil addressed to EFL teachers.",
+        },
+    },
+    {
+        photo: AnnaPhoto,
+        links: [
+            {
+                link: "www.facebook.com/LittleForestBookshop",
+                icon: FacebookIcon,
+            },
+            {
+                link: "www.littleforest.pl",
+                icon: WWWIcon,
+            },
+        ],
+        author: {
+            name: "Anna Buschke",
+            description:
+                "English teacher in kindergarten. A keen lover of books for children, for whom storytelling is a favourite element of the classes. Founder of Little Forest Children's Bookshop, a place full of creative teaching aids for teachers.",
+        },
+    },
+    {
+        photo: MarlenaPhoto,
+        links: [
+            {
+                link: "www.facebook.com/nauczycielkaangielskiegoblog",
+                icon: FacebookIcon,
+            },
+            {
+                link: "www.nauczycielkaangielskiego.pl",
+                icon: WWWIcon,
+            },
+        ],
+        author: {
+            name: "Marlena Kubelczuk",
+            description:
+                "English teacher for over 9 years. Author of the blog Nauczycielka Angielskiego. Her philosophy for education has always been to make learning exciting, interesting and fun.",
+        },
+    },
     {
         photo: "",
         links: [
             {
-                link: "",
-                icon: "",
+                link: "www.facebook.com/teacherLubas",
+                icon: FacebookIcon,
             },
             {
-                link: "",
-                icon: "",
+                link: "www.karolinalubas.pl",
+                icon: WWWIcon,
             },
         ],
         author: {
-            name: "",
-            description: "",
+            name: "Karolina Lubas",
+            description:
+                "An English teacher who loves working with children. She often uses unusual teaching aids and English-language books in her lessons. On a daily basis, she shares her ideas and provides materials in the blog www.karolinalubas.pl.",
+        },
+    },
+    {
+        photo: "",
+        links: [
+            {
+                link: "www.facebook.com/ezpzblog00",
+                icon: FacebookIcon,
+            },
+            {
+                link: "www.renatanowakowska.pl",
+                icon: WWWIcon,
+            },
+        ],
+        author: {
+            name: "Renata Nowakowska",
+            description:
+                "MA in English Philology, a teacher with over 10 years of experience. Author of the blog 'EasyPeasy' and the guide 'English without a Handbook'. Methodological consultant who supported the creation of an educational robot at Dino University.",
+        },
+    },
+    {
+        photo: "",
+        links: [
+            {
+                link: "www.facebook.com/panizklasa",
+                icon: FacebookIcon,
+            },
+            {
+                link: "www.agnieszkaiwanicka.pl",
+                icon: WWWIcon,
+            },
+        ],
+        author: {
+            name: "Agnieszka Iwanicka",
+            description:
+                "She creates language games that she would like to play, prepares lessons in which she would like to participate, teaches in the way she would like to be taught. She helps other teachers to make language classes more attractive and lively. She creates original games, which she willingly shares with teachers of various languages on the website www.agnieszkaiwanicka.pl. She shows how to use technology in the classroom and teaches others how to teach in order to have fun in one’s own lessons. She makes both teachers and students want to learn.",
         },
     },
 ];

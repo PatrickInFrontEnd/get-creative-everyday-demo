@@ -75,7 +75,7 @@ const NavigationComponent = (props) => {
 
                 <a
                     className="active"
-                    href="https://shop.getcreative-everyday.com/"
+                    href="https://shop.getcreative-everyday.com/collection/frontpage/get-creative-every-day"
                     target="_blank"
                     rel="noreferrer"
                 >

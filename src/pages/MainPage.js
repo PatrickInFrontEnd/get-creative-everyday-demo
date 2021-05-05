@@ -4,6 +4,7 @@ import { GetCreativeTrailerSectionPL } from "./../sections/GCtrailerSection";
 import { SituationsSectionPL } from "./../sections/SituationsSection";
 import { PlannerSectionPL } from "./../sections/PlannerSection";
 import { NewsletterSectionPL } from "./../sections/NewsletterSection";
+import { AuthorsSectionPL } from "./../sections/AuthorsSection";
 
 const MainPageContainer = (props) => (
     <>
@@ -13,6 +14,7 @@ const MainPageContainer = (props) => (
             <SituationsSectionPL />
             <PlannerSectionPL />
             <NewsletterSectionPL />
+            <AuthorsSectionPL />
         </section>
     </>
 );
