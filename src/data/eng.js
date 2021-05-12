@@ -4,8 +4,12 @@ import { ReactComponent as CreativityIcon } from "./../assets/svg/creativity.svg
 import { ReactComponent as OrderIcon } from "./../assets/svg/order.svg";
 import { ReactComponent as FacebookIcon } from "./../assets/svg/facebook_author.svg";
 import { ReactComponent as WWWIcon } from "./../assets/svg/www_author.svg";
-import AnnaPhoto from "./../assets/img/anna.png";
-import MarlenaPhoto from "./../assets/img/Marlena.jpg";
+import MonikaJPG from "./../assets/img/authors/Monika_Bigaj.jpeg";
+import AniaJPG from "./../assets/img/authors/Ania_Buschke.jpg";
+import MarlenaJPG from "./../assets/img/authors/Marlena_Kubelczuk.jpg";
+import AgnieszkaJPG from "./../assets/img/authors/Agnieszka_Iwanicka.jpg";
+import RenataJPG from "./../assets/img/authors/Renata_Nowakowska.jpg";
+import KarolinaJPG from "./../assets/img/authors/Karolina_Lubas.jpg";
 
 export const boxesENG = [
     {
@@ -182,8 +186,7 @@ export const buyHeadersENG = [
 
 export const authorsENG = [
     {
-        photo:
-            "https://thatisevil.education/wp-content/uploads/2020/01/mona_about_photo.png",
+        photo: MonikaJPG,
         links: [
             {
                 link: "www.facebook.com/thatisevil",
@@ -201,7 +204,7 @@ export const authorsENG = [
         },
     },
     {
-        photo: AnnaPhoto,
+        photo: AniaJPG,
         links: [
             {
                 link: "www.facebook.com/LittleForestBookshop",
@@ -219,7 +222,7 @@ export const authorsENG = [
         },
     },
     {
-        photo: MarlenaPhoto,
+        photo: MarlenaJPG,
         links: [
             {
                 link: "www.facebook.com/nauczycielkaangielskiegoblog",
@@ -237,7 +240,7 @@ export const authorsENG = [
         },
     },
     {
-        photo: "",
+        photo: KarolinaJPG,
         links: [
             {
                 link: "www.facebook.com/teacherLubas",
@@ -255,7 +258,7 @@ export const authorsENG = [
         },
     },
     {
-        photo: "",
+        photo: RenataJPG,
         links: [
             {
                 link: "www.facebook.com/ezpzblog00",
@@ -273,7 +276,7 @@ export const authorsENG = [
         },
     },
     {
-        photo: "",
+        photo: AgnieszkaJPG,
         links: [
             {
                 link: "www.facebook.com/panizklasa",

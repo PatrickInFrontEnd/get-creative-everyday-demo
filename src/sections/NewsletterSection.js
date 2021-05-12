@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { HeaderHola } from "../components/atoms/Header";
 import { flexCenter } from "../components/mixins";
 import axios from "axios";
@@ -131,20 +131,26 @@ const Form = styled.form`
 `;
 
 const Message = styled.div`
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
     z-index: 3;
     width: 100%;
     height: 60px;
     ${flexCenter};
-    background-color: ${({ theme, emailsent }) =>
-        emailsent ? theme.colors.green : theme.colors.red};
+
     p {
         color: ${({ theme }) => theme.colors.white};
         text-align: center;
-        padding: 0 30px;
+        font-weight: bold;
+        padding: 10px 30px;
+
+        &.red {
+            background-color: ${({ theme }) => theme.colors.red};
+            border: 2px solid;
+        }
+
+        &.green {
+            background-color: ${({ theme }) => theme.colors.green};
+            border: 2px solid;
+        }
     }
 `;
 
@@ -172,16 +178,10 @@ export const NewsletterSectionPL = (props) => {
         })
             .then((res) => {
                 setEmailSent(true);
-                setTimeout(() => {
-                    setEmailSent(null);
-                }, 5000);
             })
             .catch((e) => {
                 setEmailSent(false);
                 setButtonDisabled(false);
-                setTimeout(() => {
-                    setEmailSent(null);
-                }, 5000);
             });
     };
 
@@ -206,14 +206,15 @@ export const NewsletterSectionPL = (props) => {
                     Zapisz się
                 </button>
             </Form>
-
             {emailSent === null ? null : emailSent === true ? (
-                <Message emailsent={true}>
-                    <p>Email został zapisany!</p>
+                <Message>
+                    <p className="green">Email został zapisany!</p>
                 </Message>
             ) : (
-                <Message emailsent={false}>
-                    <p>Email nie został zapisany. Spróbuj ponownie później.</p>
+                <Message>
+                    <p className="red">
+                        Email nie został zapisany. Spróbuj ponownie później.
+                    </p>
                 </Message>
             )}
         </section>
@@ -241,16 +242,10 @@ const NewsletterSectionENG = (props) => {
         })
             .then((res) => {
                 setEmailSent(true);
-                setTimeout(() => {
-                    setEmailSent(null);
-                }, 5000);
             })
             .catch((e) => {
                 setEmailSent(false);
                 setButtonDisabled(false);
-                setTimeout(() => {
-                    setEmailSent(null);
-                }, 5000);
             });
     };
 
@@ -277,12 +272,14 @@ const NewsletterSectionENG = (props) => {
             </Form>
 
             {emailSent === null ? null : emailSent === true ? (
-                <Message emailsent={true}>
-                    <p>Email has been saved!</p>
+                <Message>
+                    <p className="green">Email has been saved!</p>
                 </Message>
             ) : (
-                <Message emailsent={false}>
-                    <p>Email has not beed saved. Please try again later.</p>
+                <Message>
+                    <p className="red">
+                        Email has not beed saved. Please try again later.
+                    </p>
                 </Message>
             )}
         </section>

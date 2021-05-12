@@ -42,7 +42,7 @@ const theme = {
         grey: "#BFBFBF",
         dark_grey: "#757471",
         green: "#2A9D8F",
-        red: "#F9423A",
+        red: "#e62c25",
     },
 };
 

@@ -9,6 +9,10 @@ const Container = styled.div`
     padding: 0 40px;
     margin: 20px auto;
 
+    @media screen and (max-width: 1660px) {
+        padding: 0 120px;
+    }
+
     @media screen and (max-width: 1260px) {
         ${flexColumn};
         ${flexCenter};
@@ -155,7 +159,7 @@ const HighlightContainer = styled.div`
 
 const UserHighlight = (props) => (
     <HighlightContainer>
-        <i class="fas fa-user"></i>
+        <i className="fas fa-user"></i>
     </HighlightContainer>
 );
 

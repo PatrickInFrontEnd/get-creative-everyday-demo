@@ -285,7 +285,7 @@ export const SocialMediasComponentENG = ({ isActive }) => {
             </SocialMediaComponent>
 
             <SocialMediaComponent
-                linkUrl="https://www.instagram.com/get_creative_everyday/"
+                linkUrl="https://www.instagram.com/get_creative_every_day/"
                 imgSrc={GCPNG_ICON}
             >
                 <InstagramIcon />
