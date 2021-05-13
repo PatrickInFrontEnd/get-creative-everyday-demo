@@ -5,6 +5,7 @@ import { SituationsSectionPL } from "./../sections/SituationsSection";
 import { PlannerSectionPL } from "./../sections/PlannerSection";
 import { NewsletterSectionPL } from "./../sections/NewsletterSection";
 import { AuthorsSectionPL } from "./../sections/AuthorsSection";
+import { BuyPlannerSectionPL } from "./../sections/BuyPlannerSection";
 
 const MainPageContainer = (props) => (
     <>
@@ -13,8 +14,9 @@ const MainPageContainer = (props) => (
             <GetCreativeTrailerSectionPL />
             <SituationsSectionPL />
             <PlannerSectionPL />
-            <NewsletterSectionPL />
             <AuthorsSectionPL />
+            <BuyPlannerSectionPL />
+            <NewsletterSectionPL />
         </section>
     </>
 );

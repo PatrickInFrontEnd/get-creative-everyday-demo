@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled, { css } from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { HeaderHola } from "../components/atoms/Header";
 import { flexCenter } from "../components/mixins";
 import axios from "axios";
@@ -19,7 +19,7 @@ const Form = styled.form`
         font-family: ${({ theme }) => theme.ff.Montserrat};
         font-size: ${({ theme }) => theme.fz.M};
         border: 4px solid ${({ theme }) => theme.colors.black};
-        background-color: ${({ theme }) => theme.colors.white};
+        background-color: ${({ theme }) => theme.colors.yellow};
         color: ${({ theme }) => theme.colors.black};
 
         line-height: 100%;
@@ -27,7 +27,7 @@ const Form = styled.form`
         &::placeholder {
             font-family: ${({ theme }) => theme.ff.Montserrat};
             font-size: ${({ theme }) => theme.fz.M};
-            color: ${({ theme }) => theme.colors.dark_grey};
+            color: ${({ theme }) => theme.colors.black};
         }
     }
 
@@ -144,12 +144,10 @@ const Message = styled.div`
 
         &.red {
             background-color: ${({ theme }) => theme.colors.red};
-            border: 2px solid;
         }
 
         &.green {
             background-color: ${({ theme }) => theme.colors.green};
-            border: 2px solid;
         }
     }
 `;
@@ -158,6 +156,8 @@ const API_PL_URL = "https://api.semantika.pl/api/email-save";
 const API_ENG_URL = "https://api.semantika.pl/api/eng-email-save";
 
 export const NewsletterSectionPL = (props) => {
+    const theme = useTheme();
+
     const [email, setEmail] = useState("");
     const [emailSent, setEmailSent] = useState(null);
     const [buttonDisabled, setButtonDisabled] = useState(false);
@@ -188,7 +188,11 @@ export const NewsletterSectionPL = (props) => {
     return (
         <section
             id="newsletter"
-            style={{ padding: "0 20px 40px", textAlign: "center" }}
+            style={{
+                padding: "20px 20px 40px",
+                textAlign: "center",
+                backgroundColor: theme.colors.yellow,
+            }}
         >
             <HeaderHola uppercase>
                 <h2>nadal za mało informacji?</h2>
@@ -222,6 +226,8 @@ export const NewsletterSectionPL = (props) => {
 };
 
 const NewsletterSectionENG = (props) => {
+    const theme = useTheme();
+
     const [email, setEmail] = useState("");
     const [emailSent, setEmailSent] = useState(null);
     const [buttonDisabled, setButtonDisabled] = useState(false);
@@ -252,7 +258,11 @@ const NewsletterSectionENG = (props) => {
     return (
         <section
             id="newsletter"
-            style={{ padding: "0 20px 40px", textAlign: "center" }}
+            style={{
+                padding: "20px 20px 40px",
+                textAlign: "center",
+                backgroundColor: theme.colors.yellow,
+            }}
         >
             <HeaderHola uppercase>
                 <h2>still not enough information?</h2>

@@ -8,7 +8,7 @@ import { authorsPL } from "./../../data/pl";
 const Container = styled.div`
     ${flexColumn};
     width: 100%;
-    padding: 40px 30px;
+    padding: 40px 30px 0;
 
     @media screen and (max-width: 560px) {
         padding: 20px 10px;

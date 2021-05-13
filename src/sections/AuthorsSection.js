@@ -24,7 +24,7 @@ export const AuthorsSectionPL = (props) => (
 );
 
 const AuthorsSection = (props) => (
-    <section id="authors" style={{ padding: "20px" }}>
+    <section id="authors" style={{ padding: "20px 20px 0" }}>
         <HeaderHola uppercase>
             <h2>From teachers to teachers</h2>
         </HeaderHola>
