@@ -4,60 +4,58 @@ import { flexCenter, size_100x100 } from "./../../mixins";
 
 const Container = styled.div`
     position: relative;
-    width: 350px;
-    height: 220px;
-    margin: 30px;
+    width: 400px;
+    height: 200px;
+    margin: 0 15px;
     padding: 30px;
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
     flex-direction: column;
-    background-color: ${({ theme }) => theme.colors.darker_blue};
+    color: ${({ theme }) => theme.colors.black};
+
+    h4 {
+        font-family: ${({ theme }) => theme.ff.HolaB};
+        line-height: 100%;
+        font-size: ${({ theme }) => theme.fz.hola.mini};
+        font-weight: ${({ theme }) => theme.fw.regular};
+        color: ${({ theme }) => theme.colors.black};
+    }
 
     p {
         width: 100%;
+        font-size: ${({ theme }) => theme.fz.XXS};
+        color: ${({ theme }) => theme.colors.black};
         font-weight: ${({ theme }) => theme.fw.medium};
     }
 
-    @media screen and (max-width: 1350px) {
-        width: 300px;
-        height: 200px;
-
-        p {
-            font-size: ${({ theme }) => theme.fz.XXS};
-        }
-    }
     @media screen and (max-width: 500px) {
         margin: 30px 0;
+        height: auto;
+        padding: 0;
         width: 100%;
-        ${flexCenter};
 
         p {
             margin-top: 20px;
-            text-align: center;
         }
     }
 `;
 
-export const TileIconContainer = styled.div`
-    position: absolute;
-    right: 0;
-    top: 0;
-    transform: translate(50%, -50%);
+export const TitleContainer = styled.div`
     ${flexCenter};
-    width: 80px;
-    height: 80px;
-    padding: 16px;
-    border-radius: 50%;
-    background-color: ${({ theme }) => theme.colors.darker_blue};
+`;
+
+export const TileIconContainer = styled.div`
+    ${flexCenter};
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
 
     svg {
         ${size_100x100};
-    }
-
-    @media screen and (max-width: 1350px) {
-        width: 70px;
-        height: 70px;
+        min-width: 40px;
+        min-height: 40px;
+        fill: ${({ theme }) => theme.colors.yellow};
     }
 
     @media screen and (max-width: 838px) {

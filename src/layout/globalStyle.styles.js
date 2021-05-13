@@ -1,6 +1,14 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+
+@font-face {
+    font-family: "Hola Bisou";
+src: url("${process.env.PUBLIC_URL}/fonts/holaregular.ttf") format("truetype"),
+url("${process.env.PUBLIC_URL}/fonts/holaregular.otf") format("opentype");
+}
+
+
 *{
     padding:0;
     margin:0;
@@ -18,8 +26,8 @@ html{
 }
 
 body{
-    background-color: ${({ theme }) => theme.colors.blue};
-    color: ${({ theme }) => theme.colors.white || "#ffffff"};
+    background-color: ${({ theme }) => theme.colors.white};
+    color: ${({ theme }) => theme.colors.black || "#ffffff"};
     font-family:${({ theme }) => theme.ff.Montserrat};
 }
 
@@ -50,6 +58,13 @@ p{
 a{
     text-decoration:none;
     color:inherit;
+}
+
+section#glowna,
+section#main{
+    position:relative;
+    overflow: hidden;
+    min-height:calc(100vh - 80px);
 }
 `;
 

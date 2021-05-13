@@ -23,4 +23,36 @@ const absoluteCenter = css`
     transform: translate(-50%, -50%);
 `;
 
-export { flexCenter, flexColumn, size_100x100, absoluteCenter };
+const toUpperCase = (isUpper) =>
+    isUpper
+        ? css`
+              text-transform: uppercase;
+          `
+        : "";
+
+const changeTxtColor = (color) =>
+    color
+        ? css`
+              color: ${color};
+          `
+        : "";
+
+const marginToChildren = (margin = "0 0 15px") => css`
+    & > * {
+        margin: ${margin};
+
+        &:last-child {
+            margin: 0;
+        }
+    }
+`;
+
+export {
+    flexCenter,
+    flexColumn,
+    size_100x100,
+    absoluteCenter,
+    toUpperCase,
+    changeTxtColor,
+    marginToChildren,
+};

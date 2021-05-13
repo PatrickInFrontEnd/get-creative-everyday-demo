@@ -1,22 +1,23 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { absoluteCenter } from "./../components/mixins";
 import gsap from "gsap";
 import scrollToPlugin from "gsap/ScrollToPlugin";
+import { SocialMediasComponentPL } from "../components/SocialMedia/SocialMedia.component";
+import { flexCenter } from "../components/mixins";
 
 gsap.registerPlugin(scrollToPlugin);
 
-const Navigation = styled.nav`
+export const Navigation = styled.nav`
     position: sticky;
-    z-index: 2;
+    z-index: 3;
     top: 0;
     left: 0;
     right: 0;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    background-color: ${({ theme }) => theme.colors.blue};
+    justify-content: space-between;
+    background-color: ${({ theme }) => theme.colors.white};
     width: 100%;
     min-height: 80px;
     padding: 0px 80px;
@@ -24,15 +25,52 @@ const Navigation = styled.nav`
     .links {
         display: flex;
 
+        i {
+            font-size: ${({ theme }) => theme.fz.S || "22px"};
+        }
+
         a {
             position: relative;
             overflow: hidden;
+            ${flexCenter};
             z-index: 1;
-            color: ${({ theme }) => theme.colors.white || "#ffffff"};
+            color: ${({ theme }) => theme.colors.black || "#ffffff"};
             font-size: ${({ theme }) => theme.fz.XXS || "18px"};
             font-weight: ${({ theme }) => theme.fw.semiBold};
-            margin: 20px 20px 0;
-            padding-bottom: 6px;
+            margin: 0 20px 0;
+            padding-bottom: 4px; /* When active button: remove this line */
+
+            &.active {
+                overflow: hidden;
+                border: 3px solid ${({ theme }) => theme.colors.black};
+                padding: 8px 12px;
+                transition: 0.3s;
+
+                &::before {
+                    display: none;
+                }
+
+                &::after {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    transform: translateY(100%);
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    z-index: -1;
+                    transition: 0.3s;
+                    background-color: ${({ theme }) => theme.colors.black};
+                }
+
+                &:hover {
+                    color: ${({ theme }) => theme.colors.white};
+
+                    &::after {
+                        transform: translateY(0%);
+                    }
+                }
+            }
 
             &:hover::before {
                 transform: translateX(0%);
@@ -40,51 +78,14 @@ const Navigation = styled.nav`
 
             &::before {
                 position: absolute;
-                bottom: 0px;
+                bottom: 2px; /* When active button: 2px */
                 left: 0;
                 transform: translateX(-140%);
                 content: "";
                 width: 100%;
                 height: 2px;
-                background-color: #f5f5f5;
+                background-color: #0d0d0d;
                 transition: 0.3s;
-            }
-        }
-    }
-
-    h2 {
-        ${absoluteCenter};
-        color: ${({ theme }) => theme.colors.beige};
-        text-transform: uppercase;
-        text-align: center;
-        width: 100%;
-        padding: 20px 0 0;
-
-        @media screen and (max-width: 900px) {
-            & {
-                font-size: ${({ theme }) => theme.fz.XL};
-            }
-        }
-
-        @media screen and (max-width: 700px) {
-            & {
-                font-size: ${({ theme }) => theme.fz.L};
-            }
-        }
-
-        @media screen and (max-width: 560px) {
-            & {
-                position: relative;
-                top: -5px;
-                left: unset;
-                transform: none;
-                text-align: left;
-            }
-        }
-
-        @media screen and (max-width: 400px) {
-            & {
-                font-size: ${({ theme }) => theme.fz.S};
             }
         }
     }
@@ -96,8 +97,23 @@ const Navigation = styled.nav`
     }
 
     @media screen and (max-width: 1450px) {
+        padding: 0;
+
         .links {
             padding: 40px 0;
+
+            &.eng {
+                padding: 90px 0 40px;
+
+                @media screen and (max-width: 420px) {
+                    padding: 0 0 20px;
+                }
+            }
+
+            a {
+                margin: 10px 0;
+            }
+
             flex-direction: column;
             align-items: center;
             position: absolute;
@@ -106,7 +122,7 @@ const Navigation = styled.nav`
             width: 100%;
             transition: 0.5s;
             transform: translate(-100%, 100%);
-            background-color: ${({ theme }) => theme.colors.blue};
+            background-color: ${({ theme }) => theme.colors.white};
 
             &.active {
                 transform: translate(0, 100%);
@@ -115,14 +131,14 @@ const Navigation = styled.nav`
     }
 `;
 
-const Hamburger = styled.div`
+export const Hamburger = styled.div`
     width: 50px;
     height: 50px;
     position: absolute;
     top: 50%;
     right: 80px;
     transform: translateY(-50%);
-    background-color: ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme }) => theme.colors.grey};
     border-radius: 50%;
     transition: 0.3s;
     cursor: pointer;
@@ -163,7 +179,7 @@ const Hamburger = styled.div`
         width: 55%;
         height: 2px;
         transition: 0.3s;
-        background-color: ${({ theme }) => theme.colors.darker_blue};
+        background-color: ${({ theme }) => theme.colors.white};
 
         &:nth-of-type(1) {
             top: 17px;
@@ -192,30 +208,86 @@ const Hamburger = styled.div`
 `;
 
 const NavigationComponent = (props) => {
-    const scrollTo = (hash) => () => {
-        console.log(hash);
-        gsap.to(window, { scrollTo: hash });
-    };
+    const scrollTo = (hash, offset = 0) =>
+        gsap.to(window, {
+            scrollTo: { offsetY: offset, y: hash },
+            duration: 1,
+        });
 
     const [hamburgerActive, setHamburgerActive] = useState(false);
+
+    const toggleHamburgerActive = () => setHamburgerActive((prev) => !prev);
+
+    const handleMobileClick = () => {
+        if (window.innerWidth <= 1450) toggleHamburgerActive();
+    };
 
     return (
         <Navigation>
             <div className={`links ${hamburgerActive ? "active" : ""}`}>
-                <Link to="#glowna" onClick={scrollTo("#glowna")}>
-                    Strona Główna
+                <Link
+                    to="#"
+                    onClick={() => {
+                        scrollTo(0);
+                        handleMobileClick();
+                    }}
+                >
+                    <i className="fas fa-home"></i>
                 </Link>
-                <Link to="#niezbednik" onClick={scrollTo("#niezbednik")}>
+                <Link
+                    to="#przyklady"
+                    onClick={() => {
+                        scrollTo("#przyklady", 100);
+                        handleMobileClick();
+                    }}
+                >
+                    Przykłady użycia
+                </Link>
+
+                <Link
+                    to="#planer"
+                    onClick={() => {
+                        scrollTo("#planer", 140);
+                        handleMobileClick();
+                    }}
+                >
                     Niezbędnik
                 </Link>
-                <Link to="#kontakt" onClick={scrollTo("#kontakt")}>
+                <Link
+                    to="#kontakt"
+                    onClick={() => {
+                        scrollTo("#kontakt");
+                        handleMobileClick();
+                    }}
+                >
                     Kontakt
                 </Link>
+
+                <Link
+                    to="#newsletter"
+                    onClick={() => {
+                        scrollTo("#newsletter", 150);
+                        handleMobileClick();
+                    }}
+                >
+                    Newsletter
+                </Link>
+
+                <a
+                    className="active"
+                    href="https://sklep.semantika.pl/get-creative-every-day"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    KUP TERAZ
+                </a>
             </div>
-            <h2>wkrótce premiera</h2>
+
+            <SocialMediasComponentPL isActive={hamburgerActive} />
+
             <Hamburger
                 className={hamburgerActive ? "active" : ""}
-                onClick={() => setHamburgerActive((prev) => !prev)}
+                onClick={toggleHamburgerActive}
             >
                 <span></span>
                 <span></span>
