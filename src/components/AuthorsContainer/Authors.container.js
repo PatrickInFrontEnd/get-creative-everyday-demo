@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { flexColumn, flexCenter } from "../mixins";
+import { flexColumn } from "../mixins";
 import Author from "./../AuthorComponent/Author.component";
 import { authorsENG } from "./../../data/eng";
 import { authorsPL } from "./../../data/pl";

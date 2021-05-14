@@ -6,10 +6,13 @@ import { ReactComponent as CloudIcon } from "./../assets/svg/cloud.svg";
 import GCED_detailsPNG from "./../assets/img/gced_details.png";
 import GCED_details_PL_PNG from "./../assets/img/gced_details_PL.png";
 import GCED_detailsMobile from "./../assets/img/GCED_mockup.png";
-import { IncludeHeader, ListedHeader } from "./../components/IncludeHeader";
-import { detailsBoxesENG, buyHeadersENG } from "./../data/eng";
-import { detailsBoxesPL, buyHeadersPL } from "./../data/pl";
+import {
+    IncludeHeader /* ListedHeader */,
+} from "./../components/IncludeHeader";
+import { /* detailsBoxesENG, */ buyHeadersENG } from "./../data/eng";
+import { /* detailsBoxesPL, */ buyHeadersPL } from "./../data/pl";
 import { BuyNowButton } from "./BuyPlannerSection";
+import SliderComponent from "../components/PlannerSlider/Slider.component";
 
 const HeaderContainer = styled.div`
     position: relative;
@@ -129,6 +132,7 @@ const Photo = styled.img`
 
     @media screen and (max-width: 1540px) {
         width: 80%;
+        max-width: 1000px;
     }
 
     @media screen and (max-width: 900px) {
@@ -202,13 +206,13 @@ const BuyButton = styled(BuyNowButton)`
 `;
 
 export const PlannerSectionPL = (props) => {
-    const includeHeaders = detailsBoxesPL.map((elProps, i) =>
+    /* const includeHeaders = detailsBoxesPL.map((elProps, i) =>
         elProps.sublist ? (
             <ListedHeader {...elProps} key={i} />
         ) : (
             <IncludeHeader {...elProps} key={i} />
         )
-    );
+    ); */
 
     const buyHeadersItems = buyHeadersPL.map((elProps, i) => (
         <IncludeHeader {...elProps} inverted key={i} />
@@ -262,13 +266,13 @@ export const PlannerSectionPL = (props) => {
 };
 
 const PlannerSection = (props) => {
-    const includeHeaders = detailsBoxesENG.map((elProps, i) =>
+    /* const includeHeaders = detailsBoxesENG.map((elProps, i) =>
         elProps.sublist ? (
             <ListedHeader {...elProps} key={i} />
         ) : (
             <IncludeHeader {...elProps} key={i} />
         )
-    );
+    ); */
 
     const buyHeadersItems = buyHeadersENG.map((elProps, i) => (
         <IncludeHeader {...elProps} inverted key={i} />
@@ -298,6 +302,8 @@ const PlannerSection = (props) => {
                 <CloudIcon />
                 <CloudIcon />
             </HeaderContainer>
+
+            <SliderComponent />
 
             <IncludeContainer>{buyHeadersItems}</IncludeContainer>
 
