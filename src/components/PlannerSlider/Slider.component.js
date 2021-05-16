@@ -1,16 +1,17 @@
-import React from "react";
+import React, { useContext, useRef } from "react";
 import styled from "styled-components";
 import { flexCenter, flexColumn } from "./../mixins";
 import { HeaderHola } from "../atoms/Header";
-import one from "./../../assets/img/planner_bowel/1.png";
 import PaginationComponent from "./../PaginationComponent/Pagination.component";
 import ProgressBar from "./../ProgressBar/ProgressBar.component";
 import { ReactComponent as NavigationArrow } from "./../../assets/svg/slider_icon.svg";
+import { sliderContext } from "./../../providers/sliderProvider";
+import { animateSlider } from "./../../utils/animations/slider.animation";
 
 const Container = styled.div`
     position: relative;
     width: 100%;
-    margin: 30px auto 80px;
+    margin: 30px auto;
     padding: 20px;
 
     svg {
@@ -60,9 +61,63 @@ const Container = styled.div`
             }
         }
     }
+
+    @media screen and (max-width: 1340px) {
+        margin: 100px auto 150px;
+    }
+
+    @media screen and (max-width: 1150px) {
+        svg {
+            &:nth-of-type(1) {
+                left: 20px;
+                transform: scale(0.5);
+            }
+            &:nth-of-type(2) {
+                right: 20px;
+                transform: scale(0.5) rotateY(180deg);
+            }
+        }
+    }
+
+    @media screen and (max-width: 560px) {
+        padding: 20px 0;
+
+        svg {
+            &:nth-of-type(1) {
+                left: 0px;
+            }
+            &:nth-of-type(2) {
+                right: 0px;
+            }
+
+            @keyframes animateLeft {
+                0% {
+                    transform: scale(0.5);
+                }
+                50% {
+                    transform: scale(0.6);
+                }
+                100% {
+                    transform: scale(0.5);
+                }
+            }
+
+            @keyframes animateRight {
+                0% {
+                    transform: scale(0.5) rotateY(180deg);
+                }
+                50% {
+                    transform: scale(0.6) rotateY(180deg);
+                }
+                100% {
+                    transform: scale(0.5) rotateY(180deg);
+                }
+            }
+        }
+    }
 `;
 
-const ContentBox = styled.div`
+export const ContentBox = styled.div`
     position: relative;
     width: 70%;
     max-width: 1100px;
@@ -72,6 +127,13 @@ const ContentBox = styled.div`
     padding: 30px;
     margin: 30px 10% 30px auto;
     background-color: ${({ theme }) => theme.colors.yellow};
+
+    ul {
+        li {
+            font-size: ${({ theme }) => theme.fz.S};
+            margin: 10px 0 10px 100px;
+        }
+    }
 
     @media screen and (max-width: 1840px) {
         margin: 30px 5% 30px auto;
@@ -89,21 +151,55 @@ const ContentBox = styled.div`
 
     @media screen and (max-width: 1340px) {
         margin: 30px auto;
+        width: 90%;
+        padding-top: 150px;
+    }
+
+    @media screen and (max-width: 560px) {
+        padding-top: 180px;
+        min-height: 350px;
+
+        ul {
+            li {
+                font-size: ${({ theme }) => theme.fz.XS};
+                margin: 10px 0 10px 50px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 360px) {
+        padding-top: 150px;
     }
 `;
 
 const Title = styled.div`
     max-width: 50%;
     text-align: center;
+
+    @media screen and (max-width: 900px) {
+        max-width: 80%;
+    }
+
+    @media screen and (max-width: 560px) {
+        max-width: 100%;
+    }
 `;
 
 const Description = styled.p`
     max-width: 50%;
     margin-top: 20px;
     text-align: center;
+
+    @media screen and (max-width: 900px) {
+        max-width: 80%;
+    }
+
+    @media screen and (max-width: 560px) {
+        max-width: 100%;
+    }
 `;
 
-const Photo = styled.img`
+export const Photo = styled.img`
     position: absolute;
     top: 50%;
     left: -10%;
@@ -120,26 +216,81 @@ const Photo = styled.img`
     @media screen and (max-width: 1560px) {
         max-width: 500px;
     }
+
+    @media screen and (max-width: 1340px) {
+        left: 50%;
+        top: 10%;
+        max-width: 400px;
+    }
+    @media screen and (max-width: 560px) {
+        width: 70vw;
+    }
+
+    @media screen and (max-width: 560px) {
+        width: 85vw;
+    }
 `;
 
-const SliderComponent = (props) => (
-    <Container>
-        <ContentBox>
-            <Title>
-                <HeaderHola uppercase>
-                    <h3>teaching hacks - tips useful in your everyday work</h3>
-                </HeaderHola>
-            </Title>
-            <Description>
-                Planner with 13 months of monthly and weekly pages from August
-                2021 to August 2022
-            </Description>
+const SliderComponent = (props) => {
+    const {
+        currentSlide,
+        currentIndex,
+        length,
+        nextSlide,
+        prevSlide,
+        allowChange,
+        prohibitChange,
+        allowedToChangeSlide,
+    } = useContext(sliderContext);
 
-            <Photo src={one} alt="planner" />
-            <ProgressBar progress={`30%`} />
-        </ContentBox>
-        <NavigationArrow />
-        <NavigationArrow />
-    </Container>
-);
+    const containerRef = useRef();
+
+    const convertToProgress = (currentIndex, lengthValue) =>
+        `${(currentIndex / lengthValue).toFixed(2) * 100}%`;
+
+    const handleNextSlideClick = () => handleChangeSlide(nextSlide);
+
+    const handlePrevSlideClick = () => handleChangeSlide(prevSlide);
+
+    const handleChangeSlide = (cb) => {
+        if (allowedToChangeSlide) {
+            prohibitChange();
+            animateSlider(containerRef, cb, allowChange);
+        }
+    };
+
+    return (
+        <Container ref={containerRef}>
+            <ContentBox>
+                <Title>
+                    <HeaderHola uppercase>
+                        <h3>{currentSlide.title}</h3>
+                    </HeaderHola>
+                </Title>
+                {currentSlide.description ? (
+                    <Description>{currentSlide.description}</Description>
+                ) : (
+                    currentSlide.list && (
+                        <ul>
+                            {currentSlide.list.map(({ item }, i) => (
+                                <li key={i}>{item}</li>
+                            ))}
+                        </ul>
+                    )
+                )}
+
+                <Photo src={currentSlide.photo} alt="planner" />
+                <ProgressBar
+                    progress={convertToProgress(currentIndex + 1, length)}
+                />
+            </ContentBox>
+            <PaginationComponent
+                actualNumber={currentIndex + 1}
+                length={length}
+            />
+            <NavigationArrow direction="left" onClick={handlePrevSlideClick} />
+            <NavigationArrow direction="right" onClick={handleNextSlideClick} />
+        </Container>
+    );
+};
 export default SliderComponent;

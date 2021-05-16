@@ -10,6 +10,14 @@ import MarlenaJPG from "./../assets/img/authors/Marlena_Kubelczuk.jpg";
 import AgnieszkaJPG from "./../assets/img/authors/Agnieszka_Iwanicka.jpg";
 import RenataJPG from "./../assets/img/authors/Renata_Nowakowska.jpg";
 import KarolinaJPG from "./../assets/img/authors/Karolina_Lubas.jpg";
+import one from "./../assets/img/planner_bowel/01.png";
+import two from "./../assets/img/planner_bowel/02.png";
+import three from "./../assets/img/planner_bowel/03.png";
+import four from "./../assets/img/planner_bowel/04.png";
+import five from "./../assets/img/planner_bowel/05.png";
+import six from "./../assets/img/planner_bowel/06.png";
+import seven from "./../assets/img/planner_bowel/07.png";
+import eight from "./../assets/img/planner_bowel/08.png";
 
 export const boxesENG = [
     {
@@ -39,13 +47,15 @@ export const boxesENG = [
 
 export const situationsENG = [
     {
-        header: "You need to think over and plan effective lessons and you would appreciate a thoughtful monthly schedules of themes and materials.",
+        header:
+            "You need to think over and plan effective lessons and you would appreciate a thoughtful monthly schedules of themes and materials.",
         description:
             "It’s easy now! You will find ready to use monthly calendar themes inside the GC planner. Lesson planning spreads also contain lesson objectives, suggested songs, basic vocabulary and expressions lists, extended vocabulary lists, suggested games and activities around the topic.",
         inverted: false,
     },
     {
-        header: "Again! It’s Sunday and you start your weekly preparations. Some surprising ideas for your lessons would be invaluable.",
+        header:
+            "Again! It’s Sunday and you start your weekly preparations. Some surprising ideas for your lessons would be invaluable.",
         description:
             "Simply, just have a look inside your GC planner and dive into a multitude of teaching hacks, suggested games and plays. You really just need to read and go!",
         inverted: true,
@@ -57,7 +67,8 @@ export const situationsENG = [
         inverted: true,
     },
     {
-        header: "You consider yourself a creative teacher but this time you are either short of time or you don’t feel like making up new games for your next lesson.",
+        header:
+            "You consider yourself a creative teacher but this time you are either short of time or you don’t feel like making up new games for your next lesson.",
         description:
             "Great! Browse through the GC planner and pick one of described ideas. There are games & plays offered for each and every week included in the planner.",
         inverted: false,
@@ -69,13 +80,15 @@ export const situationsENG = [
         inverted: false,
     },
     {
-        header: "You teach several groups of children and have attendance lists, grades, lesson schedules or contacts scattered in a few notebooks. And you carry them all with you each day.",
+        header:
+            "You teach several groups of children and have attendance lists, grades, lesson schedules or contacts scattered in a few notebooks. And you carry them all with you each day.",
         description:
             "Oh, we know that you like shopper bags, but save some room for carrying extra teaching aids instead of pushing inside a few planners or notebooks. Just grab your all-in-one GC planner and it will do.",
         inverted: true,
     },
     {
-        header: "You use two or more calendars to hold both your professional and private notes.",
+        header:
+            "You use two or more calendars to hold both your professional and private notes.",
         description:
             "No more! You can hold all of them in GC planner. It is veeery capacious.",
         inverted: false,
@@ -109,19 +122,23 @@ export const detailsBoxesENG = [
             { item: "5 reliable energisers for your lessons" },
             { item: "5 Various speaking incentives" },
             {
-                item: "5 Mindfulness exercises which support learning a foreign language",
+                item:
+                    "5 Mindfulness exercises which support learning a foreign language",
             },
             {
                 item: "6 Beginner’s tips – useful time-savers and other tricks",
             },
             {
-                item: "TOP 10 BOOKS – a list of must-have English books for children which guarantee a wow effect on your lessons",
+                item:
+                    "TOP 10 BOOKS – a list of must-have English books for children which guarantee a wow effect on your lessons",
             },
             {
-                item: "TOP 5 SITES – a list od educational sites for children. Use them to make your lessons more attractive and interactive",
+                item:
+                    "TOP 5 SITES – a list od educational sites for children. Use them to make your lessons more attractive and interactive",
             },
             {
-                item: "Lists of interesting English films and series for children",
+                item:
+                    "Lists of interesting English films and series for children",
             },
         ],
     },
@@ -155,6 +172,58 @@ export const detailsBoxesENG = [
             "Additional pages with a calendar to cut out and colour with your children; use it to revise months or seasons of the year",
     },
     { header: "Notes", description: "Ample space for your notes" },
+];
+
+export const slidesENG = [
+    {
+        title: "School Year Calendar",
+        description:
+            "Planner with 13 months of monthly and weekly pages from August 2021 to August 2022",
+        photo: one,
+    },
+    {
+        title: "Let’s plan",
+        description:
+            "Ready to use lesson planning spreads which cover all school year",
+        photo: two,
+    },
+    {
+        title: "My students",
+        description:
+            "Useful tables to gather information about your students and groups, such as attendance, grades, homework completion and more ",
+        photo: three,
+    },
+    {
+        title: "Teaching hacks, Nursery rhymes, Let’s celebrate",
+        list: [
+            { item: "Tips useful in your everyday work" },
+            { item: "20 theme rhymes adored by young learners" },
+            {
+                item:
+                    "Lists of official holidays, special dates and theme days",
+            },
+        ],
+        photo: four,
+    },
+    {
+        title: "Filled-in monthly theme schedules",
+        description:
+            "Including lesson objectives, suggested songs, basic vocabulary and expressions lists, extended vocabulary lists, suggested games and activities around the topic (60 ideas!)",
+        photo: five,
+    },
+    {
+        title: "Weekly view pages",
+        description:
+            "They offer ample writing space for detailed daily planning and classroom scheduling every day of the week. Creative games and activities suggested every week (58 ideas ready to use)",
+        photo: six,
+    },
+    { title: "Notes", description: "Ample space for your notes", photo: seven },
+    {
+        title: "Ready-to-use craft",
+        description:
+            "Additional pages with a calendar to cut out and colour with your children",
+        photo: eight,
+    },
 ];
 
 export const buyHeadersENG = [
