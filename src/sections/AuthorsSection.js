@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { HeaderHola } from "./../components/atoms/Header";
 import AuthorsCircle, {
     AuthorsCircleContainerPL,
@@ -7,7 +7,7 @@ import AuthorsContainer, {
     AuthorsContainerPL,
 } from "./../components/AuthorsContainer/Authors.container";
 
-export const AuthorsSectionPL = (props) => (
+export const AuthorsSectionPL = memo((props) => (
     <section id="authors" style={{ padding: "20px" }}>
         <HeaderHola uppercase>
             <h2>OD NAUCZYCIELI DLA NAUCZYCIELI</h2>
@@ -21,9 +21,9 @@ export const AuthorsSectionPL = (props) => (
 
         <AuthorsContainerPL />
     </section>
-);
+));
 
-const AuthorsSection = (props) => (
+const AuthorsSection = memo((props) => (
     <section id="authors" style={{ padding: "20px 20px 0" }}>
         <HeaderHola uppercase>
             <h2>From teachers to teachers</h2>
@@ -37,6 +37,6 @@ const AuthorsSection = (props) => (
 
         <AuthorsContainer />
     </section>
-);
+));
 
 export default AuthorsSection;

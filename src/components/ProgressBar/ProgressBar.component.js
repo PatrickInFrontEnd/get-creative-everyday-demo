@@ -17,7 +17,7 @@ const ProgressBar = styled.span`
     width: 100%;
     height: 100%;
     background-color: ${({ theme }) => theme.colors.black};
-    transition: 0.3s;
+    transition: 0.3s 0.4s;
 
     ${({ completion }) =>
         completion

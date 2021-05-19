@@ -3,14 +3,31 @@ import styled from "styled-components";
 import { flexCenter, flexColumn } from "./../mixins";
 
 const PaginationContainer = styled.div`
+    position: absolute;
+    right: 0;
+    bottom: -150px;
     ${flexCenter};
     justify-content: flex-end;
     align-items: flex-end;
-    margin: 20px 180px 20px auto;
+
+    @media screen and (max-width: 1560px) {
+        right: unset;
+        left: -270px;
+        bottom: 20px;
+    }
+
+    @media screen and (max-width: 1340px) {
+        left: unset;
+        right: 0;
+        bottom: -100px;
+    }
 
     @media screen and (max-width: 680px) {
-        margin: 20px auto;
         justify-content: center;
+    }
+
+    @media screen and (max-width: 560px) {
+        bottom: -80px;
     }
 `;
 
@@ -20,7 +37,7 @@ export const HeaderBig = styled.h2`
     line-height: 95%;
     margin-right: 25px;
 
-    @media screen and (max-width: 1340px) {
+    @media screen and (max-width: 1560px) {
         font-size: 8rem;
     }
 `;
@@ -30,7 +47,7 @@ const HeaderSmall = styled.h5`
     font-family: ${({ theme }) => theme.ff.Montserrat};
     color: ${({ theme }) => theme.colors.grey};
 
-    @media screen and (max-width: 1340px) {
+    @media screen and (max-width: 1560px) {
         font-size: 3.6rem;
     }
 `;

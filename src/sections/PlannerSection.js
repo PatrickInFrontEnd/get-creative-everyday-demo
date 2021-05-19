@@ -10,7 +10,7 @@ import {
     IncludeHeader /* ListedHeader */,
 } from "./../components/IncludeHeader";
 import { /* detailsBoxesENG, */ buyHeadersENG, slidesENG } from "./../data/eng";
-import { /* detailsBoxesPL, */ buyHeadersPL } from "./../data/pl";
+import { /* detailsBoxesPL, */ buyHeadersPL, slidesPL } from "./../data/pl";
 import { BuyNowButton } from "./BuyPlannerSection";
 import SliderComponent from "../components/PlannerSlider/Slider.component";
 import SliderProvider from "./../providers/sliderProvider";
@@ -243,6 +243,10 @@ export const PlannerSectionPL = (props) => {
                 <CloudIcon />
                 <CloudIcon />
             </HeaderContainer>
+
+            <SliderProvider slides={slidesPL}>
+                <SliderComponent />
+            </SliderProvider>
 
             <IncludeContainer>{buyHeadersItems}</IncludeContainer>
 

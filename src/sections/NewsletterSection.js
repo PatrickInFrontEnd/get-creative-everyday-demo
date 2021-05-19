@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, memo } from "react";
 import styled, { useTheme } from "styled-components";
 import { HeaderHola } from "../components/atoms/Header";
 import { flexCenter } from "../components/mixins";
@@ -155,7 +155,7 @@ const Message = styled.div`
 const API_PL_URL = "https://api.semantika.pl/api/email-save";
 const API_ENG_URL = "https://api.semantika.pl/api/eng-email-save";
 
-export const NewsletterSectionPL = (props) => {
+export const NewsletterSectionPL = memo((props) => {
     const theme = useTheme();
 
     const [email, setEmail] = useState("");
@@ -223,9 +223,9 @@ export const NewsletterSectionPL = (props) => {
             )}
         </section>
     );
-};
+});
 
-const NewsletterSectionENG = (props) => {
+const NewsletterSectionENG = memo((props) => {
     const theme = useTheme();
 
     const [email, setEmail] = useState("");
@@ -294,6 +294,6 @@ const NewsletterSectionENG = (props) => {
             )}
         </section>
     );
-};
+});
 
 export default NewsletterSectionENG;

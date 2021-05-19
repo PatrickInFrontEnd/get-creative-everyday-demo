@@ -10,6 +10,14 @@ import MarlenaJPG from "./../assets/img/authors/Marlena_Kubelczuk.jpg";
 import AgnieszkaJPG from "./../assets/img/authors/Agnieszka_Iwanicka.jpg";
 import RenataJPG from "./../assets/img/authors/Renata_Nowakowska.jpg";
 import KarolinaJPG from "./../assets/img/authors/Karolina_Lubas.jpg";
+import one from "./../assets/img/planner_bowel/01.png";
+import two from "./../assets/img/planner_bowel/02.png";
+import three from "./../assets/img/planner_bowel/03.png";
+import four from "./../assets/img/planner_bowel/04.png";
+import five from "./../assets/img/planner_bowel/05.png";
+import six from "./../assets/img/planner_bowel/06.png";
+import seven from "./../assets/img/planner_bowel/07.png";
+import eight from "./../assets/img/planner_bowel/08.png";
 
 export const boxesPL = [
     {
@@ -40,15 +48,13 @@ export const boxesPL = [
 
 export const situationsPL = [
     {
-        header:
-            "Potrzebujesz wsparcia w rozplanowaniu tematów zajęć na poszczególne tygodnie?",
+        header: "Potrzebujesz wsparcia w rozplanowaniu tematów zajęć na poszczególne tygodnie?",
         description:
             "Easy! W plannerze znajdziesz gotowy rozkład materiału na cały rok, dodaliśmy: cele zajęć, proponowane piosenki, podstawowe słownictwo i zwroty, dodatkowe słownictwo i wyrażenia, proponowane aktywności i zabawy. ",
         inverted: false,
     },
     {
-        header:
-            "Znowu niedziela i znowu zastanawiasz się, co zaplanować, aby zaskoczyć uczniów?",
+        header: "Znowu niedziela i znowu zastanawiasz się, co zaplanować, aby zaskoczyć uczniów?",
         description:
             "Otwórz kalendarz i skorzystaj z gotowych wskazówek i pomysłów! Naprawdę wystarczy przeczytać i można działać!",
         inverted: true,
@@ -59,8 +65,7 @@ export const situationsPL = [
         inverted: true,
     },
     {
-        header:
-            "Jesteś kreatywna, ale czasami brakuje Ci czasu albo ochoty na wymyślanie nowych zabaw? ",
+        header: "Jesteś kreatywna, ale czasami brakuje Ci czasu albo ochoty na wymyślanie nowych zabaw? ",
         description:
             "Skorzystaj z gotowców, w Get Creative Every Day są pomysły na każdy tydzień w roku!",
         inverted: false,
@@ -72,15 +77,13 @@ export const situationsPL = [
         inverted: false,
     },
     {
-        header:
-            "Prowadzisz kilka grup, a listy z informacjami o uczniach masz w kilku miejscach? Rozkłady zajęć dla wszystkich grup też masz w kilku notesach? Nosisz to wszystko ze sobą codziennie?",
+        header: "Prowadzisz kilka grup, a listy z informacjami o uczniach masz w kilku miejscach? Rozkłady zajęć dla wszystkich grup też masz w kilku notesach? Nosisz to wszystko ze sobą codziennie?",
         description:
             "Wiemy, że lubisz shopper bags, ale po co zabierać miejsce pomocom dydaktycznym na rzecz kilku notesów? Weź tylko planner i miej wszystko w jednym miejscu!",
         inverted: true,
     },
     {
-        header:
-            "Korzystasz z dwóch albo więcej kalendarzy, żeby pomieścić notatki zawodowe i osobiste?",
+        header: "Korzystasz z dwóch albo więcej kalendarzy, żeby pomieścić notatki zawodowe i osobiste?",
         description:
             "W Get Creative pomieścisz wszystko, bo jest bardzo pojemny!",
         inverted: false,
@@ -109,30 +112,24 @@ export const detailsBoxesPL = [
             "Wygodna tabela do zapisywania kontaktów, z których będziesz korzystać przez cały rok",
     },
     {
-        header:
-            "Tips – wskazówki dla nauczycieli, które przydadzą się w codziennej pracy",
+        header: "Tips – wskazówki dla nauczycieli, które przydadzą się w codziennej pracy",
         sublist: [
             { item: "5 niezawodnych energizerów" },
             { item: "5 wskazówek, jak zachęcić uczniów do mówienia" },
             {
-                item:
-                    "5 sposobów na ćwiczenie uważności, które wspierają naukę angielskiego",
+                item: "5 sposobów na ćwiczenie uważności, które wspierają naukę angielskiego",
             },
             {
-                item:
-                    "6 tipów na start – jak oszczędzać nauczycielski czas i wykorzystać każdą minutę",
+                item: "6 tipów na start – jak oszczędzać nauczycielski czas i wykorzystać każdą minutę",
             },
             {
-                item:
-                    "Top 10 anglojęzycznych książeczek dla dzieci z efektem WOW",
+                item: "Top 10 anglojęzycznych książeczek dla dzieci z efektem WOW",
             },
             {
-                item:
-                    "Top 5 edukacyjnych stron internetowych dla dzieci, które uatrakcyjnią zajęcia",
+                item: "Top 5 edukacyjnych stron internetowych dla dzieci, które uatrakcyjnią zajęcia",
             },
             {
-                item:
-                    "Lista ciekawych filmów i seriali anglojęzycznych dla dzieci",
+                item: "Lista ciekawych filmów i seriali anglojęzycznych dla dzieci",
             },
         ],
     },
@@ -167,6 +164,59 @@ export const detailsBoxesPL = [
     { header: "Notatki", description: "Dużo miejsca na notatki" },
 ];
 
+export const slidesPL = [
+    {
+        title: "School Year Calendar",
+        description:
+            "Kalendarz na rok szkolny zawierający zakres od sierpnia 2021 do sierpnia 2022 (kalendarz krótki i długi z miejscem na notatki)",
+        photo: one,
+    },
+    {
+        title: "Let’s plan",
+        description:
+            "Gotowy rozkład tematów na cały rok i miejsce do wpisania swoich notatek",
+        photo: two,
+    },
+    {
+        title: "My students",
+        description:
+            "Praktyczne tabele do zapisywania dowolnych informacji o uczniach z każdej grupy, którą prowadzisz (10 tabel dla 10 grup) ",
+        photo: three,
+    },
+    {
+        title: "Tips, Nursery rhymes, Let’s celebrate",
+        list: [
+            {
+                item: "Wskazówki dla nauczycieli, które przydadzą się w codziennej pracy",
+            },
+            { item: "Aż 20 tematycznych rymowanek" },
+            {
+                item: "Lista świąt oficjalnych i nietypowych na każdy miesiąc",
+            },
+        ],
+        photo: four,
+    },
+    {
+        title: "Gotowy rozkład materiału",
+        description:
+            "Rozkład na każdy miesiąc wraz z: celami zajęć, przykładowymi piosenkami, podstawowym słownictwem i zwrotami, dodatkowym słownictwem i wyrażeniami, przykładowymi aktywnościami i zabawami (aż 60 gotowych aktywności)",
+        photo: five,
+    },
+    {
+        title: "Terminarz w układzie tygodniowym",
+        description:
+            "Terminarz, dzięki któremu zaplanujesz pracę na każdy dzień. Kreatywne zabawy na każdy tydzień roku (aż 58 pomysłów do wykorzystania „od ręki”)",
+        photo: six,
+    },
+    { title: "Notatki", description: "Dużo miejsca na notatki", photo: seven },
+    {
+        title: "Kalendarz–craft",
+        description:
+            "Wspaniały pretekst do omówienia pór roku i wspólnej zabawy integrującej grupę",
+        photo: eight,
+    },
+];
+
 export const buyHeadersPL = [
     {
         header: "Widzisz?",
@@ -179,8 +229,7 @@ export const buyHeadersPL = [
             "Mimo, że do nowego roku szkolnego jeszcze kawał czasu, nigdy nie wiesz, kiedy nasze zapasy się skończą, my też nie. Nie trać wakacji na planowanie zajęć i wejdź  w nowy rok szkolny na pełnym luzie",
     },
     {
-        header:
-            "Dołącz do zorganizowanych i kreatywnych nauczycieli angielskiego",
+        header: "Dołącz do zorganizowanych i kreatywnych nauczycieli angielskiego",
         description:
             "Zorganizuj się za niewielkie pieniądze, to tylko 99 zł na cały rok! Czyli 8 zł miesięcznie, mniej niż mała latte!",
     },

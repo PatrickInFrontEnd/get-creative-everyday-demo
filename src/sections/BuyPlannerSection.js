@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import styled from "styled-components";
 import { flexCenter } from "./../components/mixins";
 import GCED_BuyPNG from "./../assets/img/GCED_flat_mockup.png";
@@ -113,7 +113,7 @@ export const BuyNowButton = styled.a`
     }
 `;
 
-export const BuyPlannerSectionPL = (props) => (
+export const BuyPlannerSectionPL = memo((props) => (
     <BuyPlannerSection id="kup">
         <img src={GCED_BuyPNG} alt="Planner" />
         <BuyNowButton
@@ -126,9 +126,9 @@ export const BuyPlannerSectionPL = (props) => (
         <EmoteIcon />
         <EmoteIcon />
     </BuyPlannerSection>
-);
+));
 
-const BuyPlannerSectionENG = (props) => (
+const BuyPlannerSectionENG = memo((props) => (
     <BuyPlannerSection id="kup">
         <img src={GCED_BuyPNG} alt="Planner" />
         <BuyNowButton
@@ -141,5 +141,6 @@ const BuyPlannerSectionENG = (props) => (
         <EmoteIcon />
         <EmoteIcon />
     </BuyPlannerSection>
-);
+));
+
 export default BuyPlannerSectionENG;

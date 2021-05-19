@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import HeaderBook from "./../components/HeaderBook/HeaderBook";
 import { HeaderNormal } from "./../components/atoms/Header";
 import styled from "styled-components";
@@ -30,7 +30,7 @@ const TitleContainer = styled.div`
     max-width: 800px;
 `;
 
-export const HeaderSectionPL = (props) => (
+export const HeaderSectionPL = memo((props) => (
     <>
         <Container>
             <HeaderBook />
@@ -47,9 +47,9 @@ export const HeaderSectionPL = (props) => (
         </Container>
         <TilesContainerPL />
     </>
-);
+));
 
-const HeaderSection = (props) => (
+const HeaderSection = memo((props) => (
     <>
         <Container>
             <HeaderBook />
@@ -66,6 +66,6 @@ const HeaderSection = (props) => (
         </Container>
         <TilesContainerENG />
     </>
-);
+));
 
 export default HeaderSection;

@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext, useEffect, useRef, useState, memo } from "react";
 import styled from "styled-components";
 import { flexCenter, flexColumn } from "./../mixins";
 import { HeaderHola } from "../atoms/Header";
@@ -11,7 +11,7 @@ import { animateSlider } from "./../../utils/animations/slider.animation";
 const Container = styled.div`
     position: relative;
     width: 100%;
-    margin: 30px auto;
+    margin: 30px auto 150px;
     padding: 20px;
 
     svg {
@@ -63,7 +63,7 @@ const Container = styled.div`
     }
 
     @media screen and (max-width: 1340px) {
-        margin: 100px auto 150px;
+        margin: 100px auto 100px;
     }
 
     @media screen and (max-width: 1150px) {
@@ -172,7 +172,7 @@ export const ContentBox = styled.div`
     }
 `;
 
-const Title = styled.div`
+export const Title = styled.div`
     max-width: 50%;
     text-align: center;
 
@@ -199,6 +199,10 @@ const Description = styled.p`
     }
 `;
 
+export const DescriptionContainer = styled.div`
+    ${flexCenter};
+`;
+
 export const Photo = styled.img`
     position: absolute;
     top: 50%;
@@ -215,6 +219,7 @@ export const Photo = styled.img`
 
     @media screen and (max-width: 1560px) {
         max-width: 500px;
+        top: 40%;
     }
 
     @media screen and (max-width: 1340px) {
@@ -231,7 +236,7 @@ export const Photo = styled.img`
     }
 `;
 
-const SliderComponent = (props) => {
+const SliderComponent = ({ slides }) => {
     const {
         currentSlide,
         currentIndex,
@@ -242,6 +247,9 @@ const SliderComponent = (props) => {
         prohibitChange,
         allowedToChangeSlide,
     } = useContext(sliderContext);
+
+    const [autoPlay, setAutoPlay] = useState(true);
+    const autoPlayRef = useRef();
 
     const containerRef = useRef();
 
@@ -259,38 +267,71 @@ const SliderComponent = (props) => {
         }
     };
 
+    useEffect(() => {
+        autoPlayRef.current = handleNextSlideClick;
+    });
+
+    useEffect(() => {
+        const play = () => {
+            autoPlayRef.current();
+        };
+
+        if (autoPlay) {
+            const interval = setInterval(play, 6000);
+            return () => clearInterval(interval);
+        }
+    }, [autoPlay]);
+
     return (
-        <Container ref={containerRef}>
+        <Container
+            ref={containerRef}
+            onMouseLeave={() => {
+                setAutoPlay(true);
+            }}
+        >
             <ContentBox>
                 <Title>
                     <HeaderHola uppercase>
                         <h3>{currentSlide.title}</h3>
                     </HeaderHola>
                 </Title>
-                {currentSlide.description ? (
-                    <Description>{currentSlide.description}</Description>
-                ) : (
-                    currentSlide.list && (
-                        <ul>
-                            {currentSlide.list.map(({ item }, i) => (
-                                <li key={i}>{item}</li>
-                            ))}
-                        </ul>
-                    )
-                )}
-
+                <DescriptionContainer>
+                    {currentSlide.description ? (
+                        <Description>{currentSlide.description}</Description>
+                    ) : (
+                        currentSlide.list && (
+                            <ul>
+                                {currentSlide.list.map(({ item }, i) => (
+                                    <li key={i}>{item}</li>
+                                ))}
+                            </ul>
+                        )
+                    )}
+                </DescriptionContainer>
                 <Photo src={currentSlide.photo} alt="planner" />
                 <ProgressBar
                     progress={convertToProgress(currentIndex + 1, length)}
                 />
+                <PaginationComponent
+                    actualNumber={currentIndex + 1}
+                    length={length}
+                />
             </ContentBox>
-            <PaginationComponent
-                actualNumber={currentIndex + 1}
-                length={length}
+            <NavigationArrow
+                direction="left"
+                onClick={() => {
+                    setAutoPlay(false);
+                    handlePrevSlideClick();
+                }}
             />
-            <NavigationArrow direction="left" onClick={handlePrevSlideClick} />
-            <NavigationArrow direction="right" onClick={handleNextSlideClick} />
+            <NavigationArrow
+                direction="right"
+                onClick={() => {
+                    setAutoPlay(false);
+                    handleNextSlideClick();
+                }}
+            />
         </Container>
     );
 };
-export default SliderComponent;
+export default memo(SliderComponent);

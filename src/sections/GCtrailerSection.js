@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import styled from "styled-components";
 import { flexCenter } from "../components/mixins";
 import { HeaderHola } from "./../components/atoms/Header";
@@ -204,7 +204,7 @@ const NoteCard = styled.div`
     }
 `;
 
-export const GetCreativeTrailerSectionPL = (props) => {
+export const GetCreativeTrailerSectionPL = memo((props) => {
     const theme = useTheme();
 
     return (
@@ -259,9 +259,9 @@ export const GetCreativeTrailerSectionPL = (props) => {
             </HereYouAreContainer>
         </section>
     );
-};
+});
 
-const GetCreativeTrailerSection = (props) => {
+const GetCreativeTrailerSection = memo((props) => {
     const theme = useTheme();
 
     return (
@@ -320,5 +320,6 @@ const GetCreativeTrailerSection = (props) => {
             </HereYouAreContainer>
         </section>
     );
-};
+});
+
 export default GetCreativeTrailerSection;

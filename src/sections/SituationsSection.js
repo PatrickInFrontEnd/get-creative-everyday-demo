@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import styled, { useTheme } from "styled-components";
 import { HeaderHola } from "./../components/atoms/Header";
 import { ReactComponent as PencilIcon } from "./../assets/svg/pencil.svg";
@@ -84,7 +84,7 @@ const HeaderContainer = styled.div`
     }
 `;
 
-export const SituationsSectionPL = (props) => {
+export const SituationsSectionPL = memo((props) => {
     const situationBoxes = situationsPL.map((properties, i) => (
         <SituationBox key={i} {...properties} />
     ));
@@ -109,9 +109,9 @@ export const SituationsSectionPL = (props) => {
             <SituationsContainer>{situationBoxes}</SituationsContainer>
         </section>
     );
-};
+});
 
-const SituationsSection = (props) => {
+const SituationsSection = memo((props) => {
     const situationBoxes = situationsENG.map((properties, i) => (
         <SituationBox key={i} {...properties} />
     ));
@@ -136,6 +136,6 @@ const SituationsSection = (props) => {
             <SituationsContainer>{situationBoxes}</SituationsContainer>
         </section>
     );
-};
+});
 
 export default SituationsSection;

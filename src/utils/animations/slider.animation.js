@@ -2,6 +2,8 @@ import gsap from "gsap";
 import { HeaderBig } from "./../../components/PaginationComponent/Pagination.component";
 import {
     ContentBox,
+    Title,
+    DescriptionContainer,
     Photo,
 } from "./../../components/PlannerSlider/Slider.component";
 
@@ -13,6 +15,9 @@ const defaultVars = {
 export const animateSlider = (ref, slideCallback, allowChangeCb) => {
     const container = ref?.current;
     const contentBox = container.querySelector(ContentBox);
+    const titleElement = contentBox.querySelector(Title);
+    const descriptionContainer = contentBox.querySelector(DescriptionContainer);
+    const contentTargets = [titleElement, descriptionContainer];
     const photoElement = container.querySelector(Photo);
     const slideNumber = container.querySelector(HeaderBig);
 
@@ -30,7 +35,7 @@ export const animateSlider = (ref, slideCallback, allowChangeCb) => {
             "start"
         )
         .to(
-            contentBox,
+            contentTargets,
             {
                 translateX: "100px",
                 autoAlpha: 0,
@@ -42,6 +47,6 @@ export const animateSlider = (ref, slideCallback, allowChangeCb) => {
         .to(slideNumber, { autoAlpha: 1 })
         .addLabel("back")
         .to(photoElement, { translateX: "+=200px", autoAlpha: 1 }, "back")
-        .to(contentBox, { translateX: "0", autoAlpha: 1 }, "back")
+        .to(contentTargets, { translateX: "0", autoAlpha: 1 }, "back")
         .call(allowChangeCb);
 };
