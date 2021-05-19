@@ -201,6 +201,18 @@ const Description = styled.p`
 
 export const DescriptionContainer = styled.div`
     ${flexCenter};
+
+    ul {
+        max-width: 80%;
+
+        @media screen and (max-width: 900px) {
+            max-width: 80%;
+        }
+
+        @media screen and (max-width: 560px) {
+            max-width: 100%;
+        }
+    }
 `;
 
 export const Photo = styled.img`
