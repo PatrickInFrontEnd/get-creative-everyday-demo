@@ -6,9 +6,15 @@ import PlannerSection from "./../sections/PlannerSection";
 import NewsletterSection from "../sections/NewsletterSection";
 import AuthorsSection from "./../sections/AuthorsSection";
 import BuyPlannerSection from "./../sections/BuyPlannerSection";
+import { HeaderNormal } from "./../components/atoms/Header";
 
 const MainPageContainerENG = (props) => (
     <section id="main">
+        <HeaderNormal>
+            <h1>
+                <b>The end of pre-sale: 11th June 2021</b>
+            </h1>
+        </HeaderNormal>
         <HeaderSection />
         <GCtrailerSection />
         <SituationsSection />
