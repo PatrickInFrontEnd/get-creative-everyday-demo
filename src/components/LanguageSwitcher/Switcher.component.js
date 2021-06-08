@@ -54,6 +54,17 @@ const SwitcherComponent = (props) => {
             >
                 PL
             </Link>
+            <Link
+                to="/esp/"
+                className={
+                    location.pathname === "/esp" ||
+                    location.pathname === "/esp/"
+                        ? "active"
+                        : ""
+                }
+            >
+                ESP
+            </Link>
         </SwitchWrapper>
     );
 };

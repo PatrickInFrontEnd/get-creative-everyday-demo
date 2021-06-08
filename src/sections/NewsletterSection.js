@@ -225,6 +225,80 @@ export const NewsletterSectionPL = memo((props) => {
     );
 });
 
+export const NewsletterSectionSPANISH = memo((props) => {
+    const theme = useTheme();
+
+    const [email, setEmail] = useState("");
+    const [emailSent, setEmailSent] = useState(null);
+    const [buttonDisabled, setButtonDisabled] = useState(false);
+
+    //utils
+    const handleInputChange = (e) => setEmail(e.target.value);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setButtonDisabled(true);
+
+        axios({
+            method: "POST",
+            url: `${API_ENG_URL}/${email}`,
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+            },
+        })
+            .then((res) => {
+                setEmailSent(true);
+            })
+            .catch((e) => {
+                setEmailSent(false);
+                setButtonDisabled(false);
+            });
+    };
+
+    return (
+        <section
+            id="newsletter"
+            style={{
+                padding: "20px 20px 40px",
+                textAlign: "center",
+                backgroundColor: theme.colors.yellow,
+            }}
+        >
+            <HeaderHola uppercase>
+                <h2>¿Aún no tienes suficiente información?</h2>
+                <h5>¡suscríbete a nuestro boletín para obtener más!</h5>
+            </HeaderHola>
+            <Form onSubmit={handleSubmit}>
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Tu correo electrónico"
+                    onChange={handleInputChange}
+                    required
+                />
+                <button type="submit" disabled={buttonDisabled}>
+                    Inscribirse
+                </button>
+            </Form>
+
+            {emailSent === null ? null : emailSent === true ? (
+                <Message>
+                    <p className="green">
+                        ¡El correo electrónico se ha guardado!
+                    </p>
+                </Message>
+            ) : (
+                <Message>
+                    <p className="red">
+                        El correo electrónico no se ha guardado. Por favor,
+                        inténtelo de nuevo más tarde.
+                    </p>
+                </Message>
+            )}
+        </section>
+    );
+});
+
 const NewsletterSectionENG = memo((props) => {
     const theme = useTheme();
 

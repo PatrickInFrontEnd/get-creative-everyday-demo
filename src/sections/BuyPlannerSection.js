@@ -128,6 +128,21 @@ export const BuyPlannerSectionPL = memo((props) => (
     </BuyPlannerSection>
 ));
 
+export const BuyPlannerSectionSPANISH = memo((props) => (
+    <BuyPlannerSection id="kup">
+        <img src={GCED_BuyPNG} alt="Planner" />
+        <BuyNowButton
+            id="buy"
+            href="https://shop.getcreative-everyday.com/collection/frontpage/get-creative-every-day"
+            target="_blank"
+        >
+            COMPRA AHORA
+        </BuyNowButton>
+        <EmoteIcon />
+        <EmoteIcon />
+    </BuyPlannerSection>
+));
+
 const BuyPlannerSectionENG = memo((props) => (
     <BuyPlannerSection id="kup">
         <img src={GCED_BuyPNG} alt="Planner" />

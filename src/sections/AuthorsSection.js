@@ -2,9 +2,11 @@ import React, { memo } from "react";
 import { HeaderHola } from "./../components/atoms/Header";
 import AuthorsCircle, {
     AuthorsCircleContainerPL,
+    AuthorsCircleContainerSPANISH,
 } from "./../components/AuthorsCircle/AuthorsCircle.component";
 import AuthorsContainer, {
     AuthorsContainerPL,
+    AuthorsContainerSPANISH,
 } from "./../components/AuthorsContainer/Authors.container";
 
 export const AuthorsSectionPL = memo((props) => (
@@ -20,6 +22,22 @@ export const AuthorsSectionPL = memo((props) => (
         </HeaderHola>
 
         <AuthorsContainerPL />
+    </section>
+));
+
+export const AuthorsSectionSPANISH = memo((props) => (
+    <section id="authors" style={{ padding: "20px" }}>
+        <HeaderHola uppercase>
+            <h2>DE PROFESORES PARA PROFESORES</h2>
+        </HeaderHola>
+
+        <AuthorsCircleContainerSPANISH />
+
+        <HeaderHola>
+            <h3>Algunos de los autores contribuyentes:</h3>
+        </HeaderHola>
+
+        <AuthorsContainerSPANISH />
     </section>
 ));
 

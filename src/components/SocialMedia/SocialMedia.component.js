@@ -119,6 +119,7 @@ const Container = styled.div`
     @media screen and (max-width: 1450px) {
         & {
             position: absolute;
+            z-index: 0;
             bottom: 0;
             left: 0;
             width: 100%;
@@ -136,8 +137,14 @@ const Container = styled.div`
     }
 
     @media screen and (max-width: 480px) {
+        z-index: -1;
         padding: 30px 0;
-        bottom: -405px;
+        bottom: -475px;
+    }
+
+    @media screen and (max-width: 420px) {
+        padding: 50px 0 30px;
+        bottom: -495px;
     }
 `;
 
@@ -172,14 +179,16 @@ const ContainerEnglish = styled(Container)`
     }
 
     @media screen and (max-width: 480px) {
+        z-index: unset;
         padding: 0 0 35px;
         bottom: unset;
     }
 
     @media screen and (max-width: 420px) {
+        z-index: -1;
         position: absolute;
         top: unset;
-        bottom: -425px;
+        bottom: -465px;
         left: 0;
         height: 130px;
         padding: 0;

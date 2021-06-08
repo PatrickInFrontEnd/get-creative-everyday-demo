@@ -10,6 +10,7 @@ import {
     IncludeHeader /* ListedHeader */,
 } from "./../components/IncludeHeader";
 import { /* detailsBoxesENG, */ buyHeadersENG, slidesENG } from "./../data/eng";
+import { buyHeadersSPANISH, slidesSPANISH } from "./../data/esp";
 import { /* detailsBoxesPL, */ buyHeadersPL, slidesPL } from "./../data/pl";
 import { BuyNowButton } from "./BuyPlannerSection";
 import SliderComponent from "../components/PlannerSlider/Slider.component";
@@ -203,24 +204,24 @@ const BuyButton = styled(BuyNowButton)`
     right: unset;
     transform: none;
     max-width: 250px;
+    ${({ big }) => (big ? "max-width:350px" : "")};
     margin: 0 auto;
+
+    @media screen and (max-width: 560px) {
+        max-width: 80%;
+    }
 `;
 
 export const PlannerSectionPL = (props) => {
-    /* const includeHeaders = detailsBoxesPL.map((elProps, i) =>
-        elProps.sublist ? (
-            <ListedHeader {...elProps} key={i} />
-        ) : (
-            <IncludeHeader {...elProps} key={i} />
-        )
-    ); */
-
     const buyHeadersItems = buyHeadersPL.map((elProps, i) => (
         <IncludeHeader {...elProps} inverted key={i} />
     ));
 
     return (
-        <section id="planer" style={{ padding: "40px 0", textAlign: "left" }}>
+        <section
+            id="planer"
+            style={{ padding: "40px 20px", textAlign: "left" }}
+        >
             <HeaderContainer>
                 <HeaderNormal uppercase>
                     <p className="bigger-line">
@@ -260,11 +261,68 @@ export const PlannerSectionPL = (props) => {
             />
 
             <BuyButton
-                href="https://shop.getcreative-everyday.com/collection/frontpage/get-creative-every-day"
+                href="https://sklep.semantika.pl/get-creative-every-day"
                 target="_blank"
                 id="buy"
             >
                 KUP TERAZ
+            </BuyButton>
+        </section>
+    );
+};
+
+export const PlannerSectionSPANISH = (props) => {
+    const buyHeadersItems = buyHeadersSPANISH.map((elProps, i) => (
+        <IncludeHeader {...elProps} inverted key={i} />
+    ));
+
+    return (
+        <section id="planner" style={{ padding: "40px 0", textAlign: "left" }}>
+            <HeaderContainer>
+                <HeaderNormal uppercase>
+                    <p className="bigger-line">
+                        ¿Sigues buscando el planificador perfecto que cumpla
+                        todas tus expectativas?
+                    </p>
+                </HeaderNormal>
+                <CloudIcon />
+                <CloudIcon />
+            </HeaderContainer>
+
+            <HeaderContainer>
+                <HeaderHola>
+                    <h1>STOP!</h1>
+                </HeaderHola>
+
+                <HeaderNormal uppercase>
+                    <h1 className="bold">¡Aquí lo tienes!</h1>
+                </HeaderNormal>
+                <CloudIcon />
+                <CloudIcon />
+            </HeaderContainer>
+
+            <SliderProvider slides={slidesSPANISH}>
+                <SliderComponent />
+            </SliderProvider>
+
+            <IncludeContainer>{buyHeadersItems}</IncludeContainer>
+
+            <Photo
+                src={
+                    window.innerWidth >= 900
+                        ? GCED_detailsPNG
+                        : GCED_detailsMobile
+                }
+                alt="Get creative every day planner details"
+            />
+
+            <BuyButton
+                big
+                href="https://shop.getcreative-everyday.com/collection/frontpage/get-creative-every-day"
+                target="_blank"
+                id="buy"
+            >
+                COMPRA AHORA
             </BuyButton>
         </section>
     );

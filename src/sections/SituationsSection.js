@@ -5,6 +5,7 @@ import { ReactComponent as PencilIcon } from "./../assets/svg/pencil.svg";
 import SituationBox from "./../components/SituationBox/SituationBox";
 import { situationsPL } from "./../data/pl";
 import { situationsENG } from "./../data/eng";
+import { situationsSPANISH } from "./../data/esp";
 import SituationsContainer from "../components/SituationsContainer/Situations.container";
 
 const HeaderContainer = styled.div`
@@ -102,6 +103,33 @@ export const SituationsSectionPL = memo((props) => {
                         Czy Get Creative Every Day na pewno jest dla Ciebie?
                     </h2>
                     <h1>Sprawdź!</h1>
+                </HeaderHola>
+                <PencilIcon />
+                <PencilIcon />
+            </HeaderContainer>
+            <SituationsContainer>{situationBoxes}</SituationsContainer>
+        </section>
+    );
+});
+
+export const SituationsSectionSPANISH = memo((props) => {
+    const situationBoxes = situationsSPANISH.map((properties, i) => (
+        <SituationBox key={i} {...properties} />
+    ));
+
+    const theme = useTheme();
+
+    return (
+        <section
+            id="ejemplos"
+            style={{ textAlign: "center", padding: "40px 0" }}
+        >
+            <HeaderContainer>
+                <HeaderHola uppercase>
+                    <h2 style={{ color: theme.colors.dark_grey }}>
+                        ¿Estás seguro de que Get Creative Every Day es para ti?
+                    </h2>
+                    <h1>¡Compruébalo!</h1>
                 </HeaderHola>
                 <PencilIcon />
                 <PencilIcon />

@@ -6,6 +6,7 @@ import Tile, {
     TitleContainer,
 } from "./../atoms/Tile/Tile.component";
 import { boxesENG } from "./../../data/eng";
+import { boxesSPANISH } from "./../../data/esp";
 import { boxesPL } from "./../../data/pl";
 
 const TilesSection = styled.div`
@@ -36,6 +37,24 @@ const TilesSection = styled.div`
 
 export const TilesContainerPL = (props) => {
     const tileComponents = boxesPL.map(
+        ({ header, description, icon: IconComponent }, i) => (
+            <Tile key={i}>
+                <TitleContainer key={`title-container${i}`}>
+                    <TileIconContainer key={`tile-icon-container${i}`}>
+                        {<IconComponent key={`icon${i}`} />}
+                    </TileIconContainer>
+                    <h4 key={`header-title${i}`}>{header}</h4>
+                </TitleContainer>
+                <p key={`description${i}`}>{description}</p>
+            </Tile>
+        )
+    );
+
+    return <TilesSection id="niezbednik">{tileComponents}</TilesSection>;
+};
+
+export const TilesContainerSPANISH = (props) => {
+    const tileComponents = boxesSPANISH.map(
         ({ header, description, icon: IconComponent }, i) => (
             <Tile key={i}>
                 <TitleContainer key={`title-container${i}`}>

@@ -1,11 +1,12 @@
 import React, { memo } from "react";
+import styled, { useTheme } from "styled-components";
 import HeaderBook from "./../components/HeaderBook/HeaderBook";
 import { HeaderNormal } from "./../components/atoms/Header";
-import styled from "styled-components";
 import { flexCenter, size_100x100 } from "../components/mixins";
 import {
     TilesContainerPL,
     TilesContainerENG,
+    TilesContainerSPANISH,
 } from "./../components/Tiles Container/Tiles.container";
 
 const Container = styled.div`
@@ -46,6 +47,25 @@ export const HeaderSectionPL = memo((props) => (
             </TitleContainer>
         </Container>
         <TilesContainerPL />
+    </>
+));
+
+export const HeaderSectionSPANISH = memo((props) => (
+    <>
+        <Container>
+            <HeaderBook />
+            <TitleContainer>
+                <HeaderNormal>
+                    <h1 className="bigger-line header">
+                        <b>Agenda y planificador</b> con ideas listas para usar
+                        en las clases de ingléspara
+                        <br />
+                        los niños más pequeños
+                    </h1>
+                </HeaderNormal>
+            </TitleContainer>
+        </Container>
+        <TilesContainerSPANISH />
     </>
 ));
 

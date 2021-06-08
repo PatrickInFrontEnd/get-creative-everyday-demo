@@ -122,6 +122,36 @@ export const AuthorsCircleContainerPL = (props) => (
     </CircleContainer>
 );
 
+export const AuthorsCircleContainerSPANISH = (props) => (
+    <CircleContainer>
+        <p>
+            Para colaborar en el contenido, invitamos a profesores de inglés que
+            ofrecieron ideas, consejos y trucos basados en su práctica diaria.
+            Parte del material también <b>procede de los recursos</b>
+        </p>
+        <HeaderNormal>
+            <h2 className="bold">
+                <a
+                    href="https://www.getcreative.edu.pl/"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                >
+                    <span>de la revista Get Creative</span>
+                </a>
+            </h2>
+        </HeaderNormal>
+
+        <a
+            href="https://www.getcreative.edu.pl/"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="logo"
+        >
+            <img src={GetCreative_LOGO} alt="Logo Get Creative Edu" />
+        </a>
+    </CircleContainer>
+);
+
 const AuthorsCircleContainer = (props) => (
     <CircleContainer>
         <p>

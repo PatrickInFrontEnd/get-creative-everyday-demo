@@ -157,7 +157,7 @@ export const ContentBox = styled.div`
 
     @media screen and (max-width: 560px) {
         padding-top: 180px;
-        min-height: 350px;
+        min-height: 450px;
 
         ul {
             li {

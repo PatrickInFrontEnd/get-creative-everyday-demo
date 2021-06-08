@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { flexColumn } from "../mixins";
 import Author from "./../AuthorComponent/Author.component";
 import { authorsENG } from "./../../data/eng";
+import { authorsSPANISH } from "./../../data/esp";
 import { authorsPL } from "./../../data/pl";
 
 const Container = styled.div`
@@ -17,6 +18,19 @@ const Container = styled.div`
 
 export const AuthorsContainerPL = (props) => {
     const authorComponents = authorsPL.map((author, i) => (
+        <Author
+            key={i}
+            author={author.author}
+            links={author.links}
+            photo={author.photo}
+        />
+    ));
+
+    return <Container>{authorComponents}</Container>;
+};
+
+export const AuthorsContainerSPANISH = (props) => {
+    const authorComponents = authorsSPANISH.map((author, i) => (
         <Author
             key={i}
             author={author.author}

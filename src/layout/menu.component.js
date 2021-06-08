@@ -4,7 +4,10 @@ import styled from "styled-components";
 import gsap from "gsap";
 import scrollToPlugin from "gsap/ScrollToPlugin";
 import { SocialMediasComponentPL } from "../components/SocialMedia/SocialMedia.component";
-import { flexCenter } from "../components/mixins";
+import { flexCenter, flexColumn } from "../components/mixins";
+import flagPL from "./../assets/img/flags/polish.png";
+import flagENG from "./../assets/img/flags/english.png";
+import flagESP from "./../assets/img/flags/spanish.png";
 
 gsap.registerPlugin(scrollToPlugin);
 
@@ -27,6 +30,79 @@ export const Navigation = styled.nav`
 
         i {
             font-size: ${({ theme }) => theme.fz.S || "22px"};
+        }
+
+        .list {
+            ${flexCenter};
+            position: relative;
+            margin: 0 20px 0;
+
+            & > p {
+                position: relative;
+                overflow: hidden;
+                ${flexCenter};
+                padding: 8px 12px;
+                z-index: 1;
+                color: ${({ theme }) => theme.colors.black || "#ffffff"};
+                font-size: ${({ theme }) => theme.fz.XXS || "18px"};
+                font-weight: ${({ theme }) => theme.fw.semiBold};
+                transition: 0.3s;
+                cursor: pointer;
+            }
+
+            &:hover ul {
+                visibility: visible;
+                opacity: 1;
+            }
+
+            ul {
+                ${flexColumn};
+                align-items: flex-start;
+                position: absolute;
+                visibility: hidden;
+                opacity: 0;
+                transition: 0.3s all;
+                left: 0;
+                bottom: 0;
+                transform: translateY(100%);
+                width: 100%;
+                padding: 5px 10px;
+                background-color: ${({ theme }) => theme.colors.black};
+
+                li {
+                    ${flexCenter};
+                    justify-content: flex-start;
+                    width: 100%;
+                    border-bottom: 1px solid
+                        ${({ theme }) => theme.colors.white};
+
+                    &:last-of-type {
+                        border-bottom: none;
+                    }
+
+                    a {
+                        ${flexCenter};
+                        justify-content: flex-start;
+                        width: 100%;
+                        padding: 15px 10px;
+                        margin: 0;
+
+                        img {
+                            width: 30px;
+                            height: 30px;
+                            object-fit: fill;
+                            object-position: center center;
+                            margin-right: 10px;
+                        }
+
+                        p {
+                            color: ${({ theme }) => theme.colors.white};
+                            font-size: ${({ theme }) => theme.fz.XXXS};
+                            font-weight: ${({ theme }) => theme.fw.semiBold};
+                        }
+                    }
+                }
+            }
         }
 
         a {
@@ -281,6 +357,45 @@ const NavigationComponent = (props) => {
                 >
                     KUP TERAZ
                 </a>
+
+                <div className="list">
+                    <p>Zmień język</p>
+                    <ul>
+                        <li>
+                            <Link to="/pl/">
+                                <img
+                                    src={flagPL}
+                                    alt="Flaga Polski"
+                                    width="40"
+                                    height="40"
+                                />
+                                <p>PL</p>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/">
+                                <img
+                                    src={flagENG}
+                                    alt="Flaga Brytanii"
+                                    width="40"
+                                    height="40"
+                                />
+                                <p>ENG</p>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/esp/">
+                                <img
+                                    src={flagESP}
+                                    alt="Flaga Hiszpanii"
+                                    width="40"
+                                    height="40"
+                                />
+                                <p>ESP</p>
+                            </Link>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
             <SocialMediasComponentPL isActive={hamburgerActive} />
