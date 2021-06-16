@@ -11,11 +11,6 @@ import { HeaderNormal } from "./../components/atoms/Header";
 const MainPageContainer = (props) => (
     <>
         <section id="glowna">
-            <HeaderNormal>
-                <h1>
-                    <b>Koniec przedsprzedaży - 11.06.2021</b>
-                </h1>
-            </HeaderNormal>
             <HeaderSectionPL />
             <GetCreativeTrailerSectionPL />
             <SituationsSectionPL />
