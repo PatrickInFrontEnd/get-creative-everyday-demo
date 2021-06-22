@@ -248,7 +248,7 @@ export const Photo = styled.img`
     }
 `;
 
-const SliderComponent = ({ slides }) => {
+const SliderComponent = (props) => {
     const {
         currentSlide,
         currentIndex,
@@ -346,4 +346,5 @@ const SliderComponent = ({ slides }) => {
         </Container>
     );
 };
-export default memo(SliderComponent);
+
+export default SliderComponent;

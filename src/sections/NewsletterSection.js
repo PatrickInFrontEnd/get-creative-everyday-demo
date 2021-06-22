@@ -1,8 +1,10 @@
-import React, { useState, memo } from "react";
+import React, { useState, memo, useCallback, useContext } from "react";
 import styled, { useTheme } from "styled-components";
 import { HeaderHola } from "../components/atoms/Header";
 import { flexCenter } from "../components/mixins";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
+import { languageContext } from "./../providers/languageProvider";
 
 const Form = styled.form`
     ${flexCenter};
@@ -155,78 +157,21 @@ const Message = styled.div`
 const API_PL_URL = "https://api.semantika.pl/api/email-save";
 const API_ENG_URL = "https://api.semantika.pl/api/eng-email-save";
 
-export const NewsletterSectionPL = memo((props) => {
+const NewsletterSection = memo((props) => {
     const theme = useTheme();
-
-    const [email, setEmail] = useState("");
-    const [emailSent, setEmailSent] = useState(null);
-    const [buttonDisabled, setButtonDisabled] = useState(false);
-
-    //utils
-    const handleInputChange = (e) => setEmail(e.target.value);
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setButtonDisabled(true);
-
-        axios({
-            method: "POST",
-            url: `${API_PL_URL}/${email}`,
-            headers: {
-                "Access-Control-Allow-Origin": "*",
-            },
-        })
-            .then((res) => {
-                setEmailSent(true);
-            })
-            .catch((e) => {
-                setEmailSent(false);
-                setButtonDisabled(false);
-            });
-    };
-
-    return (
-        <section
-            id="newsletter"
-            style={{
-                padding: "20px 20px 40px",
-                textAlign: "center",
-                backgroundColor: theme.colors.yellow,
-            }}
-        >
-            <HeaderHola uppercase>
-                <h2>nadal za mało informacji?</h2>
-                <h5>zapisz się na nasz newsletter by dostać ich więcej!</h5>
-            </HeaderHola>
-            <Form onSubmit={handleSubmit}>
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Twój adres email"
-                    onChange={handleInputChange}
-                    required
-                />
-                <button type="submit" disabled={buttonDisabled}>
-                    Zapisz się
-                </button>
-            </Form>
-            {emailSent === null ? null : emailSent === true ? (
-                <Message>
-                    <p className="green">Email został zapisany!</p>
-                </Message>
-            ) : (
-                <Message>
-                    <p className="red">
-                        Email nie został zapisany. Spróbuj ponownie później.
-                    </p>
-                </Message>
-            )}
-        </section>
-    );
-});
-
-export const NewsletterSectionSPANISH = memo((props) => {
-    const theme = useTheme();
+    const { t } = useTranslation();
+    const { language } = useContext(languageContext);
+    
+    const getProperURL = useCallback(() => {
+        switch (language) {
+            case "pl": {
+                return API_PL_URL;
+            }
+            default: {
+                return API_ENG_URL;
+            }
+        }
+    }, [language]);
 
     const [email, setEmail] = useState("");
     const [emailSent, setEmailSent] = useState(null);
@@ -265,109 +210,33 @@ export const NewsletterSectionSPANISH = memo((props) => {
             }}
         >
             <HeaderHola uppercase>
-                <h2>¿Aún no tienes suficiente información?</h2>
-                <h5>¡suscríbete a nuestro boletín para obtener más!</h5>
+                <h2>{t("atoms.notEnoughInfo")}</h2>
+                <h5>{t("atoms.signUpForNewsletter")}</h5>
             </HeaderHola>
             <Form onSubmit={handleSubmit}>
                 <input
                     type="email"
                     name="email"
-                    placeholder="Tu correo electrónico"
+                    placeholder={t("atoms.yourEmail")}
                     onChange={handleInputChange}
                     required
                 />
                 <button type="submit" disabled={buttonDisabled}>
-                    Inscribirse
+                    {t("atoms.signUp")}
                 </button>
             </Form>
 
             {emailSent === null ? null : emailSent === true ? (
                 <Message>
-                    <p className="green">
-                        ¡El correo electrónico se ha guardado!
-                    </p>
+                    <p className="green">{t("atoms.messages.emailSaved")}</p>
                 </Message>
             ) : (
                 <Message>
-                    <p className="red">
-                        El correo electrónico no se ha guardado. Por favor,
-                        inténtelo de nuevo más tarde.
-                    </p>
+                    <p className="red">{t("atoms.messages.emailNotSaved")}</p>
                 </Message>
             )}
         </section>
     );
 });
 
-const NewsletterSectionENG = memo((props) => {
-    const theme = useTheme();
-
-    const [email, setEmail] = useState("");
-    const [emailSent, setEmailSent] = useState(null);
-    const [buttonDisabled, setButtonDisabled] = useState(false);
-
-    //utils
-    const handleInputChange = (e) => setEmail(e.target.value);
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setButtonDisabled(true);
-
-        axios({
-            method: "POST",
-            url: `${API_ENG_URL}/${email}`,
-            headers: {
-                "Access-Control-Allow-Origin": "*",
-            },
-        })
-            .then((res) => {
-                setEmailSent(true);
-            })
-            .catch((e) => {
-                setEmailSent(false);
-                setButtonDisabled(false);
-            });
-    };
-
-    return (
-        <section
-            id="newsletter"
-            style={{
-                padding: "20px 20px 40px",
-                textAlign: "center",
-                backgroundColor: theme.colors.yellow,
-            }}
-        >
-            <HeaderHola uppercase>
-                <h2>still not enough information?</h2>
-                <h5>sign up for our newsletter to get some details!</h5>
-            </HeaderHola>
-            <Form onSubmit={handleSubmit}>
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Your email adress"
-                    onChange={handleInputChange}
-                    required
-                />
-                <button type="submit" disabled={buttonDisabled}>
-                    Sign Up
-                </button>
-            </Form>
-
-            {emailSent === null ? null : emailSent === true ? (
-                <Message>
-                    <p className="green">Email has been saved!</p>
-                </Message>
-            ) : (
-                <Message>
-                    <p className="red">
-                        Email has not beed saved. Please try again later.
-                    </p>
-                </Message>
-            )}
-        </section>
-    );
-});
-
-export default NewsletterSectionENG;
+export default NewsletterSection;

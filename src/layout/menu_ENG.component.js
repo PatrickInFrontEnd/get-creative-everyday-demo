@@ -7,6 +7,7 @@ import { SocialMediasComponentENG } from "../components/SocialMedia/SocialMedia.
 import flagPL from "./../assets/img/flags/polish.png";
 import flagENG from "./../assets/img/flags/english.png";
 import flagESP from "./../assets/img/flags/spanish.png";
+import { useTranslation } from "react-i18next";
 
 gsap.registerPlugin(scrollToPlugin);
 
@@ -25,6 +26,9 @@ const NavigationComponent = (props) => {
         if (window.innerWidth <= 1450) toggleHamburgerActive();
     };
 
+    //i18n
+    const { t } = useTranslation();
+
     return (
         <Navigation>
             <div className={`links ${hamburgerActive ? "active" : ""} eng`}>
@@ -38,56 +42,57 @@ const NavigationComponent = (props) => {
                     <i className="fas fa-home"></i>
                 </Link>
                 <Link
-                    to="#situations"
+                    to={`#${t("navigation.examples.link")}`}
                     onClick={() => {
-                        scrollTo("#situations", 100);
+                        scrollTo(`#${t("navigation.examples.link")}`, 100);
                         handleMobileClick();
                     }}
                 >
-                    Examples of use
-                </Link>
-                <Link
-                    to="#planner"
-                    onClick={() => {
-                        scrollTo("#planner", 180);
-                        handleMobileClick();
-                    }}
-                >
-                    About planner
+                    {t("navigation.examples.name")}
                 </Link>
 
                 <Link
-                    to="#contact"
+                    to={`#${t("navigation.about.link")}`}
                     onClick={() => {
-                        scrollTo("#contact");
+                        scrollTo(`#${t("navigation.about.link")}`, 180);
                         handleMobileClick();
                     }}
                 >
-                    Contact
+                    {t("navigation.about.name")}
                 </Link>
 
                 <Link
-                    to="#newsletter"
+                    to={`#${t("navigation.contact.link")}`}
                     onClick={() => {
-                        scrollTo("#newsletter", 150);
+                        scrollTo(`#${t("navigation.contact.link")}`);
                         handleMobileClick();
                     }}
                 >
-                    Newsletter
+                    {t("navigation.contact.name")}
+                </Link>
+
+                <Link
+                    to={`#${t("navigation.newsletter.link")}`}
+                    onClick={() => {
+                        scrollTo(`#${t("navigation.newsletter.link")}`, 150);
+                        handleMobileClick();
+                    }}
+                >
+                    {t("navigation.newsletter.name")}
                 </Link>
 
                 <a
                     className="active"
-                    href="https://shop.getcreative-everyday.com/collection/frontpage/get-creative-every-day"
+                    href={t("externalLinks.shop")}
                     target="_blank"
                     rel="noreferrer"
                 >
-                    BUY NOW
+                    {t("atoms.buyNow")}
                 </a>
                 <div className="list">
-                    <p>Change Language</p>
+                    <p>{t("navigation.changeLanguage.name")}</p>
                     <ul>
-                        <li>
+                        <li onClick={() => scrollTo(0, 0)}>
                             <Link to="/pl/">
                                 <img
                                     src={flagPL}
@@ -95,10 +100,10 @@ const NavigationComponent = (props) => {
                                     width="40"
                                     height="40"
                                 />
-                                <p>PL</p>
+                                <p>{t("atoms.polish")}</p>
                             </Link>
                         </li>
-                        <li>
+                        <li onClick={() => scrollTo(0, 0)}>
                             <Link to="/">
                                 <img
                                     src={flagENG}
@@ -106,10 +111,10 @@ const NavigationComponent = (props) => {
                                     width="40"
                                     height="40"
                                 />
-                                <p>ENG</p>
+                                <p>{t("atoms.english")}</p>
                             </Link>
                         </li>
-                        <li>
+                        <li onClick={() => scrollTo(0, 0)}>
                             <Link to="/esp/">
                                 <img
                                     src={flagESP}
@@ -117,142 +122,14 @@ const NavigationComponent = (props) => {
                                     width="40"
                                     height="40"
                                 />
-                                <p>ESP</p>
+                                <p>{t("atoms.spanish")}</p>
                             </Link>
                         </li>
                     </ul>
                 </div>
             </div>
 
-            <SocialMediasComponentENG isActive={hamburgerActive} />
-
-            <Hamburger
-                className={hamburgerActive ? "active" : ""}
-                onClick={toggleHamburgerActive}
-            >
-                <span></span>
-                <span></span>
-                <span></span>
-            </Hamburger>
-        </Navigation>
-    );
-};
-
-export const NavigationComponentSPANISH = (props) => {
-    const scrollTo = (hash, offset = 0) =>
-        gsap.to(window, {
-            scrollTo: { offsetY: offset, y: hash },
-            duration: 1,
-        });
-
-    const [hamburgerActive, setHamburgerActive] = useState(false);
-
-    const toggleHamburgerActive = () => setHamburgerActive((prev) => !prev);
-
-    const handleMobileClick = () => {
-        if (window.innerWidth <= 1450) toggleHamburgerActive();
-    };
-
-    return (
-        <Navigation>
-            <div className={`links ${hamburgerActive ? "active" : ""} eng`}>
-                <Link
-                    to="#"
-                    onClick={() => {
-                        scrollTo(0);
-                        handleMobileClick();
-                    }}
-                >
-                    <i className="fas fa-home"></i>
-                </Link>
-                <Link
-                    to="#ejemplos"
-                    onClick={() => {
-                        scrollTo("#ejemplos", 100);
-                        handleMobileClick();
-                    }}
-                >
-                    Ejemplos de uso
-                </Link>
-                <Link
-                    to="#planner"
-                    onClick={() => {
-                        scrollTo("#planner", 180);
-                        handleMobileClick();
-                    }}
-                >
-                    Planificador
-                </Link>
-
-                <Link
-                    to="#contact"
-                    onClick={() => {
-                        scrollTo("#contact");
-                        handleMobileClick();
-                    }}
-                >
-                    Contacto
-                </Link>
-
-                <Link
-                    to="#newsletter"
-                    onClick={() => {
-                        scrollTo("#newsletter", 150);
-                        handleMobileClick();
-                    }}
-                >
-                    Newsletter
-                </Link>
-
-                <a
-                    className="active"
-                    href="https://shop.getcreative-everyday.com/collection/frontpage/get-creative-every-day"
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    COMPRA AHORA
-                </a>
-                <div className="list">
-                    <p>Cambiar idioma</p>
-                    <ul>
-                        <li>
-                            <Link to="/pl/">
-                                <img
-                                    src={flagPL}
-                                    alt="Bandera polaca"
-                                    width="40"
-                                    height="40"
-                                />
-                                <p>PL</p>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/">
-                                <img
-                                    src={flagENG}
-                                    alt="La bandera de Gran Bretaña"
-                                    width="40"
-                                    height="40"
-                                />
-                                <p>ENG</p>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/esp/">
-                                <img
-                                    src={flagESP}
-                                    alt="Bandera de españa"
-                                    width="40"
-                                    height="40"
-                                />
-                                <p>ESP</p>
-                            </Link>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <SocialMediasComponentENG isActive={hamburgerActive} />
+            <SocialMediasComponentENG isActive={!!hamburgerActive} />
 
             <Hamburger
                 className={hamburgerActive ? "active" : ""}

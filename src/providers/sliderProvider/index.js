@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useEffect, useState, memo } from "react";
 
 export const sliderContext = createContext({
     slides: [],
@@ -13,7 +13,6 @@ export const sliderContext = createContext({
 });
 
 const SliderProvider = ({ slides, children }) => {
-    const [slidesArray] = useState(slides || []);
     const [slidesLength, setLength] = useState(slides?.length);
     const [currentSlide, setCurrentSlide] = useState(slides[0] || null);
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -39,13 +38,18 @@ const SliderProvider = ({ slides, children }) => {
     };
 
     useEffect(() => {
-        setCurrentSlide(slidesArray[currentIndex]);
-    }, [slidesArray, currentIndex]);
+        setCurrentSlide(slides[currentIndex]);
+    }, [slides, currentIndex]);
+
+    useEffect(() => {
+        setLength(slides?.length);
+        setCurrentIndex(0);
+    }, [slides]);
 
     return (
         <sliderContext.Provider
             value={{
-                slides: slidesArray,
+                slides,
                 length: slidesLength,
                 currentSlide,
                 currentIndex,
@@ -61,4 +65,4 @@ const SliderProvider = ({ slides, children }) => {
     );
 };
 
-export default SliderProvider;
+export default memo(SliderProvider);

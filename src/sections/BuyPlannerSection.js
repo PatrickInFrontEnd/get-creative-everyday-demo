@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { flexCenter } from "./../components/mixins";
 import GCED_BuyPNG from "./../assets/img/GCED_flat_mockup.png";
 import { ReactComponent as EmoteIcon } from "./../assets/svg/emote.svg";
+import { useTranslation } from "react-i18next";
 
 const BuyPlannerSection = styled.div`
     position: relative;
@@ -77,6 +78,7 @@ export const BuyNowButton = styled.a`
     font-size: ${({ theme }) => theme.fz.hola.medium};
     line-height: 100%;
     text-transform: uppercase;
+    text-align: center;
     border: 4px solid;
     transition: 0.3s;
 
@@ -113,49 +115,23 @@ export const BuyNowButton = styled.a`
     }
 `;
 
-export const BuyPlannerSectionPL = memo((props) => (
-    <BuyPlannerSection id="kup">
-        <img src={GCED_BuyPNG} alt="Planner" />
-        <BuyNowButton
-            id="buy"
-            href="https://sklep.semantika.pl/get-creative-every-day"
-            target="_blank"
-        >
-            KUP TERAZ
-        </BuyNowButton>
-        <EmoteIcon />
-        <EmoteIcon />
-    </BuyPlannerSection>
-));
+const BuyPlannerContainer = (props) => {
+    const { t } = useTranslation();
 
-export const BuyPlannerSectionSPANISH = memo((props) => (
-    <BuyPlannerSection id="kup">
-        <img src={GCED_BuyPNG} alt="Planner" />
-        <BuyNowButton
-            id="buy"
-            href="https://shop.getcreative-everyday.com/collection/frontpage/get-creative-every-day"
-            target="_blank"
-        >
-            COMPRA AHORA
-        </BuyNowButton>
-        <EmoteIcon />
-        <EmoteIcon />
-    </BuyPlannerSection>
-));
+    return (
+        <BuyPlannerSection id="kup">
+            <img src={GCED_BuyPNG} alt="Planner" />
+            <BuyNowButton
+                id="buy"
+                href={t("externalLinks.shop")}
+                target="_blank"
+            >
+                {t("atoms.buyNow")}
+            </BuyNowButton>
+            <EmoteIcon />
+            <EmoteIcon />
+        </BuyPlannerSection>
+    );
+};
 
-const BuyPlannerSectionENG = memo((props) => (
-    <BuyPlannerSection id="kup">
-        <img src={GCED_BuyPNG} alt="Planner" />
-        <BuyNowButton
-            id="buy"
-            href="https://shop.getcreative-everyday.com/collection/frontpage/get-creative-every-day"
-            target="_blank"
-        >
-            BUY NOW
-        </BuyNowButton>
-        <EmoteIcon />
-        <EmoteIcon />
-    </BuyPlannerSection>
-));
-
-export default BuyPlannerSectionENG;
+export default BuyPlannerContainer;

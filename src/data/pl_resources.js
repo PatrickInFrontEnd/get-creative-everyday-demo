@@ -1,9 +1,9 @@
-import { ReactComponent as EnglishIcon } from "./../assets/svg/english.svg";
-import { ReactComponent as CalendarIcon } from "./../assets/svg/calendar.svg";
-import { ReactComponent as CreativityIcon } from "./../assets/svg/creativity.svg";
-import { ReactComponent as OrderIcon } from "./../assets/svg/order.svg";
-import { ReactComponent as FacebookIcon } from "./../assets/svg/facebook_author.svg";
-import { ReactComponent as WWWIcon } from "./../assets/svg/www_author.svg";
+import EnglishIcon from "./../assets/svg/english.svg";
+import CalendarIcon from "./../assets/svg/calendar.svg";
+import CreativityIcon from "./../assets/svg/creativity.svg";
+import OrderIcon from "./../assets/svg/order.svg";
+import FacebookIcon from "./../assets/svg/facebook_author.svg";
+import WWWIcon from "./../assets/svg/www_author.svg";
 import MonikaJPG from "./../assets/img/authors/Monika_Bigaj.jpeg";
 import AniaJPG from "./../assets/img/authors/Ania_Buschke.jpg";
 import MarlenaJPG from "./../assets/img/authors/Marlena_Kubelczuk.jpg";

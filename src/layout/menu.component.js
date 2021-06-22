@@ -46,6 +46,7 @@ export const Navigation = styled.nav`
                 color: ${({ theme }) => theme.colors.black || "#ffffff"};
                 font-size: ${({ theme }) => theme.fz.XXS || "18px"};
                 font-weight: ${({ theme }) => theme.fw.semiBold};
+                text-transform: capitalize;
                 transition: 0.3s;
                 cursor: pointer;
             }
@@ -66,6 +67,7 @@ export const Navigation = styled.nav`
                 bottom: 0;
                 transform: translateY(100%);
                 width: 100%;
+                min-width: 150px;
                 padding: 5px 10px;
                 background-color: ${({ theme }) => theme.colors.black};
 
@@ -99,6 +101,7 @@ export const Navigation = styled.nav`
                             color: ${({ theme }) => theme.colors.white};
                             font-size: ${({ theme }) => theme.fz.XXXS};
                             font-weight: ${({ theme }) => theme.fw.semiBold};
+                            text-transform: capitalize;
                         }
                     }
                 }
@@ -361,7 +364,7 @@ const NavigationComponent = (props) => {
                 <div className="list">
                     <p>Zmień język</p>
                     <ul>
-                        <li>
+                        <li onClick={() => scrollTo(0, 0)}>
                             <Link to="/pl/">
                                 <img
                                     src={flagPL}
@@ -369,10 +372,10 @@ const NavigationComponent = (props) => {
                                     width="40"
                                     height="40"
                                 />
-                                <p>PL</p>
+                                <p>Polski</p>
                             </Link>
                         </li>
-                        <li>
+                        <li onClick={() => scrollTo(0, 0)}>
                             <Link to="/">
                                 <img
                                     src={flagENG}
@@ -380,10 +383,10 @@ const NavigationComponent = (props) => {
                                     width="40"
                                     height="40"
                                 />
-                                <p>ENG</p>
+                                <p>English</p>
                             </Link>
                         </li>
-                        <li>
+                        <li onClick={() => scrollTo(0, 0)}>
                             <Link to="/esp/">
                                 <img
                                     src={flagESP}
@@ -391,7 +394,7 @@ const NavigationComponent = (props) => {
                                     width="40"
                                     height="40"
                                 />
-                                <p>ESP</p>
+                                <p>Española</p>
                             </Link>
                         </li>
                     </ul>

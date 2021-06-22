@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { ReactSVG } from "react-svg";
 import { flexCenter, flexColumn, marginToChildren } from "./../mixins";
 
 const Container = styled.div`
@@ -164,14 +165,14 @@ const UserHighlight = (props) => (
 );
 
 const AuthorComponent = ({ photo, links, author }) => {
-    const authorLinks = links.map(({ link, icon: Icon }, i) => (
+    const authorLinks = links.map(({ link, icon }, i) => (
         <AuthorLink
             href={`https://${link}`}
             target="_blank"
             rel="noreferrer noopener"
             key={i}
         >
-            <Icon />
+            <ReactSVG src={icon} />
             <p>{link}</p>
         </AuthorLink>
     ));

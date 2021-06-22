@@ -68,4 +68,5 @@ const SwitcherComponent = (props) => {
         </SwitchWrapper>
     );
 };
+
 export default SwitcherComponent;

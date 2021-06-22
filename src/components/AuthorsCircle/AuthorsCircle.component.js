@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { HeaderNormal } from "./../atoms/Header";
 import { flexCenter, flexColumn } from "./../mixins";
 import GetCreative_LOGO from "./../../assets/img/get_logo.png";
+import { useTranslation, Trans } from "react-i18next";
 
 const CircleContainer = styled.div`
     ${flexCenter};
@@ -91,94 +92,40 @@ const CircleContainer = styled.div`
     }
 `;
 
-export const AuthorsCircleContainerPL = (props) => (
-    <CircleContainer>
-        <p>
-            Do współpracy nad treściami zaprosiliśmy nauczycieli języka
-            angielskiego, którzy zaproponowali pomysły, wskazówki i tipy oparte
-            na ich codziennej praktyce. Część materiałów pochodzi{" "}
-            <b>także z zasobów</b>
-        </p>
-        <HeaderNormal>
-            <h2 className="bold">
-                <a
-                    href="https://www.getcreative.edu.pl/"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                >
-                    <span>czasopisma Get Creative</span>
-                </a>
-            </h2>
-        </HeaderNormal>
+const AuthorsCircleContainer = (props) => {
+    const { t, i18n } = useTranslation();
 
-        <a
-            href="https://www.getcreative.edu.pl/"
-            target="_blank"
-            rel="noreferrer noopener"
-            className="logo"
-        >
-            <img src={GetCreative_LOGO} alt="Logo Get Creative Edu" />
-        </a>
-    </CircleContainer>
-);
+    return (
+        <CircleContainer>
+            <p>
+                <Trans
+                    i18n={i18n}
+                    i18nKey="atoms.authorsCircle.content"
+                    components={{ b: <b /> }}
+                />
+            </p>
+            <HeaderNormal>
+                <h2 className="bold">
+                    <a
+                        href="https://www.getcreative.edu.pl/"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                    >
+                        <span>{t("atoms.authorsCircle.span")}</span>
+                    </a>
+                </h2>
+            </HeaderNormal>
 
-export const AuthorsCircleContainerSPANISH = (props) => (
-    <CircleContainer>
-        <p>
-            Para colaborar en el contenido, invitamos a profesores de inglés que
-            ofrecieron ideas, consejos y trucos basados en su práctica diaria.
-            Parte del material también <b>procede de los recursos</b>
-        </p>
-        <HeaderNormal>
-            <h2 className="bold">
-                <a
-                    href="https://www.getcreative.edu.pl/"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                >
-                    <span>de la revista Get Creative</span>
-                </a>
-            </h2>
-        </HeaderNormal>
+            <a
+                href="https://www.getcreative.edu.pl/"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="logo"
+            >
+                <img src={GetCreative_LOGO} alt="Logo Get Creative Edu" />
+            </a>
+        </CircleContainer>
+    );
+};
 
-        <a
-            href="https://www.getcreative.edu.pl/"
-            target="_blank"
-            rel="noreferrer noopener"
-            className="logo"
-        >
-            <img src={GetCreative_LOGO} alt="Logo Get Creative Edu" />
-        </a>
-    </CircleContainer>
-);
-
-const AuthorsCircleContainer = (props) => (
-    <CircleContainer>
-        <p>
-            All content pages have been created by teachers of English. They are
-            based on ideas tested in their daily practice. Part of the materials
-            used in GC planner derive <b>from</b>
-        </p>
-        <HeaderNormal>
-            <h2 className="bold">
-                <a
-                    href="https://www.getcreative.edu.pl/"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                >
-                    <span>Get Creative magazine resources</span>
-                </a>
-            </h2>
-        </HeaderNormal>
-
-        <a
-            href="https://www.getcreative.edu.pl/"
-            target="_blank"
-            rel="noreferrer noopener"
-            className="logo"
-        >
-            <img src={GetCreative_LOGO} alt="Logo Get Creative Edu" />
-        </a>
-    </CircleContainer>
-);
 export default AuthorsCircleContainer;

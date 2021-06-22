@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useContext } from "react";
+import styled, { css } from "styled-components";
 import { HeaderNormal, HeaderHola } from "./../components/atoms/Header";
 import { flexCenter } from "../components/mixins";
 import { ReactComponent as CloudIcon } from "./../assets/svg/cloud.svg";
@@ -9,12 +9,11 @@ import GCED_detailsMobile from "./../assets/img/GCED_mockup.png";
 import {
     IncludeHeader /* ListedHeader */,
 } from "./../components/IncludeHeader";
-import { /* detailsBoxesENG, */ buyHeadersENG, slidesENG } from "./../data/eng";
-import { buyHeadersSPANISH, slidesSPANISH } from "./../data/esp";
-import { /* detailsBoxesPL, */ buyHeadersPL, slidesPL } from "./../data/pl";
 import { BuyNowButton } from "./BuyPlannerSection";
 import SliderComponent from "../components/PlannerSlider/Slider.component";
 import SliderProvider from "./../providers/sliderProvider";
+import { useTranslation } from "react-i18next";
+import { languageContext } from "../providers/languageProvider";
 
 const HeaderContainer = styled.div`
     position: relative;
@@ -204,6 +203,7 @@ const BuyButton = styled(BuyNowButton)`
     right: unset;
     transform: none;
     max-width: 250px;
+    text-align: center;
     ${({ big }) => (big ? "max-width:350px" : "")};
     margin: 0 auto;
 
@@ -212,143 +212,46 @@ const BuyButton = styled(BuyNowButton)`
     }
 `;
 
-export const PlannerSectionPL = (props) => {
-    const buyHeadersItems = buyHeadersPL.map((elProps, i) => (
+export const PlannerSection = (props) => {
+    const { t } = useTranslation();
+    const { language } = useContext(languageContext);
+
+    const slides = t("slides", { returnObjects: true });
+    const buyHeaders = t("buyHeaders", { returnObjects: true });
+
+    const buyHeadersItems = buyHeaders.map((elProps, i) => (
         <IncludeHeader {...elProps} inverted key={i} />
     ));
 
-    return (
-        <section
-            id="planer"
-            style={{ padding: "40px 20px", textAlign: "left" }}
-        >
-            <HeaderContainer>
-                <HeaderNormal uppercase>
-                    <p className="bigger-line">
-                        Nadal poszukujesz idealnego plannera, który spełni
-                        wszystkie Twoje oczekiwania?
-                    </p>
-                </HeaderNormal>
-                <CloudIcon />
-                <CloudIcon />
-            </HeaderContainer>
-
-            <HeaderContainer>
-                <HeaderHola>
-                    <h1>STOP!</h1>
-                </HeaderHola>
-
-                <HeaderNormal uppercase>
-                    <h1 className="bold">Masz go tutaj!</h1>
-                </HeaderNormal>
-                <CloudIcon />
-                <CloudIcon />
-            </HeaderContainer>
-
-            <SliderProvider slides={slidesPL}>
-                <SliderComponent />
-            </SliderProvider>
-
-            <IncludeContainer>{buyHeadersItems}</IncludeContainer>
-
+    const renderPhoto = () =>
+        language === "pl" ? (
             <Photo
                 src={
                     window.innerWidth >= 900
                         ? GCED_details_PL_PNG
                         : GCED_detailsMobile
                 }
-                alt="Get creative every day planner details"
+                alt="Get creative every day planer - szczegóły"
             />
-
-            <BuyButton
-                href="https://sklep.semantika.pl/get-creative-every-day"
-                target="_blank"
-                id="buy"
-            >
-                KUP TERAZ
-            </BuyButton>
-        </section>
-    );
-};
-
-export const PlannerSectionSPANISH = (props) => {
-    const buyHeadersItems = buyHeadersSPANISH.map((elProps, i) => (
-        <IncludeHeader {...elProps} inverted key={i} />
-    ));
-
-    return (
-        <section id="planner" style={{ padding: "40px 0", textAlign: "left" }}>
-            <HeaderContainer>
-                <HeaderNormal uppercase>
-                    <p className="bigger-line">
-                        ¿Sigues buscando el planificador perfecto que cumpla
-                        todas tus expectativas?
-                    </p>
-                </HeaderNormal>
-                <CloudIcon />
-                <CloudIcon />
-            </HeaderContainer>
-
-            <HeaderContainer>
-                <HeaderHola>
-                    <h1>STOP!</h1>
-                </HeaderHola>
-
-                <HeaderNormal uppercase>
-                    <h1 className="bold">¡Aquí lo tienes!</h1>
-                </HeaderNormal>
-                <CloudIcon />
-                <CloudIcon />
-            </HeaderContainer>
-
-            <SliderProvider slides={slidesSPANISH}>
-                <SliderComponent />
-            </SliderProvider>
-
-            <IncludeContainer>{buyHeadersItems}</IncludeContainer>
-
-            <Photo
-                src={
-                    window.innerWidth >= 900
-                        ? GCED_detailsPNG
-                        : GCED_detailsMobile
-                }
-                alt="Get creative every day planner details"
-            />
-
-            <BuyButton
-                big
-                href="https://shop.getcreative-everyday.com/collection/frontpage/get-creative-every-day"
-                target="_blank"
-                id="buy"
-            >
-                COMPRA AHORA
-            </BuyButton>
-        </section>
-    );
-};
-
-const PlannerSection = (props) => {
-    /* const includeHeaders = detailsBoxesENG.map((elProps, i) =>
-        elProps.sublist ? (
-            <ListedHeader {...elProps} key={i} />
         ) : (
-            <IncludeHeader {...elProps} key={i} />
-        )
-    ); */
-
-    const buyHeadersItems = buyHeadersENG.map((elProps, i) => (
-        <IncludeHeader {...elProps} inverted key={i} />
-    ));
+            <Photo
+                src={
+                    window.innerWidth >= 900
+                        ? GCED_detailsPNG
+                        : GCED_detailsMobile
+                }
+                alt="Get creative every day planner details"
+            />
+        );
 
     return (
-        <section id="planner" style={{ padding: "40px 0", textAlign: "left" }}>
+        <section
+            id={t("navigation.about.link")}
+            style={{ padding: "40px 0", textAlign: "left" }}
+        >
             <HeaderContainer>
                 <HeaderNormal uppercase>
-                    <p className="bigger-line">
-                        Are you still looking for an ideal planner that will
-                        meet all your expectations?
-                    </p>
+                    <p className="bigger-line">{t("atoms.meetExpectations")}</p>
                 </HeaderNormal>
                 <CloudIcon />
                 <CloudIcon />
@@ -360,41 +263,28 @@ const PlannerSection = (props) => {
                 </HeaderHola>
 
                 <HeaderNormal uppercase>
-                    <h1 className="bold">you've just found it!</h1>
+                    <h1 className="bold">{t("atoms.youFoundIt")}</h1>
                 </HeaderNormal>
                 <CloudIcon />
                 <CloudIcon />
             </HeaderContainer>
 
-            <SliderProvider slides={slidesENG}>
+            <SliderProvider slides={slides}>
                 <SliderComponent />
             </SliderProvider>
 
             <IncludeContainer>{buyHeadersItems}</IncludeContainer>
 
-            <Photo
-                src={
-                    window.innerWidth >= 900
-                        ? GCED_detailsPNG
-                        : GCED_detailsMobile
-                }
-                alt="Get creative every day planner details"
-            />
+            {renderPhoto()}
 
             <BuyButton
-                href="https://shop.getcreative-everyday.com/collection/frontpage/get-creative-every-day"
+                href={t("externalLinks.shop")}
                 target="_blank"
                 id="buy"
+                big
             >
-                BUY NOW
+                {t("atoms.buyNow")}
             </BuyButton>
-
-            <HeaderHola uppercase>
-                <h3>
-                    JOIN A HUGE GROUP OF WELL ORGANISED AND CREATIVE TEACHERS OF
-                    ENGLISH
-                </h3>
-            </HeaderHola>
         </section>
     );
 };

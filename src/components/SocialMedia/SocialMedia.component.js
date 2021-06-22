@@ -154,7 +154,7 @@ const ContainerEnglish = styled(Container)`
     padding: 0 0 35px;
     background-color: ${({ theme }) => theme.colors.white};
     border-radius: 20px;
-    transition: 0.3s;
+    transition: 0.5s;
 
     &.hidden {
         top: 0;
@@ -252,14 +252,18 @@ export const SocialMediasComponentENG = ({ isActive }) => {
     //refs
     const ref = useRef();
     const listenerRef = useRef();
+
+    const handleSetY = () => setY(window.scrollY);
     //listen to the window's scrollY
     listenerRef.current = () => {
-        window.addEventListener("scroll", () => {
-            setY(window.scrollY);
-        });
+        window.addEventListener("scroll", handleSetY);
     };
 
-    useEffect(() => listenerRef.current(), []);
+    useEffect(() => {
+        listenerRef.current();
+
+        return () => window.removeEventListener("scroll", handleSetY);
+    }, []);
 
     //UTILS
     const addClass = (ref, className) => ref.current.classList.add(className);

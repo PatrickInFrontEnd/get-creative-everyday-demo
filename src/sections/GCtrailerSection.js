@@ -7,6 +7,7 @@ import { ReactComponent as ClipIcon } from "./../assets/svg/clip.svg";
 import FireworksIcon from "./../assets/img/fireworks.png";
 import GCEDLogotypePNG from "./../assets/img/gced_logo.png";
 import { useTheme } from "styled-components";
+import { useTranslation } from "react-i18next";
 
 const QuestionsContainer = styled.div`
     ${flexCenter};
@@ -204,26 +205,30 @@ const NoteCard = styled.div`
     }
 `;
 
-export const GetCreativeTrailerSectionPL = memo((props) => {
+export const GetCreativeTrailerSection = memo((props) => {
     const theme = useTheme();
+    const { t } = useTranslation();
 
     return (
-        <section id="trailer" style={{ textAlign: "center", margin: "40px 0" }}>
+        <section
+            id={"trailer"}
+            style={{ textAlign: "center", margin: "40px 0" }}
+        >
             <QuestionsContainer>
                 <SunIcon />
                 <SunIcon />
 
                 <HeaderHola>
-                    <h2>Czy to możliwe?</h2>
+                    <h2>{t("quotes.possible")}</h2>
                 </HeaderHola>
                 <HeaderHola>
-                    <h2>Organizator, inspirator i time-saver w jednym?</h2>
+                    <h2>{t("quotes.organiser")}</h2>
                 </HeaderHola>
                 <HeaderHola>
-                    <h2>Dedykowany nauczycielom angielskiego?</h2>
+                    <h2>{t("quotes.teachers")}</h2>
                 </HeaderHola>
                 <HeaderHola>
-                    <h2>Already fully in English?</h2>
+                    <h2>{t("quotes.tool")}</h2>
                 </HeaderHola>
             </QuestionsContainer>
 
@@ -232,7 +237,7 @@ export const GetCreativeTrailerSectionPL = memo((props) => {
                     <h2>
                         yess!!!
                         <br />
-                        oto on
+                        {t("atoms.hereYouAre")}
                     </h2>
                 </HeaderHola>
 
@@ -250,131 +255,7 @@ export const GetCreativeTrailerSectionPL = memo((props) => {
 
                 <NoteCard>
                     <HeaderHola uppercase>
-                        <h2>
-                            Zapewniamy nauczycielską kreatywność każdego dnia!
-                        </h2>
-                    </HeaderHola>
-                    <ClipIcon />
-                </NoteCard>
-            </HereYouAreContainer>
-        </section>
-    );
-});
-
-export const GetCreativeTrailerSectionSPANISH = memo((props) => {
-    const theme = useTheme();
-
-    return (
-        <section id="trailer" style={{ textAlign: "center", margin: "40px 0" }}>
-            <QuestionsContainer>
-                <SunIcon />
-                <SunIcon />
-
-                <HeaderHola>
-                    <h2>¿Es esto posible?</h2>
-                </HeaderHola>
-                <HeaderHola>
-                    <h2>
-                        ¿Organizador, inspirador y ahorrador de tiempo, todo en
-                        uno?
-                    </h2>
-                </HeaderHola>
-                <HeaderHola>
-                    <h2>¿Dirigido especialmente a los profesores de inglés?</h2>
-                </HeaderHola>
-                <HeaderHola>
-                    <h2>Already fully in English?</h2>
-                </HeaderHola>
-            </QuestionsContainer>
-
-            <HeaderContainer>
-                <HeaderHola uppercase>
-                    <h2>
-                        yess!!!
-                        <br />
-                        ¡Aquí está!
-                    </h2>
-                </HeaderHola>
-
-                <img src={FireworksIcon} alt="firworks icon" />
-                <img src={FireworksIcon} alt="firworks icon" />
-            </HeaderContainer>
-
-            <HereYouAreContainer>
-                <Logo>
-                    <img src={GCEDLogotypePNG} alt="Get creative every day" />
-                    <HeaderHola color={theme.colors.dark_grey}>
-                        <h2>School Year 2021/2022</h2>
-                    </HeaderHola>
-                </Logo>
-
-                <NoteCard>
-                    <HeaderHola uppercase>
-                        <h2>
-                            Proporcionamos creatividad a los profesores todos
-                            los días
-                        </h2>
-                    </HeaderHola>
-                    <ClipIcon />
-                </NoteCard>
-            </HereYouAreContainer>
-        </section>
-    );
-});
-
-const GetCreativeTrailerSection = memo((props) => {
-    const theme = useTheme();
-
-    return (
-        <section id="trailer" style={{ textAlign: "center", margin: "40px 0" }}>
-            <QuestionsContainer>
-                <SunIcon />
-                <SunIcon />
-
-                <HeaderHola>
-                    <h2>Is it really possible?</h2>
-                </HeaderHola>
-                <HeaderHola>
-                    <h2>
-                        An organiser, your lesson wizard and time-saver all in
-                        one?
-                    </h2>
-                </HeaderHola>
-                <HeaderHola>
-                    <h2>
-                        Dedicated to the teachers of English (English taught as
-                        a foreign language)?
-                    </h2>
-                </HeaderHola>
-                <HeaderHola>
-                    <h2>More of a tool than just a planner?</h2>
-                </HeaderHola>
-            </QuestionsContainer>
-
-            <HeaderContainer>
-                <HeaderHola uppercase>
-                    <h2>
-                        yess!!!
-                        <br />
-                        here you are
-                    </h2>
-                </HeaderHola>
-
-                <img src={FireworksIcon} alt="firworks icon" />
-                <img src={FireworksIcon} alt="firworks icon" />
-            </HeaderContainer>
-
-            <HereYouAreContainer>
-                <Logo>
-                    <img src={GCEDLogotypePNG} alt="Get creative every day" />
-                    <HeaderHola color={theme.colors.dark_grey}>
-                        <h2>School Year 2021/2022</h2>
-                    </HeaderHola>
-                </Logo>
-
-                <NoteCard>
-                    <HeaderHola uppercase>
-                        <h2>Your everyday boost of creativity in teaching!</h2>
+                        <h2>{t("atoms.creativityBoost")}</h2>
                     </HeaderHola>
                     <ClipIcon />
                 </NoteCard>
