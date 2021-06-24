@@ -1,4 +1,10 @@
-import React, { useState, memo, useCallback, useContext } from "react";
+import React, {
+    useState,
+    memo,
+    useCallback,
+    useContext,
+    useEffect,
+} from "react";
 import styled, { useTheme } from "styled-components";
 import { HeaderHola } from "../components/atoms/Header";
 import { flexCenter } from "../components/mixins";
@@ -154,31 +160,58 @@ const Message = styled.div`
     }
 `;
 
-const API_PL_URL = "https://api.semantika.pl/api/email-save";
-const API_ENG_URL = "https://api.semantika.pl/api/eng-email-save";
+const API_URL = "https://api.semantika.pl/api/emails/save-to-ac";
 
-const NewsletterSection = memo((props) => {
+const NewsletterSection = (props) => {
     const theme = useTheme();
     const { t } = useTranslation();
     const { language } = useContext(languageContext);
-    
-    const getProperURL = useCallback(() => {
-        switch (language) {
-            case "pl": {
-                return API_PL_URL;
-            }
-            default: {
-                return API_ENG_URL;
-            }
-        }
-    }, [language]);
+
+    const messagesTrans = t("atoms.messages", { returnObjects: true });
 
     const [email, setEmail] = useState("");
     const [emailSent, setEmailSent] = useState(null);
     const [buttonDisabled, setButtonDisabled] = useState(false);
+    const [message, setMessage] = useState("");
+
+    const messages = {
+        500: messagesTrans.emailNotSaved,
+        422: messagesTrans.emailExist,
+        201: messagesTrans.emailSaved,
+    };
+
+    useEffect(() => {
+        setMessage("");
+        setEmail("");
+        setEmailSent(null);
+        setButtonDisabled(false);
+    }, [language]);
 
     //utils
+
+    const getProperBody = useCallback(() => {
+        switch (language) {
+            case "pl": {
+                return { name: "Get Creative Everyday", email };
+            }
+            default: {
+                return { name: "Get Creative Everyday ENG", email };
+            }
+        }
+    }, [language, email]);
+
     const handleInputChange = (e) => setEmail(e.target.value);
+
+    const setRequestCompleted = (code) => {
+        setMessage(messages[code]);
+        setEmailSent(true);
+    };
+
+    const setRequestFailure = (code) => {
+        setMessage(messages[code]);
+        setEmailSent(false);
+        setButtonDisabled(false);
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -186,17 +219,21 @@ const NewsletterSection = memo((props) => {
 
         axios({
             method: "POST",
-            url: `${API_ENG_URL}/${email}`,
+            url: API_URL,
             headers: {
-                "Access-Control-Allow-Origin": "*",
+                "Content-Type": "application/json",
             },
+            data: getProperBody(),
         })
             .then((res) => {
-                setEmailSent(true);
+                if (res.status == "201") {
+                    setRequestCompleted(res.status);
+                } else if (res.status == "500" || res.status == "422") {
+                    setRequestFailure(res.status);
+                }
             })
             .catch((e) => {
-                setEmailSent(false);
-                setButtonDisabled(false);
+                setRequestFailure(500);
             });
     };
 
@@ -219,6 +256,7 @@ const NewsletterSection = memo((props) => {
                     name="email"
                     placeholder={t("atoms.yourEmail")}
                     onChange={handleInputChange}
+                    value={email}
                     required
                 />
                 <button type="submit" disabled={buttonDisabled}>
@@ -226,17 +264,13 @@ const NewsletterSection = memo((props) => {
                 </button>
             </Form>
 
-            {emailSent === null ? null : emailSent === true ? (
+            {emailSent === null ? null : (
                 <Message>
-                    <p className="green">{t("atoms.messages.emailSaved")}</p>
-                </Message>
-            ) : (
-                <Message>
-                    <p className="red">{t("atoms.messages.emailNotSaved")}</p>
+                    <p className={emailSent ? "green" : "red"}>{message}</p>
                 </Message>
             )}
         </section>
     );
-});
+};
 
 export default NewsletterSection;

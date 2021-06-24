@@ -96,6 +96,7 @@ const translationPolish = {
                     emailSaved: "Email został zapisany!",
                     emailNotSaved:
                         "Email nie został zapisany. Spróbuj ponownie później.",
+                    emailExist:"Email jest już zarejestrowany!"
                 },
 
                 polish: "polski",

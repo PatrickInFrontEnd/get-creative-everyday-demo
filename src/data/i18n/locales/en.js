@@ -99,6 +99,7 @@ const translationEnglish = {
                     emailSaved: "Email has been saved!",
                     emailNotSaved:
                         "Email has not beed saved. Please try again later.",
+                    emailExist: "Email has already been registered!",
                 },
 
                 polish: "polski",

@@ -99,6 +99,7 @@ const translationSpanish = {
                     emailSaved: "¡El correo electrónico se ha guardado!",
                     emailNotSaved:
                         "El correo electrónico no se ha guardado. Por favor, inténtelo de nuevo más tarde.",
+                    emailExist: "¡El correo electrónico ya ha sido registrado!",
                 },
 
                 polish: "polski",
