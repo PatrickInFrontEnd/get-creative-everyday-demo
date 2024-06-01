@@ -188,7 +188,7 @@ const ContainerEnglish = styled(Container)`
         z-index: -1;
         position: absolute;
         top: unset;
-        bottom: -465px;
+        bottom: -462px;
         left: 0;
         height: 130px;
         padding: 0;
@@ -196,7 +196,7 @@ const ContainerEnglish = styled(Container)`
         & > p {
             background-color: ${({ theme }) => theme.colors.white};
             padding-bottom: 40px;
-            top: -35px;
+            top: -30px;
         }
     }
 
