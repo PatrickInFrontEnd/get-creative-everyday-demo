@@ -9,6 +9,8 @@ import {
 const translationPolish = {
     pl: {
         translation: {
+            siteIsNotBeingUsedInfo:
+                "Ta strona nie jest już dostępna lub aktywna. Służy wyłącznie do celów prezentacyjnych!",
             navigation: {
                 examples: {
                     name: "Przykłady użycia",
@@ -96,7 +98,7 @@ const translationPolish = {
                     emailSaved: "Email został zapisany!",
                     emailNotSaved:
                         "Email nie został zapisany. Spróbuj ponownie później.",
-                    emailExist:"Email jest już zarejestrowany!"
+                    emailExist: "Email jest już zarejestrowany!",
                 },
 
                 polish: "polski",

@@ -9,6 +9,8 @@ import {
 const translationSpanish = {
     esp: {
         translation: {
+            siteIsNotBeingUsedInfo:
+                "¡Este sitio ya no está disponible o activo. Sirve solo para fines de presentación!",
             navigation: {
                 examples: {
                     name: "Ejemplos de uso",
