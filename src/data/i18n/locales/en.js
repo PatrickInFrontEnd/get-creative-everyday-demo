@@ -34,7 +34,7 @@ const translationEnglish = {
             },
 
             externalLinks: {
-                shop: "https://shop.getcreative-everyday.com/collection/frontpage/get-creative-every-day",
+                shop: "https://get-creative-everyday-demo.netlify.app/",
             },
 
             boxes: boxesENG,
@@ -103,6 +103,8 @@ const translationEnglish = {
                         "Email has not beed saved. Please try again later.",
                     emailExist: "Email has already been registered!",
                 },
+
+                from: "from",
 
                 polish: "polski",
                 english: "english",

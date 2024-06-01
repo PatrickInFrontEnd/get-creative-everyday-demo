@@ -4,12 +4,12 @@ import CreativityIcon from "./../assets/svg/creativity.svg";
 import OrderIcon from "./../assets/svg/order.svg";
 import FacebookIcon from "./../assets/svg/facebook_author.svg";
 import WWWIcon from "./../assets/svg/www_author.svg";
-import MonikaJPG from "./../assets/img/authors/Monika_Bigaj.jpeg";
-import AniaJPG from "./../assets/img/authors/Ania_Buschke.jpg";
-import MarlenaJPG from "./../assets/img/authors/Marlena_Kubelczuk.jpg";
-import AgnieszkaJPG from "./../assets/img/authors/Agnieszka_Iwanicka.jpg";
-import RenataJPG from "./../assets/img/authors/Renata_Nowakowska.jpg";
-import KarolinaJPG from "./../assets/img/authors/Karolina_Lubas.jpg";
+import MonikaJPG from "./../assets/img/authors/Monika.jpg";
+import AniaJPG from "./../assets/img/authors/Anna.jpg";
+import MarlenaJPG from "./../assets/img/authors/Marlena.jpg";
+import AgnieszkaJPG from "./../assets/img/authors/Agnieszka.jpg";
+import RenataJPG from "./../assets/img/authors/Renata.jpg";
+import KarolinaJPG from "./../assets/img/authors/Karolina.jpg";
 import one from "./../assets/img/planner_bowel/01.png";
 import two from "./../assets/img/planner_bowel/02.png";
 import three from "./../assets/img/planner_bowel/03.png";
@@ -234,16 +234,16 @@ export const authorsENG = [
         photo: MonikaJPG,
         links: [
             {
-                link: "www.facebook.com/thatisevil",
+                link: "get-creative-everyday-demo.netlify.app",
                 icon: FacebookIcon,
             },
             {
-                link: "www.thatisevil.education",
+                link: "get-creative-everyday-demo.netlify.app",
                 icon: WWWIcon,
             },
         ],
         author: {
-            name: "Monika Bigaj-Kisała",
+            name: "Anna Kowalska",
             description:
                 "English teacher with 18 years of experience in Poland, England and Ireland, director of studies and teacher trainer. Supports didactic teams in language schools, trains teachers and speaks at conferences and branch meetings. Author of the website That is Evil addressed to EFL teachers.",
         },
@@ -252,16 +252,16 @@ export const authorsENG = [
         photo: AniaJPG,
         links: [
             {
-                link: "www.facebook.com/LittleForestBookshop",
+                link: "get-creative-everyday-demo.netlify.app",
                 icon: FacebookIcon,
             },
             {
-                link: "www.littleforest.pl",
+                link: "get-creative-everyday-demo.netlify.app",
                 icon: WWWIcon,
             },
         ],
         author: {
-            name: "Anna Buschke",
+            name: "Martyna Bornicka",
             description:
                 "English teacher in kindergarten. A keen lover of books for children, for whom storytelling is a favourite element of the classes. Founder of Little Forest Children's Bookshop, a place full of creative teaching aids for teachers.",
         },
@@ -270,16 +270,16 @@ export const authorsENG = [
         photo: MarlenaJPG,
         links: [
             {
-                link: "www.facebook.com/nauczycielkaangielskiegoblog",
+                link: "get-creative-everyday-demo.netlify.app",
                 icon: FacebookIcon,
             },
             {
-                link: "www.nauczycielkaangielskiego.pl",
+                link: "get-creative-everyday-demo.netlify.app",
                 icon: WWWIcon,
             },
         ],
         author: {
-            name: "Marlena Kubelczuk",
+            name: "Cristine John",
             description:
                 "English teacher for over 9 years. Author of the blog Nauczycielka Angielskiego. Her philosophy for education has always been to make learning exciting, interesting and fun.",
         },
@@ -288,16 +288,16 @@ export const authorsENG = [
         photo: KarolinaJPG,
         links: [
             {
-                link: "www.facebook.com/teacherLubas",
+                link: "get-creative-everyday-demo.netlify.app",
                 icon: FacebookIcon,
             },
             {
-                link: "www.karolinalubas.pl",
+                link: "get-creative-everyday-demo.netlify.app",
                 icon: WWWIcon,
             },
         ],
         author: {
-            name: "Karolina Lubas",
+            name: "Karolina Machnicka",
             description:
                 "An English teacher who loves working with children. She often uses unusual teaching aids and English-language books in her lessons. On a daily basis, she shares her ideas and provides materials in the blog www.karolinalubas.pl.",
         },
@@ -306,16 +306,16 @@ export const authorsENG = [
         photo: RenataJPG,
         links: [
             {
-                link: "www.facebook.com/ezpzblog00",
+                link: "get-creative-everyday-demo.netlify.app",
                 icon: FacebookIcon,
             },
             {
-                link: "www.renatanowakowska.pl",
+                link: "get-creative-everyday-demo.netlify.app",
                 icon: WWWIcon,
             },
         ],
         author: {
-            name: "Renata Nowakowska",
+            name: "Renata Nowak",
             description:
                 "MA in English Philology, a teacher with over 10 years of experience. Author of the blog 'EasyPeasy' and the guide 'English without a Handbook'. Methodological consultant who supported the creation of an educational robot at Dino University.",
         },
@@ -324,16 +324,16 @@ export const authorsENG = [
         photo: AgnieszkaJPG,
         links: [
             {
-                link: "www.facebook.com/panizklasa",
+                link: "get-creative-everyday-demo.netlify.app",
                 icon: FacebookIcon,
             },
             {
-                link: "www.agnieszkaiwanicka.pl",
+                link: "get-creative-everyday-demo.netlify.app",
                 icon: WWWIcon,
             },
         ],
         author: {
-            name: "Agnieszka Iwanicka",
+            name: "Agnieszka Roland",
             description:
                 "She creates language games that she would like to play, prepares lessons in which she would like to participate, teaches in the way she would like to be taught. She helps other teachers to make language classes more attractive and lively. She creates original games, which she willingly shares with teachers of various languages on the website www.agnieszkaiwanicka.pl. She shows how to use technology in the classroom and teaches others how to teach in order to have fun in one’s own lessons. She makes both teachers and students want to learn.",
         },

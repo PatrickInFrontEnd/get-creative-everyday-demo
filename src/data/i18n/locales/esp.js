@@ -34,7 +34,7 @@ const translationSpanish = {
             },
 
             externalLinks: {
-                shop: "https://shop.getcreative-everyday.com/collection/frontpage/get-creative-every-day",
+                shop: "https://get-creative-everyday-demo.netlify.app/",
             },
 
             boxes: boxesSPANISH,
@@ -103,6 +103,8 @@ const translationSpanish = {
                         "El correo electrónico no se ha guardado. Por favor, inténtelo de nuevo más tarde.",
                     emailExist: "¡El correo electrónico ya ha sido registrado!",
                 },
+
+                from: "de",
 
                 polish: "polski",
                 english: "english",
