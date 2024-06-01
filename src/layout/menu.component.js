@@ -8,6 +8,7 @@ import { flexCenter, flexColumn } from "../components/mixins";
 import flagPL from "./../assets/img/flags/polish.png";
 import flagENG from "./../assets/img/flags/english.png";
 import flagESP from "./../assets/img/flags/spanish.png";
+import { useTranslation } from "react-i18next";
 
 gsap.registerPlugin(scrollToPlugin);
 
@@ -287,6 +288,8 @@ export const Hamburger = styled.div`
 `;
 
 const NavigationComponent = (props) => {
+    const { t } = useTranslation();
+
     const scrollTo = (hash, offset = 0) =>
         gsap.to(window, {
             scrollTo: { offsetY: offset, y: hash },
@@ -354,11 +357,11 @@ const NavigationComponent = (props) => {
 
                 <a
                     className="active"
-                    href="https://sklep.semantika.pl/get-creative-every-day"
+                    href={t("externalLinks.shop")}
                     target="_blank"
                     rel="noreferrer"
                 >
-                    KUP TERAZ
+                    {t("atoms.buyNow")}
                 </a>
 
                 <div className="list">

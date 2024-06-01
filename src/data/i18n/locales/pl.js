@@ -34,7 +34,7 @@ const translationPolish = {
             },
 
             externalLinks: {
-                shop: "https://sklep.semantika.pl/kolekcja/frontpage/get-creative-every-day",
+                shop: "https://get-creative-everyday-demo.netlify.app/",
             },
 
             boxes: boxesPL,
@@ -100,6 +100,8 @@ const translationPolish = {
                         "Email nie został zapisany. Spróbuj ponownie później.",
                     emailExist: "Email jest już zarejestrowany!",
                 },
+
+                from: "z",
 
                 polish: "polski",
                 english: "english",

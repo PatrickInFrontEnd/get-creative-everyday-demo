@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { flexCenter, flexColumn } from "./../mixins";
+import { useTranslation } from "react-i18next";
 
 const PaginationContainer = styled.div`
     position: absolute;
@@ -52,12 +53,18 @@ const HeaderSmall = styled.h5`
     }
 `;
 
-const PaginationComponent = ({ actualNumber, length }) => (
-    <PaginationContainer>
-        <HeaderBig>
-            {actualNumber < 10 ? `0${actualNumber}` : actualNumber}
-        </HeaderBig>
-        <HeaderSmall>from {length}</HeaderSmall>
-    </PaginationContainer>
-);
+const PaginationComponent = ({ actualNumber, length }) => {
+    const { t } = useTranslation();
+
+    return (
+        <PaginationContainer>
+            <HeaderBig>
+                {actualNumber < 10 ? `0${actualNumber}` : actualNumber}
+            </HeaderBig>
+            <HeaderSmall>
+                {t("atoms.from")} {length}
+            </HeaderSmall>
+        </PaginationContainer>
+    );
+};
 export default PaginationComponent;

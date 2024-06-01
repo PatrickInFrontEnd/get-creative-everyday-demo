@@ -4,12 +4,12 @@ import CreativityIcon from "./../assets/svg/creativity.svg";
 import OrderIcon from "./../assets/svg/order.svg";
 import FacebookIcon from "./../assets/svg/facebook_author.svg";
 import WWWIcon from "./../assets/svg/www_author.svg";
-import MonikaJPG from "./../assets/img/authors/Monika_Bigaj.jpeg";
-import AniaJPG from "./../assets/img/authors/Ania_Buschke.jpg";
-import MarlenaJPG from "./../assets/img/authors/Marlena_Kubelczuk.jpg";
-import AgnieszkaJPG from "./../assets/img/authors/Agnieszka_Iwanicka.jpg";
-import RenataJPG from "./../assets/img/authors/Renata_Nowakowska.jpg";
-import KarolinaJPG from "./../assets/img/authors/Karolina_Lubas.jpg";
+import MonikaJPG from "./../assets/img/authors/Monika.jpg";
+import AniaJPG from "./../assets/img/authors/Anna.jpg";
+import MarlenaJPG from "./../assets/img/authors/Marlena.jpg";
+import AgnieszkaJPG from "./../assets/img/authors/Agnieszka.jpg";
+import RenataJPG from "./../assets/img/authors/Renata.jpg";
+import KarolinaJPG from "./../assets/img/authors/Karolina.jpg";
 import one from "./../assets/img/planner_bowel/01.png";
 import two from "./../assets/img/planner_bowel/02.png";
 import three from "./../assets/img/planner_bowel/03.png";
@@ -240,108 +240,108 @@ export const authorsSPANISH = [
         photo: MonikaJPG,
         links: [
             {
-                link: "www.facebook.com/thatisevil",
+                link: "get-creative-everyday-demo.netlify.app",
                 icon: FacebookIcon,
             },
             {
-                link: "www.thatisevil.education",
+                link: "get-creative-everyday-demo.netlify.app",
                 icon: WWWIcon,
             },
         ],
         author: {
-            name: "Monika Bigaj-Kisała",
+            name: "Anna Kowalska",
             description:
-                "Profesora de inglés con 17 años de experiencia adquirida en escuelas de Polonia, Inglaterra e Irlanda. Es metodóloga y formadora de profesores desde hace 4 años. Presta apoyo metodológico a equipos docentes de escuelas de idiomas, además de formar a profesores y conferenciantes en eventos del sector. Autor de That is Evil, un sitio web dirigido a profesores de inglés.",
+                "Profesora de inglés con 18 años de experiencia en Polonia, Inglaterra e Irlanda, directora de estudios y formadora de profesores. Apoya a equipos didácticos en escuelas de idiomas, capacita a profesores y habla en conferencias y reuniones sectoriales. Autora del sitio web That is Evil dirigido a profesores de inglés.",
         },
     },
     {
         photo: AniaJPG,
         links: [
             {
-                link: "www.facebook.com/LittleForestBookshop",
+                link: "get-creative-everyday-demo.netlify.app",
                 icon: FacebookIcon,
             },
             {
-                link: "www.littleforest.pl",
+                link: "get-creative-everyday-demo.netlify.app",
                 icon: WWWIcon,
             },
         ],
         author: {
-            name: "Anna Buschke",
+            name: "Martyna Bornicka",
             description:
-                "Profesora de inglés en jardín de infancia. Ávida amante de los libros infantiles, para quien el storytelling es uno de los elementos más importantes de las clases. Fundadora de Little Forest Children’s Bookshop, un lugar lleno de material didáctico creativo para los profesores.",
+                "Profesora de inglés en jardín de infancia. Ávida amante de los libros para niños, para quien el storytelling es un elemento favorito de las clases. Fundadora de Little Forest Children's Bookshop, un lugar lleno de materiales didácticos creativos para profesores.",
         },
     },
     {
         photo: MarlenaJPG,
         links: [
             {
-                link: "www.facebook.com/nauczycielkaangielskiegoblog",
+                link: "get-creative-everyday-demo.netlify.app",
                 icon: FacebookIcon,
             },
             {
-                link: "www.nauczycielkaangielskiego.pl",
+                link: "get-creative-everyday-demo.netlify.app",
                 icon: WWWIcon,
             },
         ],
         author: {
-            name: "Marlena Kubelczuk",
+            name: "Cristine John",
             description:
-                "Profesora de inglés durante más de 9 años. Autora del blog Nauczycielka Angielskiego [Profesora deinglés], donde comparte sus ideas para crear sus propios materiales didácticos para niños en edad preescolar y escolar, así como inspiraciones tanto para las clases como para talleres de lectura y juegoslingüísticos en casa.",
+                "Profesora de inglés durante más de 9 años. Autora del blog Nauczycielka Angielskiego. Su filosofía educativa siempre ha sido hacer que el aprendizaje sea emocionante, interesante y divertido.",
         },
     },
     {
         photo: KarolinaJPG,
         links: [
             {
-                link: "www.facebook.com/teacherLubas",
+                link: "get-creative-everyday-demo.netlify.app",
                 icon: FacebookIcon,
             },
             {
-                link: "www.karolinalubas.pl",
+                link: "get-creative-everyday-demo.netlify.app",
                 icon: WWWIcon,
             },
         ],
         author: {
-            name: "Karolina Lubas",
+            name: "Karolina Machnicka",
             description:
-                "Profesora de inglés a quien le encanta trabajar con niños. A menudo utiliza en sus clases materiales didácticos no necesariamente evidentes y libros de inglés. A diario, comparte ideas y recursos en su blog www.karolinalubas.pl. ",
+                "Profesora de inglés que ama trabajar con niños. A menudo utiliza materiales didácticos inusuales y libros en inglés en sus clases. Comparte ideas y materiales diariamente en el blog www.karolinalubas.pl.",
         },
     },
     {
         photo: RenataJPG,
         links: [
             {
-                link: "www.facebook.com/ezpzblog00",
+                link: "get-creative-everyday-demo.netlify.app",
                 icon: FacebookIcon,
             },
             {
-                link: "www.renatanowakowska.pl",
+                link: "get-creative-everyday-demo.netlify.app",
                 icon: WWWIcon,
             },
         ],
         author: {
-            name: "Renata Nowakowska",
+            name: "Renata Nowak",
             description:
-                "Máster en filología inglesa, profesora con más de 10 años de experiencia. Autora del blog EasyPeasyy de la guía 'Angielski bez Podręcznika' [Inglés sin Libro de texto]. Consultora metodológica para el desarrollo del robot educativo Dino University.",
+                "Licenciada en Filología Inglesa, profesora con más de 10 años de experiencia. Autora del blog 'EasyPeasy' y la guía 'Inglés sin libro de texto'. Consultora metodológica que apoyó la creación de un robot educativo en Dino University.",
         },
     },
     {
         photo: AgnieszkaJPG,
         links: [
             {
-                link: "www.facebook.com/panizklasa",
+                link: "get-creative-everyday-demo.netlify.app",
                 icon: FacebookIcon,
             },
             {
-                link: "www.agnieszkaiwanicka.pl",
+                link: "get-creative-everyday-demo.netlify.app",
                 icon: WWWIcon,
             },
         ],
         author: {
-            name: "Agnieszka Iwanicka",
+            name: "Agnieszka Roland",
             description:
-                "Crea juegos lingüísticos que a ella misma le gustaría jugar, prepara lecciones en las que le gustaría participar y enseña de la forma en que a ella misma le gustaría que le enseñaran. Ayuda a que las clases de idiomas sean más interesantes y animadas. Crea juegos originales que le gusta compartir con los profesores de varios idiomas en www.agnieszkaiwanicka.pl. Muestra cómo utilizar la tecnología en el aula, y sugiere cómo enseñar de forma que puedas divertirte en tus propias lecciones. Hace que tengamos ganas de aprender, tanto los profesores como los alumnos.",
+                "Crea juegos lingüísticos que le gustaría jugar, prepara lecciones en las que le gustaría participar y enseña de la manera en que le gustaría ser enseñada. Ayuda a otros profesores a hacer que las clases de idiomas sean más atractivas y animadas. Crea juegos originales que comparte con profesores de varios idiomas en www.agnieszkaiwanicka.pl. Muestra cómo usar la tecnología en el aula y enseña a otros cómo enseñar para divertirse en sus propias clases. Hace que tanto profesores como estudiantes quieran aprender.",
         },
     },
 ];

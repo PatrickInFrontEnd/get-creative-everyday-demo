@@ -160,8 +160,6 @@ const Message = styled.div`
     }
 `;
 
-const API_URL = "https://api.semantika.pl/api/emails/save-to-ac";
-
 const NewsletterSection = (props) => {
     const theme = useTheme();
     const { t } = useTranslation();
@@ -207,17 +205,20 @@ const NewsletterSection = (props) => {
         setEmailSent(true);
     };
 
-    const setRequestFailure = (code) => {
+    /*    const setRequestFailure = (code) => {
         setMessage(messages[code]);
         setEmailSent(false);
         setButtonDisabled(false);
-    };
+    }; */
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setButtonDisabled(true);
 
-        axios({
+        setTimeout(() => {
+            setRequestCompleted(201);
+        }, 2000);
+        /* axios({
             method: "POST",
             url: API_URL,
             headers: {
@@ -234,7 +235,7 @@ const NewsletterSection = (props) => {
             })
             .catch((e) => {
                 setRequestFailure(500);
-            });
+            }); */
     };
 
     return (
