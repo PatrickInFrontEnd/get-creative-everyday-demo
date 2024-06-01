@@ -6,9 +6,13 @@ import FooterComponent from "./footer.component";
 import FooterComponentENG from "./footer_ENG.component";
 import { useLocation } from "react-router-dom";
 import LanguageProvider from "./../providers/languageProvider";
+import SiteIsNotBeingUsedInfo from "./SiteIsNotBeingUsedInfo";
+import { useTranslation } from "react-i18next";
 
 const LayoutComponent = (props) => {
     const location = useLocation();
+
+    const { t } = useTranslation();
 
     const renderNavigation = (pathname) => {
         switch (pathname) {
@@ -38,6 +42,9 @@ const LayoutComponent = (props) => {
         <LanguageProvider>
             <GlobalStyle />
             {renderNavigation(location.pathname)}
+            <SiteIsNotBeingUsedInfo>
+                {t("siteIsNotBeingUsedInfo")}
+            </SiteIsNotBeingUsedInfo>
         </LanguageProvider>
     );
 };
