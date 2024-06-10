@@ -251,7 +251,7 @@ export const authorsSPANISH = [
         author: {
             name: "Anna Kowalska",
             description:
-                "Profesora de inglés con 18 años de experiencia en Polonia, Inglaterra e Irlanda, directora de estudios y formadora de profesores. Apoya a equipos didácticos en escuelas de idiomas, capacita a profesores y habla en conferencias y reuniones sectoriales. Autora del sitio web That is Evil dirigido a profesores de inglés.",
+                "Profesora de inglés con 18 años de experiencia en Polonia, Inglaterra e Irlanda, directora de estudios y formadora de profesores. Apoya a equipos didácticos en escuelas de idiomas, capacita a profesores y habla en conferencias y reuniones del sector. Autora del sitio web That is Evil dirigido a profesores de EFL.",
         },
     },
     {
@@ -269,7 +269,7 @@ export const authorsSPANISH = [
         author: {
             name: "Martyna Bornicka",
             description:
-                "Profesora de inglés en jardín de infancia. Ávida amante de los libros para niños, para quien el storytelling es un elemento favorito de las clases. Fundadora de Little Forest Children's Bookshop, un lugar lleno de materiales didácticos creativos para profesores.",
+                "Profesora de inglés en jardín de infancia. Amante de los libros para niños, para quienes contar cuentos es su elemento favorito de las clases. Fundadora de Little Forest Children's Bookshop, un lugar lleno de ayudas didácticas creativas para profesores.",
         },
     },
     {
@@ -287,7 +287,7 @@ export const authorsSPANISH = [
         author: {
             name: "Cristine John",
             description:
-                "Profesora de inglés durante más de 9 años. Autora del blog Nauczycielka Angielskiego. Su filosofía educativa siempre ha sido hacer que el aprendizaje sea emocionante, interesante y divertido.",
+                "Profesora de inglés durante más de 9 años. Autora del blog de inglés. Su filosofía de la educación siempre ha sido hacer que el aprendizaje sea emocionante, interesante y divertido.",
         },
     },
     {
@@ -305,7 +305,7 @@ export const authorsSPANISH = [
         author: {
             name: "Karolina Machnicka",
             description:
-                "Profesora de inglés que ama trabajar con niños. A menudo utiliza materiales didácticos inusuales y libros en inglés en sus clases. Comparte ideas y materiales diariamente en el blog www.karolinalubas.pl.",
+                "Una profesora de inglés que ama trabajar con niños. A menudo utiliza ayudas didácticas inusuales y libros en inglés en sus lecciones. Diariamente, comparte sus ideas y proporciona materiales en el blog.",
         },
     },
     {
@@ -323,7 +323,7 @@ export const authorsSPANISH = [
         author: {
             name: "Renata Nowak",
             description:
-                "Licenciada en Filología Inglesa, profesora con más de 10 años de experiencia. Autora del blog 'EasyPeasy' y la guía 'Inglés sin libro de texto'. Consultora metodológica que apoyó la creación de un robot educativo en Dino University.",
+                "Licenciada en Filología Inglesa, profesora con más de 10 años de experiencia. Autora del blog 'EasyPeasy' y de la guía 'Inglés sin Manual'. Consultora metodológica que apoyó la creación de un robot educativo en la Universidad Dino.",
         },
     },
     {
@@ -341,7 +341,7 @@ export const authorsSPANISH = [
         author: {
             name: "Agnieszka Roland",
             description:
-                "Crea juegos lingüísticos que le gustaría jugar, prepara lecciones en las que le gustaría participar y enseña de la manera en que le gustaría ser enseñada. Ayuda a otros profesores a hacer que las clases de idiomas sean más atractivas y animadas. Crea juegos originales que comparte con profesores de varios idiomas en www.agnieszkaiwanicka.pl. Muestra cómo usar la tecnología en el aula y enseña a otros cómo enseñar para divertirse en sus propias clases. Hace que tanto profesores como estudiantes quieran aprender.",
+                "Crea juegos de idiomas que le gustaría jugar, prepara lecciones en las que le gustaría participar, enseña de la manera en que le gustaría que le enseñaran. Ayuda a otros profesores a hacer que las clases de idiomas sean más atractivas y animadas. Crea juegos originales, que comparte con gusto con profesores de varios idiomas en el sitio web. Muestra cómo utilizar la tecnología en el aula y enseña a otros a enseñar para que se diviertan en sus propias lecciones. Hace que tanto profesores como estudiantes quieran aprender.",
         },
     },
 ];

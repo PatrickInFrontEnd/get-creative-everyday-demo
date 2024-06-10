@@ -251,7 +251,7 @@ export const authorsPL = [
         author: {
             name: "Anna Kowalska",
             description:
-                "Nauczycielka angielskiego z 18-letnim doświadczeniem zdobywanym w szkołach w Polsce, Anglii i Irlandii. Od 5 lat jest metodyczką oraz trenerką nauczycieli. Wspiera metodycznie zespoły dydaktyczne w szkołach językowych, a oprócz tego szkoli nauczycieli i lektorów na konferencjach i zlotach branżowych. Autorka strony That is Evil skierowanej do anglistów.",
+                "Nauczycielka angielskiego z 18-letnim doświadczeniem w Polsce, Anglii i Irlandii, dyrektor studiów i trenerka nauczycieli. Wspiera zespoły dydaktyczne w szkołach językowych, szkoli nauczycieli i występuje na konferencjach i spotkaniach branżowych. Autorka strony That is Evil skierowanej do nauczycieli EFL.",
         },
     },
     {
@@ -269,7 +269,7 @@ export const authorsPL = [
         author: {
             name: "Martyna Bornicka",
             description:
-                "Nauczycielka języka angielskiego w przedszkolu. Zapalona miłośniczka książek dla dzieci, dla której storytelling jest ulubionym elementem zajęć. Założycielka Little Forest Children’s Bookshop, miejsca pełnego kreatywnych pomocy dydaktycznych dla nauczycieli.",
+                "Nauczycielka angielskiego w przedszkolu. Zakochana w książkach dla dzieci, dla której opowiadanie historii jest ulubionym elementem zajęć. Założycielka Little Forest Children's Bookshop, miejsca pełnego kreatywnych pomocy dydaktycznych dla nauczycieli.",
         },
     },
     {
@@ -287,7 +287,7 @@ export const authorsPL = [
         author: {
             name: "Cristine John",
             description:
-                "Od ponad 9 lat nauczyciel języka angielskiego. Autorka bloga Nauczycielka Angielskiego, na którym dzieli się pomysłami na tworzenie własnych pomocy dydaktycznych dla dzieci w wieku przedszkolnym oraz wczesnoszkolnym, a także inspiracjami zarówno na zajęcia i warsztaty czytelnicze, jak i domowe zabawy językowe.",
+                "Nauczycielka angielskiego od ponad 9 lat. Autorka bloga angielskiego. Jej filozofia edukacji zawsze polegała na tym, by nauka była ekscytująca, interesująca i zabawna.",
         },
     },
     {
@@ -305,7 +305,7 @@ export const authorsPL = [
         author: {
             name: "Karolina Machnicka",
             description:
-                "Nauczycielka języka angielskiego, która uwielbia pracę z dziećmi. Często wykorzystuje niekoniecznie oczywiste pomoce dydaktyczne i książki anglojęzyczne na swoich lekcjach. Na co dzień dzieli się pomysłami i materiałami na blogu www.karolinalubas.pl.",
+                "Nauczycielka angielskiego, która uwielbia pracować z dziećmi. Często wykorzystuje nietypowe pomoce dydaktyczne i książki anglojęzyczne na swoich lekcjach. Na co dzień dzieli się swoimi pomysłami i udostępnia materiały na blogu.",
         },
     },
     {
@@ -323,7 +323,7 @@ export const authorsPL = [
         author: {
             name: "Renata Nowak",
             description:
-                "Magister filologii angielskiej, lektor z ponad 10-letnim stażem. Autorka bloga EasyPeasy oraz poradnika „Angielski bez Podręcznika”. Konsultant metodyczny przy tworzeniu robota edukacyjnego Dino University.",
+                "Magister filologii angielskiej, nauczycielka z ponad 10-letnim doświadczeniem. Autorka bloga 'EasyPeasy' i przewodnika 'Angielski bez podręcznika'. Konsultantka metodyczna, która wspierała tworzenie robota edukacyjnego na Uniwersytecie Dino.",
         },
     },
     {
@@ -341,7 +341,7 @@ export const authorsPL = [
         author: {
             name: "Agnieszka Roland",
             description:
-                "Tworzy gry językowe, w które sama chciałaby grać, przygotowuje lekcje, w których chciałaby uczestniczyć, uczy tak, jak sama chciałaby być uczona. Pomaga uatrakcyjniać i ożywiać zajęcia językowe. Tworzy autorskie gry, którymi chętnie dzieli się z nauczycielami różnych języków na stronie www.agnieszkaiwanicka.pl. Pokazuje, jak korzystać z technologii w klasie oraz podpowiada, jak uczyć, aby samemu dobrze się bawić na własnych lekcjach. Sprawia, że chce się uczyć – zarówno nauczycielom, jak i uczniom.",
+                "Tworzy gry językowe, w które sama chciałaby grać, przygotowuje lekcje, w których sama chciałaby uczestniczyć, uczy w sposób, w jaki sama chciałaby być nauczana. Pomaga innym nauczycielom uatrakcyjniać i ożywiać zajęcia językowe. Tworzy oryginalne gry, którymi chętnie dzieli się z nauczycielami różnych języków na stronie internetowej. Pokazuje, jak wykorzystywać technologię w klasie i uczy innych, jak uczyć, aby dobrze się bawić na własnych lekcjach. Sprawia, że zarówno nauczyciele, jak i uczniowie chcą się uczyć.",
         },
     },
 ];
