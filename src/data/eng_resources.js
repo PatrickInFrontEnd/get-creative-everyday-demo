@@ -263,7 +263,7 @@ export const authorsENG = [
         author: {
             name: "Martyna Bornicka",
             description:
-                "English teacher in kindergarten. A keen lover of books for children, for whom storytelling is a favourite element of the classes. Founder of Little Forest Children's Bookshop, a place full of creative teaching aids for teachers.",
+                "English teacher in kindergarten. A keen lover of books for children, for whom storytelling is a favorite element of the classes. Founder of Little Forest Children's Bookshop, a place full of creative teaching aids for teachers.",
         },
     },
     {
@@ -281,7 +281,7 @@ export const authorsENG = [
         author: {
             name: "Cristine John",
             description:
-                "English teacher for over 9 years. Author of the blog Nauczycielka Angielskiego. Her philosophy for education has always been to make learning exciting, interesting and fun.",
+                "English teacher for over 9 years. Author of the english blog. Her philosophy for education has always been to make learning exciting, interesting and fun.",
         },
     },
     {
@@ -299,7 +299,7 @@ export const authorsENG = [
         author: {
             name: "Karolina Machnicka",
             description:
-                "An English teacher who loves working with children. She often uses unusual teaching aids and English-language books in her lessons. On a daily basis, she shares her ideas and provides materials in the blog www.karolinalubas.pl.",
+                "An English teacher who loves working with children. She often uses unusual teaching aids and English-language books in her lessons. On a daily basis, she shares her ideas and provides materials in the blog.",
         },
     },
     {
@@ -335,7 +335,7 @@ export const authorsENG = [
         author: {
             name: "Agnieszka Roland",
             description:
-                "She creates language games that she would like to play, prepares lessons in which she would like to participate, teaches in the way she would like to be taught. She helps other teachers to make language classes more attractive and lively. She creates original games, which she willingly shares with teachers of various languages on the website www.agnieszkaiwanicka.pl. She shows how to use technology in the classroom and teaches others how to teach in order to have fun in one’s own lessons. She makes both teachers and students want to learn.",
+                "She creates language games that she would like to play, prepares lessons in which she would like to participate, teaches in the way she would like to be taught. She helps other teachers to make language classes more attractive and lively. She creates original games, which she willingly shares with teachers of various languages on the website. She shows how to use technology in the classroom and teaches others how to teach in order to have fun in one’s own lessons. She makes both teachers and students want to learn.",
         },
     },
 ];
